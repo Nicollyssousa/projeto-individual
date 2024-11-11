@@ -62,11 +62,12 @@ body {
 
 .navegacao {
     margin: 0;
-    width: 98%;
+    width: 100%;
     height: auto;
     text-align: center;
     justify-items: center;
-    background-image: url("assets/loginCadastroBackground.jpg");
+    background-image: url("../assets/navegacaoBackground.jpg");
+    background-size: 100%;
 }
 
 .navegacao h1 {
