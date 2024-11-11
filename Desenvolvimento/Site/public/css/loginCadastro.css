@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Passion+One:wght@400;700;900&display=swap');
+
+*{
+    margin: 0;
+}
+
+body {
+    font-family: "Changa One", serif;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.877);
+}
+
+.balaoLogin{
+    margin: 0;
+    padding: 0;
+}
+
+.armarioCadastro{
+    margin: 0;
+    width: 90%;
+    height: 100%;
+    text-align: center;
+    justify-items: center;
+    background-image: url("/public/assets/icon/loginCadastro/armarioCadastro.png");
+    background-size: 1vw;
+}
+
+.armarioCadastro #armarioCadastro {
+    margin: 0;
+    width: 90%;
+}
+
+.armarioCadastro #balaoFala{
+    margin: 0;
+    width: 28%;
+    padding: 10vh;
+    transform: translateX(-80%);
+}
+
+.armarioCadastro #pet {
+    margin: 0;
+    width: 30%;
+    height: auto;
+    transform: translateX(-50%);
+}
+
+.armarioCadastro  p {
+    margin: 0;
+    padding: 0;
+    top: 5vh;
+    position: absolute;
+    color: #11792E;
+    font-size: 5vh;
+    transform: translateX(-170%);
+}
+
+.armarioCadastro #vizualizarSenha {
+    position: absolute;
+    width: 5px;
+    bottom: 40vh;
+    left: 61%;
+    font-size: 5vh;
+    transform: translateX(-50%);
+}
+
+.armarioCadastro #marcaDaAgua {
+    font-size: 3vh;
+    color: white;
+    align-self: flex-start;
+    margin-left: 0;
+    margin-top: 0vh;
+}
+
+.armarioCadastro #nomeUsuario{
+    position: absolute;
+    width: 7%;
+    height: 4%;
+    bottom: -9vh;
+    left: 70%;
+    transform: translateX(-308%);
+}
+
+.armarioCadastro #tipoMonstro{
+    position: absolute;
+    width: 12%;
+    height: 4%;
+    bottom: -15vh;
+    left: 49%;
+    transform: translateX(-50%);
+}
+
+.armarioCadastro #senhaUsuario {
+    position: absolute;
+    width: 8%;
+    height: 3%;
+    bottom: 0vh;
+    right: 41%;
+    transform: translateX(-50%);
+}
+
+.armarioCadastro #confirmacaoSenha{
+    position: absolute;
+    width: 8%;
+    height: 3%;
+    bottom: 0vh;
+    right: 41%;
+    transform: translateX(-50%);
+}
+
+.armarioCadastro #idadeUsuario{
+    position: absolute;
+    width: 4%;
+    height: 2%;
+    bottom: 0vh;
+    right: 38%;
+    transform: translateX(-50%);
+}
