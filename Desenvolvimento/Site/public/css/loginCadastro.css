@@ -55,20 +55,31 @@ body {
 }
 
 .armarioCadastro #vizualizarSenha {
+    /*deixar a imagem clicável*/
     position: absolute;
-    width: 5px;
-    left: 61%;
-    font-size: 5vh;
-    transform: translateX(-50%);
+    width: 7.1vh;
+    z-index: -1;
+    transform: translate(-3.2vh, 20.8vh);
 }
 
 .armarioCadastro #nomeUsuario{
     position: absolute;
-    width: 7%;
+    width: 11%;
     height: 4%;
-    left: 70%;
-    transform: translateX(-308%);
+    transform: translate(10.9vh, -13.8vh);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 2.8vh;
+    font-family: "Changa One", serif;
+    color: white;
 }
+
+#nomeUsuario::placeholder {
+    /*muda cor do texto do input*/
+    color: white; 
+    opacity: 0.7;
+  }
 
 .armarioCadastro #tipoMonstro{
     position: absolute;
