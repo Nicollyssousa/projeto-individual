@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Passion+One:wght@400;700;900&display=swap');
 
-*{
+html, body {
+    width: 100%;
+    height: 100%;
     margin: 0;
-}
-
-body {
+    padding: 0;
     font-family: "Changa One", serif;
-    background-color: rgba(0, 0, 0, 0.911);
-    margin: 0;
+    background-color: #000000e8;
+    overflow: hidden;
 }
 
 .abertura {
@@ -44,8 +44,7 @@ body {
     font-size: 3vh;
     color: white;
     align-self: flex-start;
-    margin-left: 90vw;
-    margin-top: 11vh;
+    transform: translate(103vh, 11vh);
 }
 
 .abertura #boasVindas {
@@ -61,13 +60,18 @@ body {
 }
 
 .navegacao {
-    margin: 0;
     width: 100%;
-    height: auto;
+    height: 100vh; /* Ajusta a altura para 100% da tela */
     text-align: center;
     justify-items: center;
     background-image: url("../assets/navegacaoBackground.jpg");
-    background-size: 100%;
+    background-size: cover; /* Cobre toda a área da div */
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .navegacao h1 {
@@ -87,35 +91,33 @@ body {
 }
 
 .navegacao img {
-    width: 42%;
-    height: 100%;
-    display: block;
+    width: 97vh;
+    height: auto;
     margin: 0;
-    margin-left: auto; /* Centraliza a imagem horizontalmente */
-    margin-right: auto; /* Centraliza a imagem horizontalmente */
-    padding-top: 5vh;;
+    transform: translate(-1vh, 2vh);
+    padding-top: 5vh;
 }
 
 .navegacao #linkCadastro {
     position: absolute;
     bottom: 65vh;
-    left: 57%;
     font-size: 5vh;
-    transform: translateX(-50%);
+    transform: translate(-41vh, 3vh);
+    color: rgba(0, 0, 0, 0.833);
 }
 
 .navegacao #linkLogin {
     position: absolute;
     bottom: 40vh;
-    left: 61%;
     font-size: 5vh;
-    transform: translateX(-50%);
+    transform: translate(-27vh, 5vh);
+    color: black;
 }
 
 .navegacao #marcaDAgua {
+    position: absolute;
     font-size: 3vh;
     color: white;
     align-self: flex-start;
-    margin-left: 94vw;
-    margin-top: 7vh;
+    transform: translate(147vh, 3vh);
 }

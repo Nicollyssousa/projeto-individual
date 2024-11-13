@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/icon/logoSite.png">
     <link rel="stylesheet" href="css/navegacao.css">
+    <link rel="stylesheet" href="css/loginCadastro.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>| Navegação</title>
+    <title>| MH</title>
 </head>
+
 <body>
+    <!-- abertura e navegação -->
     <div id="abertura" class="abertura" style="display: block;">
         <img id="logoNavegacao" src="assets/icon/navegacao/logoPadrao.png">
         <p id="boasVindas">Seja Bem-vindo(a) Monster High</p>
@@ -20,28 +24,109 @@
     </div>
 
     <div id="navegacao" class="navegacao" style="display: none;">
-        <p id="loginLink"></p>
-        <p id="cadastroLink"></p>
         <h1>Escolha seu destino arrepiante</h1>
         <img src="assets/icon/navegacao/mapa.png">
-        <l id="linkLogin">Login</l><br>
-        <l id="linkCadastro">Cadastro</l>
+        <a id="linkLogin" href="javascript:void(0)">Login</a>
+        <a id="linkCadastro" href="javascript:void(0)">Cadastro</a>
         <p id="marcaDAgua">@Nick</p>
     </div>
 
-    <script>
-        function sumirAbertura() {
-            var abertura = document.getElementById('abertura');
-            var navegacao = document.getElementById('navegacao');
+    <!-- cadastro e login -->
+    <div id="cadastro" class="armarioCadastro" style="display: none;">
+        <img id="balaoFala" src="assets/icon/loginCadastro/balaoFala.png">
+        <img id="pet" src="assets/icon/loginCadastro/pet.png">
+        <p>Já tem uma<br>conta aqui?</p>
+        <button onclick="irParaLogin()" id="linkLoginBalao">Login</button>
+        <input type="text" id="nomeUsuario" placeholder="Digite seu usuário">
+        <select type="text" id="tipoMonstro">
+            <option value="vazio">Tipo de criatura</option>
+            <option value="lobisomen">Lobisomen</option>
+            <option value="Vampiro">Vampiro(a)</option>
+        </select>
+        <input type="password" id="senhaUsuario" placeholder="Digite sua senha">
+        <input type="password" id="confirmacaoSenha" placeholder="Digite novamente">
+        <input type="number" id="idadeUsuario" placeholder="Idade">
+        <button onclick="cadastrar()" id="cadastroUsuario" style="display: none;">Cadastrar-se</button>
+        <p id="marcaDaAgua">@Nick</p>
+        <img id="vizualizarSenha" src="assets/icon/loginCadastro/olho.png">
+    </div>
 
-            abertura.classList.add('subindo');
-
-            setTimeout(function() {
-                abertura.style.display = 'none';
-                navegacao.style.display = 'block';
-            }, 700);
-        }
-    </script>
+    <div id="login" class="armarioLogin" style="display: none;">
+        <div class="balaoCadastro">
+            <img id="balaoFala2" src="assets/icon/loginCadastro/balaoFala.png">
+            <p>É novo por aqui?</p>
+            <button onclick="irParaCadastro()" id="linkCadastroBalao">Cadastro</button>
+        </div>
+        <center>
+            <input type="text" id="usario" placeholder="Digite seu usuário">
+            <input type="password" id="senha" placeholder="Digite sua senha">
+        </center>
+        <img id="armarioLogin" src="assets/icon/loginCadastro/armarioLogin.png">
+    </div>
 </body>
-</html>
 
+<script>
+    function sumirAbertura() {
+        var abertura = document.getElementById('abertura');
+        var navegacao = document.getElementById('navegacao');
+
+        abertura.classList.add('subindo');
+        setTimeout(function () {
+            abertura.style.display = 'none';
+            navegacao.style.display = 'block';
+        }, 700);
+    }
+
+    // Função para exibir uma div e ocultar a outra com transição
+    function exibirDiv(aparece, sumir) {
+        sumir.classList.remove("show");
+        setTimeout(() => {
+            sumir.style.display = 'none';
+            aparece.style.display = 'block';
+            setTimeout(() => aparece.classList.add("show"), 10);
+        }, 500);
+    }
+
+    function aparecerCadastroLogin() {
+        const navegacao = document.getElementById("navegacao");
+        const linkLogin = document.getElementById("linkLogin");
+        const linkCadastro = document.getElementById("linkCadastro");
+        const armarioLogin = document.getElementById("login");
+        const armarioCadastro = document.getElementById("cadastro");
+
+        // Eventos de clique para alternar entre as seções de Login e Cadastro
+        linkLogin.addEventListener("click", function () {
+            navegacao.classList.remove("show");
+            setTimeout(() => {
+                navegacao.style.display = 'none';
+                exibirDiv(armarioLogin, armarioCadastro);
+            }, 500);
+        });
+
+        linkCadastro.addEventListener("click", function () {
+            navegacao.classList.remove("show");
+            setTimeout(() => {
+                navegacao.style.display = 'none';
+                exibirDiv(armarioCadastro, armarioLogin);
+            }, 500);
+        });
+    }
+
+    // Inicializa a função de troca de seções ao carregar a página
+    window.onload = function () {
+        aparecerCadastroLogin();
+    }
+
+    function irParaLogin() {
+        armarioLogin = document.getElementById("login");
+        armarioCadastro = document.getElementById("cadastro");
+        exibirDiv(armarioLogin, armarioCadastro);
+    }
+
+    function irParaCadastro() {
+        armarioLogin = document.getElementById("login");
+        armarioCadastro = document.getElementById("cadastro");
+        exibirDiv(armarioCadastro, armarioLogin);
+    }
+</script>
+</html>

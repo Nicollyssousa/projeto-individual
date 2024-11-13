@@ -13,6 +13,7 @@ body {
 }
 
 .armarioCadastro {
+    transition: opacity 0.3s ease;
     margin: 0;
     width: 100vw;
     height: 100vh;
@@ -66,51 +67,110 @@ body {
     position: absolute;
     width: 11%;
     height: 4%;
-    transform: translate(10.9vh, -13.8vh);
+    transform: translate(10.3vh, -13.8vh);
     background-color: transparent;
     border: none;
     outline: none;
     font-size: 2.8vh;
     font-family: "Changa One", serif;
     color: white;
+    text-align: center;
 }
 
 #nomeUsuario::placeholder {
-    /*muda cor do texto do input*/
+    /*muda cor do texto do input e 
+    alinha o texto no meio do input*/
     color: white; 
     opacity: 0.7;
+    text-align: center;
   }
 
-.armarioCadastro #tipoMonstro{
+  .armarioCadastro #tipoMonstro {
     position: absolute;
-    width: 12%;
+    width: 11%;
     height: 4%;
-    left: 49%;
-    transform: translateX(-50%);
+    transform: translate(7.3vh, -6.2vh);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 2.8vh;
+    font-family: "Changa One", serif;
+    text-align: center;
+    color: white;
+    opacity: 0.9;
+    appearance: none;
+}
+
+/* letra preta para as opções do select */
+.armarioCadastro #tipoMonstro option {
+    color: black;
 }
 
 .armarioCadastro #senhaUsuario {
     position: absolute;
-    width: 8%;
-    height: 3%;
-    right: 41%;
-    transform: translateX(-50%);
+    width: 11%;
+    height: 4%;
+    transform: translate(10.3vh, 10vh);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 2.5vh;
+    font-family: "Changa One", serif;
+    color: black;
+    text-align: center;
 }
+
+#senhaUsuario::placeholder {
+    color: black; 
+    opacity: 0.6;
+    text-align: center;
+  }
 
 .armarioCadastro #confirmacaoSenha{
     position: absolute;
-    width: 8%;
-    height: 3%;
-    right: 41%;
-    transform: translateX(-50%);
+    width: 11%;
+    height: 4%;
+    transform: translate(10.3vh, 15vh);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 2.4vh;
+    font-family: "Changa One", serif;
+    color: black;
+    text-align: center;
 }
+
+#confirmacaoSenha::placeholder {
+    color: black; 
+    opacity: 0.6;
+    text-align: center;
+  }
 
 .armarioCadastro #idadeUsuario{
     position: absolute;
-    width: 4%;
-    height: 2%;
-    right: 38%;
-    transform: translateX(-50%);
+    width: 11%;
+    height: 4%;
+    transform: translate(28vh, 40.3vh);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 3.3vh;
+    font-family: "Changa One", serif;
+    color: rgb(60, 3, 60);
+    text-align: center;
+}
+
+/*tira as setas do input tipo numero*/
+.armarioCadastro #idadeUsuario[type="number"]::-webkit-outer-spin-button,
+.armarioCadastro #idadeUsuario[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.armarioCadastro #cadastroUsuario {
+    position: absolute;
+    width: 11%;
+    height: 4%;
+    transform: translate(28vh, 40.3vh);
 }
 
 .armarioCadastro #marcaDaAgua {
