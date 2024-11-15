@@ -84,10 +84,10 @@ html, body {
     font-weight: bold;
     font-style: italic;
     text-shadow:
-                2px 2px 2px black,
-                -2px -2px 2px black,
-                2px -2px 2px black,
-                -2px 2px 2px black;
+    2px 2px 2px black,
+    -2px -2px 2px black,
+    2px -2px 2px black,
+    -2px 2px 2px black;
 }
 
 .navegacao img {
@@ -100,18 +100,18 @@ html, body {
 
 .navegacao #linkCadastro {
     position: absolute;
-    bottom: 65vh;
-    font-size: 5vh;
-    transform: translate(-41vh, 3vh);
+    font-size: 4.8vh;
     color: rgba(0, 0, 0, 0.833);
+    text-decoration: none;
+    transform: translate(-40vh, 24vh);
 }
 
 .navegacao #linkLogin {
     position: absolute;
-    bottom: 40vh;
     font-size: 5vh;
-    transform: translate(-27vh, 5vh);
     color: black;
+    text-decoration: none;
+    transform: translate(-29vh, 51.4vh);
 }
 
 .navegacao #marcaDAgua {

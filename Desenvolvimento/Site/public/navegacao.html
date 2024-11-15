@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/navegacao.css">
     <link rel="stylesheet" href="css/loginCadastro.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>| MH</title>
+    <title>| Monster High</title>
 </head>
 
 <body>
@@ -46,26 +46,47 @@
         <input type="password" id="senhaUsuario" placeholder="Digite sua senha">
         <input type="password" id="confirmacaoSenha" placeholder="Digite novamente">
         <input type="number" id="idadeUsuario" placeholder="Idade">
-        <button onclick="cadastrar()" id="cadastroUsuario" style="display: none;">Cadastrar-se</button>
+        <img id="visualizarSenha" src="assets/icon/loginCadastro/olho.png" alt="Mostrar senha" style="cursor: pointer;"
+            onclick="mostrarSenha()">
+        <button onclick="cadastrar()" id="cadastroUsuario">Cadastrar-se</button>
         <p id="marcaDaAgua">@Nick</p>
-        <img id="vizualizarSenha" src="assets/icon/loginCadastro/olho.png">
-    </div>
+</body>
+</div>
 
-    <div id="login" class="armarioLogin" style="display: none;">
-        <div class="balaoCadastro">
-            <img id="balaoFala2" src="assets/icon/loginCadastro/balaoFala.png">
-            <p>É novo por aqui?</p>
-            <button onclick="irParaCadastro()" id="linkCadastroBalao">Cadastro</button>
-        </div>
-        <center>
-            <input type="text" id="usario" placeholder="Digite seu usuário">
-            <input type="password" id="senha" placeholder="Digite sua senha">
-        </center>
-        <img id="armarioLogin" src="assets/icon/loginCadastro/armarioLogin.png">
+<div id="login" class="armarioLogin" style="display: none;">
+    <div class="balaoCadastro">
+        <img id="balaoFala2" src="assets/icon/loginCadastro/balaoFala.png">
+        <p>É novo por<br> aqui?</p>
+        <button onclick="irParaCadastro()" id="linkCadastroBalao">Cadastro</button>
     </div>
+    <center>
+        <input type="text" id="usuario" placeholder="Digite seu usuário">
+        <input type="password" id="senha" placeholder="Digite sua senha">
+        <button onclick="login()" id="loginUsuario">Logar</button>
+    </center>
+    <p id="marcaDaAgua">@Nick</p>
+</div>
+
+<div id="exibir"></div>
 </body>
 
 <script>
+    // Script transição de divs e exibir senha 
+    function mostrarSenha() {
+
+        const exibirSenha = document.getElementById("senhaUsuario");
+        const exibirConfirmacaoSenha = document.getElementById("confirmacaoSenha");
+
+        if (exibirSenha.type === "password" && (exibirConfirmacaoSenha.type === "password")) {
+
+            exibirSenha.type = "text";
+            exibirConfirmacaoSenha.type = "text";
+        } else {
+            exibirSenha.type = "password";
+            exibirConfirmacaoSenha.type = "password";
+        }
+    }
+
     function sumirAbertura() {
         var abertura = document.getElementById('abertura');
         var navegacao = document.getElementById('navegacao');
@@ -131,4 +152,19 @@
         //:)
     }
 </script>
+
 </html>
+<script>
+    //Script inputs 
+    const nomeUsuario = nomeUsuario.value;
+    const tipoMonstro = tipoMonstro.value;
+    const idade = Number(idadeUsuario.value);
+    const senhaUsuario = senhaUsuario.value;
+    const confirmacaoSenha = confirmacaoSenha.value;
+
+    if (nomeUsuario.length > 2 && (tipoMonstro !== "vazio") && (idade !== "") && (!isNaN(idade)) && (senhaUsuario !== "") && (confirmacaoSenha !== "")) {
+
+        document.getElementById("cadastroUsuario").style.display = "block";
+    }
+
+</script>

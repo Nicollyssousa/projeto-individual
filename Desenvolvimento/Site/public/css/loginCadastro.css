@@ -9,7 +9,7 @@ body {
     margin: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.877);
+    background-color: #1C1B1B
 }
 
 .armarioCadastro {
@@ -29,7 +29,7 @@ body {
 .armarioCadastro #balaoFala{
     margin: 0;
     width: 17%;
-    transform: translate(94vh, -30vh);
+    transform: translate(160vh, 7vh);
 }
 
 .armarioCadastro p {
@@ -37,37 +37,37 @@ body {
     position: absolute;
     color: #11792E;
     font-size: 5vh;
-    transform: translate(72vh, 3vh);
+    transform: translate(165vh, 4.8vh);
 }
 
 .armarioCadastro #linkLoginBalao {
-    top: 5vh;
     position: absolute;
-    color: #791151;
+    color: #941664;
     font-size: 5vh;
-    transform: translate(72vh, 14vh);
+    font-family: "Changa One", serif;
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+    transform: translate(133vh, 21vh);
 }
 
 .armarioCadastro #pet {
-    margin: 0;
+    position: absolute;
     width: 20%;
     height: auto;
-    transform: translate(69vh, -10vh);
+    transform: translate(137vh, 24vh);
 }
 
-.armarioCadastro #vizualizarSenha {
-    /*deixar a imagem clicável*/
+.armarioCadastro #visualizarSenha {
     position: absolute;
-    width: 7.1vh;
-    z-index: -1;
-    transform: translate(-3.2vh, 20.8vh);
+    width: 7.4vh;
+    transform: translate(65.9vh, 67vh);
 }
 
 .armarioCadastro #nomeUsuario{
     position: absolute;
-    width: 11%;
+    width: 13%;
     height: 4%;
-    transform: translate(10.3vh, -13.8vh);
     background-color: transparent;
     border: none;
     outline: none;
@@ -75,6 +75,7 @@ body {
     font-family: "Changa One", serif;
     color: white;
     text-align: center;
+    transform: translate(68.6vh, 34vh);
 }
 
 #nomeUsuario::placeholder {
@@ -89,7 +90,7 @@ body {
     position: absolute;
     width: 11%;
     height: 4%;
-    transform: translate(7.3vh, -6.2vh);
+    transform: translate(68vh, 41.6vh);
     background-color: transparent;
     border: none;
     outline: none;
@@ -110,7 +111,7 @@ body {
     position: absolute;
     width: 11%;
     height: 4%;
-    transform: translate(10.3vh, 10vh);
+    transform: translate(70.5vh, 58vh);
     background-color: transparent;
     border: none;
     outline: none;
@@ -130,7 +131,6 @@ body {
     position: absolute;
     width: 11%;
     height: 4%;
-    transform: translate(10.3vh, 15vh);
     background-color: transparent;
     border: none;
     outline: none;
@@ -138,6 +138,7 @@ body {
     font-family: "Changa One", serif;
     color: black;
     text-align: center;
+    transform: translate(70.5vh, 63vh);
 }
 
 #confirmacaoSenha::placeholder {
@@ -150,7 +151,7 @@ body {
     position: absolute;
     width: 11%;
     height: 4%;
-    transform: translate(28vh, 40.3vh);
+    transform: translate(88vh, 88.6vh);
     background-color: transparent;
     border: none;
     outline: none;
@@ -168,9 +169,12 @@ body {
 
 .armarioCadastro #cadastroUsuario {
     position: absolute;
-    width: 11%;
-    height: 4%;
-    transform: translate(28vh, 40.3vh);
+    height: 5vh;
+    font-family: "Changa One", serif;
+    font-size: 4vh;
+    background-color: rgba(0, 0, 0, 0.784);
+    color: #11792E;
+    transform: translate(73vh, 15vh);
 }
 
 .armarioCadastro #marcaDaAgua {
@@ -181,4 +185,91 @@ body {
     color: white;
     font-size: 3vh;
     transform: translate(78vh, 91vh);
+}
+
+/*pagina login*/
+.armarioLogin {
+    transition: opacity 0.3s ease;
+    margin: 0;
+    margin-top: 2vh;
+    width: 100vw;
+    height: 113vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../assets/icon/loginCadastro/armarioLogin.png");
+    background-size: 100vh;
+    background-position: 60vh;
+    background-repeat: no-repeat;
+}
+
+.armarioLogin #balaoFala2 {
+    margin: 0;
+    width: 17%;
+    transform: translate(33vh, 5vh);
+}
+
+.armarioLogin p {
+    position: absolute;
+    color: #11792E;
+    font-size: 5vh;
+    transform: translate(38vh, -20vh);
+}
+
+.armarioLogin #linkCadastroBalao {
+    position: absolute;
+    color: #791151;
+    font-size: 5vh;
+    font-family: "Changa One", serif;
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+    font-size: 3.6vh;
+    transform: translate(13vh, 17vh);
+}
+
+.armarioLogin #usuario {
+    font-size: 3.5vh;
+    font-family: "Changa One", serif;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transform: translate(-1vh, 38vh);
+}
+
+#usuario::placeholder {
+    color: black; 
+    opacity: 0.6;
+}
+
+.armarioLogin #senha {
+    position: absolute;
+    font-size: 3.5vh;
+    font-family: "Changa One", serif;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transform: translate(-42vh, 43vh);
+}
+
+.armarioLogin #marcaDaAgua {
+    position: absolute;
+    width: 2%;
+    height: 2%;
+    right: 38%;
+    color: white;
+    font-size: 3vh;
+    transform: translate(78vh, 59vh);
+}
+
+.armarioLogin #loginUsuario {
+    position: absolute;
+    height: 5vh;
+    font-family: "Changa One", serif;
+    font-size: 4vh;
+    background-color: rgba(0, 0, 0, 0.784);
+    color: #11792E;
+    transform: translate(-27vh, 48.5vh);
 }
