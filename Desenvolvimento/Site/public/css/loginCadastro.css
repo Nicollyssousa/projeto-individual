@@ -30,6 +30,7 @@ body {
     margin: 0;
     width: 17%;
     transform: translate(160vh, 7vh);
+    filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.5));
 }
 
 .armarioCadastro p {

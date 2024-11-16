@@ -16,7 +16,7 @@
     <div id="abertura" class="abertura" style="display: block;">
         <img id="logoNavegacao" src="assets/icon/navegacao/logoPadrao.png">
         <p id="boasVindas">Seja Bem-vindo(a) Monster High</p>
-        <p id="frase">onde ser único é ser monstruosamente fabuloso!</p>
+        <div class="frase">onde ser único é ser monstruosamente fabuloso!</div>
         <a href="javascript:void(0);" onclick="sumirAbertura()">
             <i class="fa-solid fa-arrow-down-long fa-beat"></i>
         </a>
@@ -32,6 +32,11 @@
     </div>
 
     <!-- cadastro e login -->
+
+    <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+    </div>
+
     <div id="cadastro" class="armarioCadastro" style="display: none;">
         <img id="balaoFala" src="assets/icon/loginCadastro/balaoFala.png">
         <img id="pet" src="assets/icon/loginCadastro/pet.png">
@@ -155,16 +160,78 @@
 
 </html>
 <script>
-    //Script inputs 
+    function cadastrar() {
     const nomeUsuario = nomeUsuario.value;
     const tipoMonstro = tipoMonstro.value;
     const idade = Number(idadeUsuario.value);
     const senhaUsuario = senhaUsuario.value;
     const confirmacaoSenha = confirmacaoSenha.value;
+    
+    document.body.innerHTML += `<span>${nomeUsuario}}</span>`;
 
-    if (nomeUsuario.length > 2 && (tipoMonstro !== "vazio") && (idade !== "") && (!isNaN(idade)) && (senhaUsuario !== "") && (confirmacaoSenha !== "")) {
+    // if(
+    //     nomeUsuario == "" ||
+    //     (tipoMonstro == "vazio") ||
+    //     (idade == "") ||
+    //     (senhaUsuario == "") ||
+    //     (confirmacaoSenha == "")
+    // ){
+    //     cardErro.style.display = "block";
+    //     mensagem_erro.innerHTML =
+    //     "(Mensagem de erro para todos os campos em branco)";
 
-        document.getElementById("cadastroUsuario").style.display = "block";
+        
+    //     finalizarAguardar();
+    //     return false;
+    // }
+    // else {
+    //   setInterval(sumirMensagem, 5000);
+    // }
+
+    // fetch("/usuarios/cadastrar", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     // crie um atributo que recebe o valor recuperado aqui
+    //     // Agora vá para o arquivo routes/usuario.js
+    //     nomeServer: nomeVar,
+    //     emailServer: emailVar,
+    //     senhaServer: senhaVar,
+    //     idEmpresaVincularServer: idEmpresaVincular
+    //   }),
+    // })
+    //   .then(function (resposta) {
+    //     console.log("resposta: ", resposta);
+
+    //     if (resposta.ok) {
+    //       cardErro.style.display = "block";
+
+    //       mensagem_erro.innerHTML =
+    //         "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+    //       setTimeout(() => {
+    //         window.location = "login.html";
+    //       }, "2000");
+
+    //       limparFormulario();
+    //       finalizarAguardar();
+    //     } else {
+    //       throw "Houve um erro ao tentar realizar o cadastro!";
+    //     }
+    //   })
+    //   .catch(function (resposta) {
+    //     console.log(`#ERRO: ${resposta}`);
+    //     finalizarAguardar();
+    //   });
+
+    // return false;
+    // }
+
+    // function sumirMensagem() {
+    // cardErro.style.display = "none";
+    // 
     }
 
 </script>

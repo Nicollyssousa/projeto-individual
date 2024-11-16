@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Passion+One:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Changa+One:ital@0;1&family=Passion+One:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Changa One", serif;
+}
+
+html,
+body {
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0; */
+    /* background-color: rgba(0, 0, 0, 0.815); */
+}
+
+.header {
+    height: 13vh;
+    background-image: url("../assets/headerBackground.jpg");
+    /* filter: brightness(0.7);
+    z-index: -1; */
+}
+
+.navbar {
+    width: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.header #logoIndex {
+    margin-top: 1vh;
+    height: 10vh;
+    width: 35vh;
+    transform: translate(10vh, 0vh);
+}
+
+.header .navbar {
+    padding: 0;
+    transform: translate(75vh, -5vh);
+}
+
+.header a {
+    -ms-transform: skewY(12deg);
+    -webkit-transform: skewY(12deg);
+    transform: skewY(12deg);
+    padding: 5vh;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar .agora {
+    height: 10vh;
+    font-size: 5vh;
+    background: #DC1A73;
+    -ms-transform: skewY(-12deg);
+    -webkit-transform: skewY(-12deg);
+    transform: skewY(-12deg);
+    transform: skewY(-10deg);
+    float: left;
+    clip-path: polygon(100% 91%, 89% 12%, 87% -2%, 0% 0%, 2% 9%, 20% 92%, 21% 92%, 97% 69%);
+}
+
+.navbar .franquia {
+    height: 10vh;
+    font-size: 4vh;
+    background: #DC1A73;
+    transform: skewY(20deg);
+    float: left;
+    clip-path: polygon(91% 71%, 88% 12%, 87% 0%, 0% 0%, 0% 2%, 20% 265%, 5% 102%, 91% 68%)
+}
+
+.navbar .sobreMim {
+    width: 120vh;
+    height: 10vh;
+    font-size: 3vh;
+    background: #DC1A73;
+    transform: skewY(-10deg);
+    clip-path: polygon(100% 100%, 148% 30%, 100% -1%, 5% -35%, -118% 113%, 30% 92%, 30% 92%, 182% 85%)
+}
+
+.navbar .quiz {
+    height: 10vh;
+    font-size: 5vh;
+    background: #DC1A73;
+    transform: skewY(-10deg);
+    float: left;
+    clip-path: polygon(100% 91%, 89% 12%, 87% -2%, 0% 0%, 2% 9%, 20% 92%, 21% 92%, 97% 69%);
+}
+
+.introducao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 88vh;
+
+    font-family: "Caveat", cursive;
+}
+
+.introducao::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    bottom: 0px;
+    background-image: url("../assets/indexBackground.jpg");
+    background-size: cover;
+    z-index: -1;
+    filter: brightness(46%);
+}
+
+.introducao .container #livro {
+    position: absolute;
+    right: 50vh;
+    top: 20vh;
+    width: auto;
+    height: 76vh;
+    filter: brightness(80%);
+}
+
+.introducao .container #fotoTurma {
+    position: absolute;
+    width: auto;
+    height: 42vh;
+    top: 43vh;
+    left: 53vh;
+    transform: rotate(5deg);
+    z-index: 3;
+    filter: brightness(80%);
+}
+
+.introducao .container #celular {
+    position: absolute;
+    width: auto;
+    height: 40vh;
+    top: 53vh;
+    left: 50vh;
+    transform: rotate(-10deg);
+    z-index: 3;
+    filter: brightness(80%);
+}
+
+.introducao .container #fraseLivro {
+    position: absolute;
+    width: 40vh;
+    height: 10vh;
+    word-wrap: break-word;
+    top: 30vh;
+    left: 66vh;
+    z-index: 3;
+    font-size: 3.7vh;
+    transform: rotate(-1deg);
+    font-family: "Caveat", cursive;
+    font-style: bold;
+}
+
+.introducao .container #raio {
+    position: absolute;
+    width: auto;
+    height: 10vh;
+    top: 35vh;
+    left: 99vh;
+    transform: rotate(14deg);
+    z-index: 3;
+    filter: brightness(80%);
+}
+
+.introducao .idEstudante {
+    position: absolute;
+    width: 42vh;
+    height: 23vh;
+    top: 33vh;
+    left: 118vh;
+    z-index: 3;
+    filter: brightness(80%);
+    background-image: url("../assets/headerBackground.jpg");
+    border-radius: 10px;
+}
+
+.introducao #clip {
+    position: absolute;
+    width: auto;
+    height: 25vh;
+    transform: rotate(-40deg);
+    top: 1.5vh;
+    left: -7vh;
+    z-index: 3;
+}
+
+.introducao .user {
+    position: absolute;
+    width: auto;
+    transform: rotate(-40deg);
+    top: 3vh;
+    left: -7vh;
+    z-index: 5;
+    background-color: aquamarine;
+}
+
+.introducao #logoId {
+    position: absolute;
+    width: auto;
+    height: 5vh;
+    top: 1vh;
+    left: 15vh;
+    z-index: 5;
+}
+
+.introducao #texto {
+    position: absolute;
+    width: 30vh;
+    height: 3vh;
+    top: 19vh;
+    left: 3vh;
+    z-index: 5;
+    background-color: #DC1A73;
+    color: white;
+    text-align: center;
+}
+
+.introducao .longount img {
+    position: absolute;
+    width: 3.5vh;
+    height: 3.5vh;
+    top: 18.5vh;
+    left: 35vh;
+    z-index: 3;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.introducao h1 {
+    position: absolute;
+    width: 50vh;
+    height: 3.5vh;
+    top: 62vh;
+    left: 117vh;
+    z-index: 3;
+    font-size: 3.5vh;
+    font-family: "Caveat", cursive;
+    font-style: bold;
+    color: #ad115a;
+}
+
+.introducao .navegar #linkHistoria {
+    position: absolute;
+    width: 50vh;
+    height: 3vh;
+    top: 63vh;
+    padding: 20px;
+    left: 117vh;
+    z-index: 3;
+    font-size: 3.5vh;
+    font-family: "Caveat", cursive;
+    color: black;
+}
+
+.introducao .navegar #linkOnu {
+    position: absolute;
+    width: 50vh;
+    height: 3vh;
+    top: 68vh;
+    padding: 20px;
+    left: 117vh;
+    z-index: 3;
+    font-size: 3.5vh;
+    font-family: "Caveat", cursive;
+    color: black;
+}
+
+.introducao .navegar #linkPersonagens {
+    position: absolute;
+    width: 50vh;
+    height: 3vh;
+    top: 72vh;
+    padding: 20px;
+    left: 117vh;
+    z-index: 3;
+    font-size: 3.5vh;
+    font-family: "Caveat", cursive;
+    color: black;
+}
+
+img {
+    top: 50vh;
+    width: 10vh;
+    height: 10vh;
+    z-index: 1;
+}

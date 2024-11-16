@@ -1,11 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Passion+One:wght@400;700;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Changa One", serif;
+}
 
 html, body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: "Changa One", serif;
     background-color: #000000e8;
     overflow: hidden;
 }
@@ -31,7 +39,7 @@ html, body {
     padding: 0;
     font-size: 6vh;
     font-style: bold;
-    color: #BA3B89;
+    color: #901360;
     margin-top: 6vh;
 }
 
@@ -53,10 +61,25 @@ html, body {
     margin-top: 3vh;
 }
 
-.abertura #frase {
-    font-size: 5vh;
-    color: #34ABE1;
+.frase {
+    font-size: 6vh;
     margin-top: 2vh;
+
+    background-image: linear-gradient(45deg, #34ABE1, #227ca5, #88185d, #5c0f71, #34ABE1);
+    background-size: 400% 100%;
+    animation: degrade s linear infinite alternate;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes degrade {
+    0%{
+        background-position-x: 0%;
+    }
+    100%{
+        background-position: 100%;
+    }
 }
 
 .navegacao {
@@ -95,7 +118,8 @@ html, body {
     height: auto;
     margin: 0;
     transform: translate(-1vh, 2vh);
-    padding-top: 5vh;
+    padding-top: 3vh;
+    filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.5));
 }
 
 .navegacao #linkCadastro {
@@ -103,7 +127,29 @@ html, body {
     font-size: 4.8vh;
     color: rgba(0, 0, 0, 0.833);
     text-decoration: none;
-    transform: translate(-40vh, 24vh);
+    transform: translateX(-40vh) translateY(25.5vh);
+    transition: all 0.3s ease-in-out;
+}
+
+.navegacao #linkCadastro:hover {
+    animation: pularCadastro 1.5s ease-in-out;
+    -webkit-background-clip: text;
+    color: #118031;
+}
+
+@keyframes pularCadastro {
+    0% {
+        transform: translateX(-40vh) translateY(25.5vh);
+        color: #118031;
+    }
+    50% {
+        transform: translateX(-40vh) translateY(24vh);
+        color: #118031;
+    }
+    100% {
+        transform: translateX(-40vh) translateY(25.5vh);
+        color: #118031;
+    }
 }
 
 .navegacao #linkLogin {
@@ -111,7 +157,26 @@ html, body {
     font-size: 5vh;
     color: black;
     text-decoration: none;
-    transform: translate(-29vh, 51.4vh);
+    transform: translate(-26vh, 53vh);
+    transition: all 0.3s ease-in-out;
+}
+
+.navegacao #linkLogin:hover {
+    animation: pularLogin 1.5s ease-in-out;
+    -webkit-background-clip: text;
+    color: #118031;
+}
+
+@keyframes pularLogin {
+    0% {
+        transform: translateX(-26vh, 53vh);
+    }
+    50% {
+        transform: translateX(-26vh) translateY(52vh);
+    }
+    100% {
+        transform: translateX(-26vh) translateY(53vh);
+    }
 }
 
 .navegacao #marcaDAgua {
