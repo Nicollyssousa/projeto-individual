@@ -8,14 +8,8 @@
     font-family: "Changa One", serif;
 }
 
-html,
-body {
-    /* display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0; */
-    /* background-color: rgba(0, 0, 0, 0.815); */
+html, body {
+
 }
 
 .header {
@@ -69,7 +63,7 @@ body {
 .navbar .franquia {
     height: 10vh;
     font-size: 4vh;
-    background: #DC1A73;
+    background: #0E7CB7;
     transform: skewY(20deg);
     float: left;
     clip-path: polygon(91% 71%, 88% 12%, 87% 0%, 0% 0%, 0% 2%, 20% 265%, 5% 102%, 91% 68%)
@@ -79,7 +73,7 @@ body {
     width: 120vh;
     height: 10vh;
     font-size: 3vh;
-    background: #DC1A73;
+    background: #0E7CB7;
     transform: skewY(-10deg);
     clip-path: polygon(100% 100%, 148% 30%, 100% -1%, 5% -35%, -118% 113%, 30% 92%, 30% 92%, 182% 85%)
 }
@@ -87,7 +81,7 @@ body {
 .navbar .quiz {
     height: 10vh;
     font-size: 5vh;
-    background: #DC1A73;
+    background: #0E7CB7;
     transform: skewY(-10deg);
     float: left;
     clip-path: polygon(100% 91%, 89% 12%, 87% -2%, 0% 0%, 2% 9%, 20% 92%, 21% 92%, 97% 69%);
@@ -98,16 +92,16 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 88vh;
-
+    height: 100vh;
     font-family: "Caveat", cursive;
+    padding-bottom: 102vh;
 }
 
 .introducao::before {
     content: "";
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 115vh;
     top: 0px;
     bottom: 0px;
     background-image: url("../assets/indexBackground.jpg");
@@ -182,6 +176,7 @@ body {
     filter: brightness(80%);
     background-image: url("../assets/headerBackground.jpg");
     border-radius: 10px;
+    filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.5));
 }
 
 .introducao #clip {
@@ -253,7 +248,7 @@ body {
     position: absolute;
     width: 50vh;
     height: 3vh;
-    top: 63vh;
+    top: 64vh;
     padding: 20px;
     left: 117vh;
     z-index: 3;
@@ -279,7 +274,7 @@ body {
     position: absolute;
     width: 50vh;
     height: 3vh;
-    top: 72vh;
+    top: 72.5vh;
     padding: 20px;
     left: 117vh;
     z-index: 3;
@@ -288,9 +283,128 @@ body {
     color: black;
 }
 
+.introducao .pet2 {
+    position: absolute;
+    width: 30vh;
+    height: auto;
+    top: 72vh;
+    padding: 20px;
+    left: 136vh;
+    z-index: 3;
+}
+
 img {
     top: 50vh;
     width: 10vh;
     height: 10vh;
     z-index: 1;
+}
+
+.historia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 110vh;
+    background-color: rgba(0, 0, 0, 0.933);
+}
+
+.historia #logoHistoria {
+    width: 50vh;
+    height: auto;
+}
+
+.historia h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 27vh;
+    padding-bottom: 2vh;
+    height: auto;
+    font-size: 8vh;
+    color: white;
+}
+
+.historia .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    height: auto;
+    width: 100%;
+}
+
+.historia p {
+    font-size: clamp(2rem, 2.5vw, 5vh); /* Tamanho dinâmico entre 2rem e 5vh */
+    color: white;
+    max-width: 60%; 
+    text-align: justify; 
+    line-height: 1.6; /* Adiciona espaçamento entre as linhas */
+    overflow-wrap: break-word; 
+}
+
+.objetivosOnu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 110vh;
+    background-color: rgba(0, 0, 0, 0.953);
+}
+
+.objetivosOnu h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-top: 2.4vh;
+    font-size: 10vh;
+    color: white;
+}
+
+.objetivosOnu .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    height: auto;
+    position: relative;
+    width: 100%;
+    margin-bottom: 60vh;
+}
+
+.objetivosOnu #fantasmas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    position: relative;
+    width: 173vh;
+    margin-left: 35vh;
+    z-index: 1;
+}
+
+.objetivosOnu #lapide1 {
+    width: 40vh;
+    height: auto;
+    z-index: 5;
+
+}
+
+.objetivosOnu #lapide2 {
+    width: 40vh;
+    height: auto;
+    z-index: 5;
+}
+
+.objetivosOnu #lapide3 {
+    width: 40vh;
+    height: auto;
+    z-index: 5;
+}
+
+.objetivosOnu #lapide4 {
+    width: 40vh;
+    height: auto;
+    z-index: 5;
 }
