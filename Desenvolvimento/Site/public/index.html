@@ -15,15 +15,23 @@
         <div class="container">
             <img id="logoIndex" src="../public/assets/icon/logoNome.png">
             <ul class="navbar">
-                <div class="agora"><li><a href="#">Início</a></li></div>
-                <div class="franquia"><li><a href="">Frânquia</a></li></div>
-                <div class="sobreMim"><li><a href="">Sobre mim</a></li></div>
-                <div class="quiz"> <li><a href="">Quiz+</a></li></div>
+                <div class="agora">
+                    <li><a href="#">Início</a></li>
+                </div>
+                <div class="franquia">
+                    <li><a href="">Frânquia</a></li>
+                </div>
+                <div class="sobreMim">
+                    <li><a href="">Sobre mim</a></li>
+                </div>
+                <div class="quiz">
+                    <li><a href="">Quiz+</a></li>
+                </div>
             </ul>
         </div>
     </div>
 
-    <div class="introducao">
+    <div id="introducao" class="introducao">
         <div class="container">
             <img id="livro" src="../public/assets/icon/index/livro.png">
             <span id="fraseLivro">Nada mais arrepiante do que ter autoconfiança para ser quem você é!</span>
@@ -32,67 +40,162 @@
             <img id="raio" src="../public/assets/icon/index/raio.png">
 
             <div class="idEstudante">
-                
+
                 <img id="clip" src="../public/assets/icon/index/clip.png">
-                <div class="user"><script src="navegacao.html"></script></div>
+                <div class="user">
+                    <script src="navegacao.html"></script>
+                </div>
                 <span id="texto">STUDENT ID CARD</span>
                 <img id="logoId" src="../public/assets/icon/logoNome.png">
-                <div class="longount"><img id="longount" src="../public/assets/icon/index/longount.png" 
-                alt="sairParaNavegaçãp" style="cursor: pointer;"onclick="sair()"></div>
+                <div class="longount"><img id="longount" src="../public/assets/icon/index/longount.png"
+                        alt="sairParaNavegaçãp" style="cursor: pointer;" onclick="sair()" href="navegacao.html"></div>
             </div>
 
             <h1>Navegue ainda aqui:</h1>
             <div class="navegar">
-            <li><a id="linkHistoria" href="javascript:void(0)">.Historia</a></li>
-            <li><a id="linkOnu" href="javascript:void(0)">.Objetivos da ONU</a></li>
-            <li><a id="linkPersonagens" href="javascript:void(0)">.Personagens</a></li>
-            <img class="pet2" src="../public/assets/icon/loginCadastro/pet.png">
+                <li><a id="linkHistoria" href="#historia">.Historia</a></li>
+                <li><a id="linkOnu" href="#objetivosOnu">.Objetivos da ONU</a></li>
+                <li><a id="linkPersonagens" href="#personagens">.Personagens</a></li>
+                <img class="pet2" src="../public/assets/icon/loginCadastro/pet.png">
             </div>
         </div>
     </div>
 
-    <div class="historia">
+    <div id="historia" class="historia">
         <h1>História de MH</h1>
         <div class="container">
             <img id="logoHistoria" src="../public/assets/icon/navegacao/logoPadrao.png">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo earum corrupti iste et aspernatur facere! Nisi, id, tempore,
-                repudiandae doloremque illum placeat ex quasi tempora aspernatur sed facilis nostrum nulla!</p>
+            <p>
+                Bem-vindo à Monster High! Aqui, os filhos de monstros como vampiros e lobisomens estudam e aprendem a controlar suas habilidades especiais. 
+                A escola celebra a diversidade e ensina que ser diferente é o que torna todos únicos. 
+                <span>Prepare-se para fazer amigos e viver muitas aventuras!</span></p>
         </div>
     </div>
 
-    <div class="objetivosOnu">
+    <div id="objetivosOnu" class="objetivosOnu">
         <h1>Objetivos da ONU</h1>
         <img id="fantasmas" src="../public/assets/icon/index/ghosts.png">
         <div class="container">
-            <img id="lapide1" src="../public/assets/icon/index/lapide.1.png">
-            <img id="lapide2" src="../public/assets/icon/index/lapide.2.png">
-            <img id="lapide3" src="../public/assets/icon/index/lapide.3.png">
-            <img id="lapide4" src="../public/assets/icon/index/lapide.4.png">
+            <img id="lapide1" src="../public/assets/icon/index/lapide.1.png" alt="lapide1Btn" onclick="ocultarLapide(this)" style="cursor: pointer;">
+            <p id="pLapide1" style="display: none;">O tema central de <span>Monster High</span> gira em torno da <span>aceitação das diferenças</span>, sejam elas físicas, culturais ou sociais. 
+                O que alinha com a redução das desigualdades e a promoção da inclusão social. </p>
+
+            <img id="lapide2" src="../public/assets/icon/index/lapide.2.png" alt="lapide1Btn"onclick="ocultarLapide(this)" style="cursor: pointer;">
+            <p id="pLapide2" style="display: none;"><span>Monster High</span> incentiva a aceitação das diferenças e o respeito mútuo, algo que pode estar vinculado a uma educação que promove a <span>inclusão,
+                 o combate ao bullying e a valorização da diversidade</span>.</p>
+
+            <img id="lapide3" src="../public/assets/icon/index/lapide.3.png" alt="lapide1Btn"onclick="ocultarLapide(this)" style="cursor: pointer;">
+            <p id="pLapide3" style="display: none;">A série apresenta personagens femininas fortes e diversificadas, rompendo com estereótipos de gênero. 
+                Isso contribui para a conscientização sobre a importância da <span>igualdade de gênero e do empoderamento de meninas e mulheres.</span></p>
+
+            <img id="lapide4" src="../public/assets/icon/index/lapide.4.png" alt="lapide1Btn"onclick="ocultarLapide(this)" style="cursor: pointer;">
+            <p id="pLapide4" style="display: none;">A série promove valores como respeito, tolerância e resolução pacífica de conflitos, apoiando a criação de uma cultura de paz e inclusão,
+                 onde <span>as diferenças são respeitadas e valorizadas.</span></p>
         </div>
     </div>
 
-    <div clas="personagens">
+    <div id="personagens" class="personagens">
         <div class="container">
-            <img id="cardClowdeen" src="../public/assets/icon/index/personagens/clawdeenCard.png">
-
-            <img id="icon1" src="../public/assets/icon/index/personagens/icon.10.png">
-            <img id="icon2" src="../public/assets/icon/index/personagens/icon.11.png">
-            <img id="icon3" src="../public/assets/icon/index/personagens/icon.12.png">
-            <img id="icon4" src="../public/assets/icon/index/personagens/icon.9.png">
-            <img id="icon5" src="../public/assets/icon/index/personagens/icon.8.png">
+            <img id="icon1" src="../public/assets/icon/index/personagens/icon.10.png" alt="lagoonaBtn"
+                onclick="mostrarPersonagem(this)" style="cursor: pointer;">
+            <img id="icon2" src="../public/assets/icon/index/personagens/icon.11.png" alt="cleoBtn"
+                onclick="mostrarPersonagem(this)" style="cursor: pointer;">
+            <img id="icon3" src="../public/assets/icon/index/personagens/icon.12.png" alt="draculauraBtn"
+                onclick="mostrarPersonagem(this)" style="cursor: pointer;">
+            <img id="icon4" src="../public/assets/icon/index/personagens/icon.9.png" alt="frankieBtn"
+                onclick="mostrarPersonagem(this)" style="cursor: pointer;">
+            <img id="icon5" src="../public/assets/icon/index/personagens/icon.8.png" alt="clawdeenBtn"
+                onclick="mostrarPersonagem(this)" style="cursor: pointer;">
+            <span>|</span>
+        </div>
+        <div class="fundoPersonagens">
+        <img id="cardLagoona" src="../public/assets/icon/index/personagens/lagoonaCard.png" style="display: none;">
+        <img id="cardCleo" src="../public/assets/icon/index/personagens/cleoCard.png" style="display: none;">
+        <img id="cardDraculaura" src="../public/assets/icon/index/personagens/draculauraCard.png"style="display: none;">
+        <img id="cardFrankie" src="../public/assets/icon/index/personagens/frankieCard.png" style="display: none;">
+        <img id="cardClawdeen" src="../public/assets/icon/index/personagens/clawdeenCard.png" style="display: block;">
         </div>
     </div>
 
     <div class="footer">
         <div class="container">
-            <li><a id="linkHistoria" href="javascript:void(0)">Historia</a></li>
-            <li><a id="linkOnu" href="javascript:void(0)">Objetivos da ONU</a></li>
-            <li><a id="linkPersonagens" href="javascript:void(0)">Personagens</a></li>
-
-            <span>Todos os direitos reservados <spa>MATTEL</spa></span>
-            <p id="marcaDAgua">By Nick</p>
+            <li><a id="linkHome" href="#introducao">Home</a></li>
+            <li><a id="linkHistoria" href="#historia">Historia</a></li>
+            <li><a id="linkOnu" href="#objetivosOnu">Objetivos da ONU</a></li>
+            <li><a id="linkPersonagens" href="#personagens">Personagens</a></li>
+        </div>
+        <div id="direitos">
+            <span>Todos os direitos reservados <span id="marca">MATTEL</span></span>
+            <p id="marcaDAgua">By Nick :)</p>
         </div>
 </body>
-<scipt>
-</scipt>
+<script>
+    function mostrarPersonagem(imagem) {
+        // Esconde todos os cards
+        document.getElementById('cardLagoona').style.display = 'none';
+        document.getElementById('cardCleo').style.display = 'none';
+        document.getElementById('cardDraculaura').style.display = 'none';
+        document.getElementById('cardFrankie').style.display = 'none';
+        document.getElementById('cardClawdeen').style.display = 'none';
+
+        // Exibe o card correspondente
+        switch (imagem.id) {
+            case 'icon1':
+                document.getElementById('cardLagoona').style.display = 'block';
+                break;
+            case 'icon2':
+                document.getElementById('cardCleo').style.display = 'block';
+                break;
+            case 'icon3':
+                document.getElementById('cardDraculaura').style.display = 'block';
+                break;
+            case 'icon4':
+                document.getElementById('cardFrankie').style.display = 'block';
+                break;
+            case 'icon5':
+                document.getElementById('cardClawdeen').style.display = 'block';
+                break;
+            default:
+                console.log('Imagem não encontrada');
+        }
+    }
+    function ocultarLapide(imagem) {
+
+    document.getElementById('pLapide1').style.display = 'none';
+    document.getElementById('pLapide2').style.display = 'none';
+    document.getElementById('pLapide3').style.display = 'none';
+    document.getElementById('pLapide4').style.display = 'none';
+
+    document.getElementById('lapide1').style.filter = "brightness(50%)";
+    document.getElementById('lapide2').style.filter = "brightness(50%)";
+    document.getElementById('lapide3').style.filter = "brightness(50%)";
+    document.getElementById('lapide4').style.filter = "brightness(50%)";
+
+    switch (imagem.id) {
+        case 'lapide1':
+            document.getElementById('lapide1').style.filter = "brightness(100%)";
+            document.getElementById('pLapide1').style.display = 'block';
+            break;
+        case 'lapide2':
+            document.getElementById('lapide2').style.filter = "brightness(100%)";
+            document.getElementById('pLapide2').style.display = 'block';
+            break;
+        case 'lapide3':
+            document.getElementById('lapide3').style.filter = "brightness(100%)";
+            document.getElementById('pLapide3').style.display = 'block';
+            break;
+        case 'lapide4':
+            document.getElementById('lapide4').style.filter = "brightness(100%)";
+            document.getElementById('pLapide4').style.display = 'block';
+            break;
+        default:
+            console.log('Imagem não encontrada');
+    }
+}
+
+function sair(){
+    window.location.href = "navegacao.html";
+}
+</script>
+
 </html>
