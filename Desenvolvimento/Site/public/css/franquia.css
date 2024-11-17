@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:ital@0;1&family=Passion+One:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Passion One", serif;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+.header {
+    height: 13vh;
+    position: relative;
+    z-index: 1;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("../assets/headerBackground.jpg");
+    background-position: center;
+    z-index: -1;
+    filter: brightness(45%);
+}
+
+.navbar {
+    width: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.header #logoIndex {
+    margin-top: 1vh;
+    height: 10vh;
+    width: 35vh;
+    transform: translate(10vh, 0vh);
+    filter:  brightness(90%);
+}
+
+.header .navbar {
+    padding: 0;
+    transform: translate(75vh, -5vh);
+}
+
+.header a {
+    -ms-transform: skewY(12deg);
+    -webkit-transform: skewY(12deg);
+    transform: skewY(12deg);
+    padding: 5vh;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar .agora {
+    height: 10vh;
+    font-size: 5vh;
+    background: #0E7CB7;
+    -ms-transform: skewY(-12deg);
+    -webkit-transform: skewY(-12deg);
+    transform: skewY(-12deg);
+    transform: skewY(-10deg);
+    float: left;
+    clip-path: polygon(100% 91%, 89% 12%, 87% -2%, 0% 0%, 2% 9%, 20% 92%, 21% 92%, 97% 69%);
+}
+
+.navbar .franquia {
+    height: 10vh;
+    font-size: 4vh;
+    background: #DC1A73;
+    transform: skewY(20deg);
+    float: left;
+    clip-path: polygon(91% 71%, 88% 12%, 87% 0%, 0% 0%, 0% 2%, 20% 265%, 5% 102%, 91% 68%)
+}
+
+.navbar .sobreMim {
+    width: 120vh;
+    height: 10vh;
+    font-size: 3vh;
+    background: #0E7CB7;
+    transform: skewY(-10deg);
+    clip-path: polygon(100% 100%, 148% 30%, 100% -1%, 5% -35%, -118% 113%, 30% 92%, 30% 92%, 182% 85%)
+}
+
+.navbar .quiz {
+    height: 10vh;
+    font-size: 5vh;
+    background: #0E7CB7;
+    transform: skewY(-10deg);
+    float: left;
+    clip-path: polygon(100% 91%, 89% 12%, 87% -2%, 0% 0%, 2% 9%, 20% 92%, 21% 92%, 97% 69%);
+}
+
+.mattel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.938);
+}
+
+.mattel #logoMattel {
+    width: 40vh;
+    height: auto;
+}
+
+.mattel .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    height: auto;
+    width: 100%;
+}
+
+.mattel p {
+    font-size: clamp(2rem, 2.5vw, 5vh); /* Tamanho dinâmico entre 2rem e 5vh */
+    color: white;
+    max-width: 60%; 
+    text-align: justify; 
+    line-height: 1.2; /* Adiciona espaçamento entre as linhas */
+    overflow-wrap: break-word; 
+}
+
+.carrosselFilmes {
+    position: relative;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 105vh;
+    background-color: rgba(0, 0, 0, 0.938);  
+}
+
+.carrosselFilmes h1 {
+    height: auto;
+    font-size: 10vh;
+    color: white;
+}
+
+.carrosselFilmes .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 10vh;
+}
+
+.carrosselFilmes .container-slider {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative; 
+}
+
+.carrosselFilmes .container-images {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3vh;
+    max-width: 160vh;
+    transition: transform 0.5s ease-in-out;
+}
+
+#voltarBtn, #avancarBtn {
+    width: 20vh;
+    height: auto;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#voltarBtn img, #avancarBtn img {
+    width: 5vh;
+    height: auto;
+}
+
+.filme {
+    width: 30vh;
+    height: auto;
+    flex-shrink: 0;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    border: 6px solid #DC1A73;
+}
+
+.inicial {
+    opacity: 1;
+    transform: scale(1.0); /* Destaque para o filme ativo */
+}
+
+/* Remover scrollbars visíveis */
+.container-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.linhaTempo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.938);
+}
+
+img {
+    width: 15px;
+}

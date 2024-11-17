@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/icon/logoSite.png">
+    <link rel="stylesheet" href="css/franquia.css">
+    <script src="./src/carrossel.js" defer></script>
+    <title>| Frânquia</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <div class="header">
+        <div class="container">
+            <img id="logoIndex" src="../public/assets/icon/logoNome.png">
+            <ul class="navbar">
+                <div class="agora">
+                    <li><a href="#">Início</a></li>
+                </div>
+                <div class="franquia">
+                    <li><a href="">Frânquia</a></li>
+                </div>
+                <div class="sobreMim">
+                    <li><a href="">Sobre mim</a></li>
+                </div>
+                <div class="quiz">
+                    <li><a href="">Quiz+</a></li>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mattel">
+        <div class="container">
+            <img id="logoMattel" src="../public/assets/icon/franquia/mattelLogo.png">
+            <p>
+                A Mattel é uma líder global em brinquedos, criadora de marcas icônicas como Barbie, Hot Wheels e Monster
+                High. Fundada em 1945, combina inovação e entretenimento para conectar gerações.
+                Monster High destaca-se por celebrar a diversidade e a individualidade em suas bonecas e histórias.
+            </p>
+        </div>
+    </div>
+
+    <div class="carrosselFilmes">
+        <div class="container">
+            <button type="button" class="control" id="voltarBtn"><img
+                    src="../public/assets/icon/franquia/setaVoltar.png" alt="voltar"></button>
+            <h1>Principais filmes</h1>
+            <button type="button" class="control" id="avancarBtn"><img
+                    src="../public/assets/icon/franquia/setaAvancar.png" alt="avancar"></button>
+        </div>
+        <div class="container-slider">
+            <div class="container-images">
+                <img class="filme inicial" src="../public/assets/filmes/filme1.jpg" alt="filme1">
+                <img class="filme" src="../public/assets/filmes/filme2.jpg" alt="filme2">
+                <img class="filme" src="../public/assets/filmes/filmes3.webp" alt="filme3">
+                <img class="filme" src="../public/assets/filmes/filme4.jpg" alt="filme4">
+                <img class="filme" src="../public/assets/filmes/filme5.jpg" alt="filme5">
+                <img class="filme" src="../public/assets/filmes/filme6.jpg" alt="filme6">
+                <img class="filme" src="../public/assets/filmes/filme7.webp" alt="filme7">
+                <img class="filme" src="../public/assets/filmes/filme8.jpg" alt="filme8">
+                <img class="filme" src="../public/assets/filmes/filme9.jpg" alt="filme9">
+                <img class="filme" src="../public/assets/filmes/filme10.webp" alt="filme10">
+                <img class="filme" src="../public/assets/filmes/filme11.jpg" alt="filme11">
+            </div>
+        </div>
+    </div>
+
+    <div class="linhaTempo">
+        <span>Gerações Monster high</span>
+    </div>
+
+    <div class="colecionadores">
+        <h1>Colecionadores</h1>
+        <span>Conheça alguns colecionadores das bonecas de Monster High!</span>
+        <div id="container">
+            <img class="colecionadoresFotos" src="../public/assets/icon/franquia/renata.jpg" alt="colector1">
+            <img id="clip" src="../public/assets/icon/index/clip.png">
+            <span>@Renata Celi</span>
+
+            <img class="colecionadoresFotos" src="../public/assets/icon/franquia/isabella.png" alt="colector2">
+            <img id="clip" src="../public/assets/icon/index/clip.png">
+            <span>@Yasmim.cb</span>
+
+            <img class="colecionadoresFotos" src="../public/assets/icon/franquia/filipe.jpg" alt="colector3">
+            <img id="clip" src="../public/assets/icon/index/clip.png">
+            <span>@Filipedmb</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div id="direitos">
+            <span>Todos os direitos reservados <span id="marca">MATTEL</span></span>
+            <p id="marcaDAgua">By Nick :)</p>
+        </div>
+    </div>
+</body>
+<script>
+const controls = document.querySelectorAll(".control");
+
+let inicial = 0; // Índice inicial
+const filmes = document.querySelectorAll(".filme"); // Seleciona todas as imagens
+const qtdFilmes = filmes.length; // Quantidade total de filmes
+
+controls.forEach((control) => {
+    control.addEventListener("click", (e) => {
+        e.preventDefault(); // Evita o comportamento padrão
+        e.stopPropagation(); // Impede propagação de eventos
+
+        // Determina o botão clicado
+        const isLeft = control.id === "voltarBtn";
+
+        // Atualiza o índice
+        inicial = isLeft ? inicial - 1 : inicial + 1;
+
+        // Garante que o índice esteja dentro dos limites
+        if (inicial >= qtdFilmes) {
+            inicial = 0;
+        } else if (inicial < 0) {
+            inicial = qtdFilmes - 1;
+        }
+
+        // Remove a classe 'inicial' de todos os filmes
+        filmes.forEach((filme) => filme.classList.remove("inicial"));
+
+        // Adiciona a classe 'inicial' ao filme atual
+        filmes[inicial].classList.add("inicial");
+
+        // Faz o carrossel deslizar para o filme selecionado
+        filmes[inicial].scrollIntoView({
+            behavior: "smooth",
+            inline: "center",
+        });
+    });
+});
+</script>
+
+</html>
