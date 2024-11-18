@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Passion+One:wght@400;700;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Changa One", serif;
+}
+
+.header {
+    height: 13vh;
+    position: relative;
+    z-index: 1;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("../assets/headerBackground.jpg");
+    background-position: center;
+    z-index: -1;
+    filter: brightness(45%);
+}
+
+.navbar {
+    width: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.header #logoIndex {
+    margin-top: 1vh;
+    height: 10vh;
+    width: 35vh;
+    transform: translate(10vh, 0vh);
+    filter:  brightness(90%);
+}
+
+.header .navbar {
+    padding: 0;
+    transform: translate(75vh, -5vh);
+}
+
+.header a {
+    -ms-transform: skewY(12deg);
+    -webkit-transform: skewY(12deg);
+    transform: skewY(12deg);
+    padding: 5vh;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar .agora {
+    height: 10vh;
+    font-size: 5vh;
+    background: #0E7CB7;
+    -ms-transform: skewY(-12deg);
+    -webkit-transform: skewY(-12deg);
+    transform: skewY(-12deg);
+    transform: skewY(-10deg);
+    float: left;
+    clip-path: polygon(100% 91%, 89% 12%, 87% -2%, 0% 0%, 2% 9%, 20% 92%, 21% 92%, 97% 69%);
+}
+
+.navbar .franquia {
+    height: 10vh;
+    font-size: 4vh;
+    background: #0E7CB7;
+    transform: skewY(20deg);
+    float: left;
+    clip-path: polygon(91% 71%, 88% 12%, 87% 0%, 0% 0%, 0% 2%, 20% 265%, 5% 102%, 91% 68%)
+}
+
+.navbar .sobreMim {
+    width: 120vh;
+    height: 10vh;
+    font-size: 3vh;
+    background: #DC1A73;
+    transform: skewY(-10deg);
+    clip-path: polygon(100% 100%, 148% 30%, 100% -1%, 5% -35%, -118% 113%, 30% 92%, 30% 92%, 182% 85%)
+}
+
+.navbar .quiz {
+    height: 10vh;
+    font-size: 5vh;
+    background: #0E7CB7;
+    transform: skewY(-10deg);
+    float: left;
+    clip-path: polygon(100% 91%, 89% 12%, 87% -2%, 0% 0%, 2% 9%, 20% 92%, 21% 92%, 97% 69%);
+}
+
+.eu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 110vh;
+    background-color: black;
+}
+
+.minhaFoto {
+    width: 40vh;
+    height: auto;
+    border: 5px solid #FC3A9A;
+}
+  
+.fundo-dinamico {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 83vh;
+    width: 65vw;
+}
+  
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+  
+.slide-fotos {
+    display: flex;
+    width: 300%; 
+    transition: linear 25s;
+    filter: brightness(90%);
+}  
+  
+.fotos-fundo {
+    width: 100%;
+    height: 100%;
+}
+  
+.fotos-fundo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.minhaFoto {
+    border-radius: 5px solid #FC3A9A;
+    width: 30vh;
+    height: auto;
+    object-fit: cover;
+}
+  
+.eu h1 {
+    text-align: center;
+    font-size: 4vh;
+    color: white;
+    z-index: 1;
+}
+
+.eu .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 5px;
+    gap: 3vh;
+    height: auto;
+    width: 100%;
+    z-index: 1;
+}
+
+.eu p {
+    font-size: 5vh;
+    color: rgba(255, 255, 255, 0.401);
+    max-width: 70%; 
+    margin-bottom: 6vh;
+    text-align: justify; 
+    overflow-wrap: break-word; 
+}
+
+.colecao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 110vh;
+    background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.926));
+}
+
+.fotoColecao {
+    width: 50vh;
+    height: auto;
+}
+
+.colecao h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 31vh;
+    padding-bottom: 3vh;
+    height: auto;
+    font-size: 8vh;
+    color: #86196b;
+}
+
+.colecao .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    height: auto;
+    width: 100%;
+}
+
+.colecao p {
+    font-size: clamp(2rem, 2.5vw, 5vh); /* Tamanho dinâmico entre 2rem e 5vh */
+    color: white;
+    max-width: 60%; 
+    text-align: justify; 
+    line-height: 1.2; /* Adiciona espaçamento entre as linhas */
+    overflow-wrap: break-word; 
+}
+
+.colecao span {
+    text-align: justify; 
+    line-height: 1.2;
+    font-size: clamp(2rem, 2.5vw, 5vh); 
+    background-image: linear-gradient(45deg, #34ABE1, #227ca5, #88185d, #5c0f71, #34ABE1);
+    background-size: 400% 100%;
+    animation: degrade 5s linear infinite alternate;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    height: 8vh;
+    background-color: black;
+    color: white;
+    z-index: 10;
+}
+
+.footer #direitos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 80vh;
+    gap: 80vh;
+    font-size: 2.3vh;
+}
+
+.footer #marca {
+    color:#2D7305;
+}
+
+.footer #marcaDAgua {
+    color: #FC3A9A;
+}
