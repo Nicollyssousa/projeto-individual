@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- titulo pagina -->
+    <title>| Dashboard</title>
+    <!-- link chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <!-- logo site -->
+    <link rel="icon" href="assets/icon/logoSite.png">
+    <!-- link css -->
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+        <div class="header">
+            <div class="container">
+                <img id="logoIndex" src="../public/assets/icon/logoNome.png">
+                <ul class="navbar">
+                    <div class="agora">
+                        <li><a href="#">Início</a></li>
+                    </div>
+                    <div class="franquia">
+                        <li><a href="">Frânquia</a></li>
+                    </div>
+                    <div class="sobreMim">
+                        <li><a href="">Sobre mim</a></li>
+                    </div>
+                    <div class="quiz">
+                        <li><a href="">Quiz+</a></li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dashboard">
+            
+            <div class="container">
+                <a href="quiz.html" class="sair-quiz"><img src="../public/assets/icon/dashboard/setaVoltar.png">Sair do QUIZ</a>
+                <div class="saida-quiz">
+                    <h1>Você é totalmente</h1>
+                    <h2>DRACULAURA</h2>
+                </div>
+            </div>
+        
+            <div class="grafico">
+                <div class="kpis">
+                    <div id="kpi">
+                        <p>Fofa</p>
+                    </div><br>
+                    <div id="kpi">
+                        <p>Leal</p>
+                    </div><br>
+                    <div id="kpi">
+                        <p>Amizade Verdadeira</p>
+                    </div>
+                </div>
+                <div>
+                    <canvas id="myChart" style="position: relative; height:40vh; width:46vw"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div id="direitos">
+                <span>Todos os direitos reservados a <span id="marca">MATTEL</span></span>
+                <p id="marcaDAgua">By Nick :)</p>
+            </div>
+        </div>
+</body>
+<script>
+    const ctx = document.getElementById('myChart');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: [
+                    'Cleo',
+                    'Clawdeen',
+                    'Frankie',
+                    'Draculaura',
+                    'Lagoona'
+                ],
+                datasets: [{
+                    label: 'compatibilidade',
+                    data: [15, 20, 20, 30, 15],
+                    backgroundColor: [
+                        '#B29438',
+                        '#8252C0',
+                        '#3581AA',
+                        '#DC1A73',
+                        '#1D9DA9'
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                aspectRatio: 2,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            boxWidth: 20,
+                            color: 'white',
+                            font: {
+                                weight: 'bold',
+                                size: 16
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Personagens',
+                            font: {
+                                size: 17,
+                                weight: 'bold'
+                            },
+                            padding: 2,
+                            color: 'white'
+                        }
+                    },
+                    datalabels: {
+                        color: 'white',
+                        font: {
+                            family: 'Passion One',
+                            weight: 'bold',
+                            size: 23,
+                        },
+                        formatter: (value, context) => {
+                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            const percentage = (value / total * 100).toFixed(1) + '%';
+                            return percentage;
+                        }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels],
+        });
+</script>
+</html>

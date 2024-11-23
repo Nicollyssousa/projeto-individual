@@ -10,6 +10,7 @@
     height: 13vh;
     position: relative;
     z-index: 1;
+    box-shadow: 6px 5px 5px rgba(0, 0, 0, 0.781);
 }
 
 .header::before {
@@ -22,7 +23,7 @@
     background-image: url("../assets/headerBackground.jpg");
     background-position: center;
     z-index: -1;
-    filter: brightness(45%);
+    filter: brightness(25%);
 }
 
 .navbar {
@@ -42,8 +43,7 @@
 }
 
 .header .navbar {
-    padding: 0;
-    transform: translate(75vh, -5vh);
+    transform: translate(80vh, -4vh);
 }
 
 .header a {
@@ -94,102 +94,77 @@
     clip-path: polygon(100% 91%, 89% 12%, 87% -2%, 0% 0%, 2% 9%, 20% 92%, 21% 92%, 97% 69%);
 }
 
-.quiz {
+.dashboard {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background:  rgba(0, 0, 0, 0.926);
+    background:  #000000f5;
 }
 
-.quiz h1 {
-    text-align: center;
-    padding-bottom: 3vh;
-    height: auto;
-    font-size: 10vh;
-    color: white;
-}
-
-.quiz span {
-    text-align: center; 
-    font-size: 5vh;
-    max-width: 85vh;
-    color: white;
-}
-
-.selecionar a{
+.dashboard .container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 40vh;
-    width: 70vh;
-    background-color: #9d0b54;
-    margin-top: 5vh;
+
 }
 
-.colecao p {
-    font-size: clamp(2rem, 2.5vw, 5vh); /* Tamanho dinâmico entre 2rem e 5vh */
-    color: white;
-    max-width: 60%; 
-    text-align: justify; 
-    line-height: 1.2; /* Adiciona espaçamento entre as linhas */
-    overflow-wrap: break-word; 
-}
-
-.colecaoUsuario {
+.container a {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 110vh;
-    background:  rgba(0, 0, 0, 0.926);
-    border: 4px solid blue;
+    flex-direction: row;
+    gap: 2vh;
+    transform: translate(-67vh, -15vh);
+    font-size: 3.5vh;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.colecaoUsuario h1 {
+.container a:hover {
+    transform: translate(-68vh, -15vh);
+    color: #0D691A;
+}
+
+.saida-quiz {
+    font-size: 3.5vh;
+    color: #0D691A;
+    transform: translate(-10vh, -4vh);
+}
+
+.saida-quiz h2 {
     text-align: center;
-    padding-bottom: 3vh;
-    height: auto;
     font-size: 8vh;
-    color: white;
+    color: #DC1A73;
+    margin-bottom: 5vh;
 }
 
-.espaco-colecao {
+.grafico {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 80vh;
-    width: 160vh;
-    background-color: #3c055a;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    gap: 15vh;
 }
 
-.colecaoStatus {
+.sair-quiz img {
+    width: auto;
+    height: 9vh;
+}
+
+.kpis #kpi {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 32vh;
+    height: 9vh;
+    background-color: #D99AB7;
+    font-size: 4vh;
 }
 
-#checkList {
-    width: 10vh;
-    height: 10vh;
-    font-size: 5vh;
-    color: white;
-}
-
-.espaco-colecao button {
-    height: 10vh;
-    width: 15vh;
-    color: white;
-    background-color: black;
-    padding: 1px;
-    font-size: 3vh;
-}
-
-#fotoBoneca {
+.chart-container {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
@@ -212,8 +187,8 @@
     align-items: center;
     justify-content: center;
     margin-left: 80vh;
-    gap: 80vh;
-    font-size: 2.3vh;
+    gap: 74vh;
+    font-size: 3vh;
 }
 
 .footer #marca {

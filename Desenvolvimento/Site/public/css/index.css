@@ -57,33 +57,39 @@ body {
 
 .header .navbar {
     padding: 0;
-    transform: translate(75vh, -5vh);
+    transform: translate(75vh, -15vh);
 }
 
 .header a {
-    -ms-transform: skewY(12deg);
-    -webkit-transform: skewY(12deg);
-    transform: skewY(12deg);
-    padding: 5vh;
+    padding: 7vh;
     text-decoration: none;
     color: white;
 }
 
 .navbar .agora {
-    height: 10vh;
-    font-size: 5vh;
-    background: #DC1A73;
-    -ms-transform: skewY(-12deg);
-    -webkit-transform: skewY(-12deg);
-    transform: skewY(-12deg);
-    transform: skewY(-10deg);
-    float: left;
-    clip-path: polygon(100% 91%, 89% 12%, 87% -2%, 0% 0%, 2% 9%, 20% 92%, 21% 92%, 97% 69%);
+    height: 30vh;
+    padding: 10vh;
+    background-color: brown;
+    clip-path: polygon(-1% 81%, 100% 70%, 100% 30%, 100% 100%, 0% 100%);
+    transform: rotate(-9deg);
+    border: 3px solid black;
+    transform: translateY(-12vh);
+}
+
+.agora li {
+    position: fixed;
+    color: white;
+    font-size: 10vh;
+    transform: translateY(7vh);
+    left: 15vh;
+    list-style-type: none;
+    border: black;
 }
 
 .navbar .franquia {
     height: 10vh;
     font-size: 4vh;
+    padding: 10px;
     background: #0E7CB7;
     transform: skewY(20deg);
     float: left;
@@ -91,12 +97,13 @@ body {
 }
 
 .navbar .sobreMim {
-    width: 120vh;
+    width: 200vh;
     height: 10vh;
     font-size: 3vh;
     background: #0E7CB7;
     transform: skewY(-10deg);
-    clip-path: polygon(100% 100%, 148% 30%, 100% -1%, 5% -35%, -118% 113%, 30% 92%, 30% 92%, 182% 85%)
+    border-radius: 6px 5px 1px 4px;
+    /* clip-path: polygon(100% 100%, 148% 30%, 100% -1%, 5% -35%, -118% 113%, 30% 92%, 30% 92%, 182% 85%) */
 }
 
 .navbar .quiz {
