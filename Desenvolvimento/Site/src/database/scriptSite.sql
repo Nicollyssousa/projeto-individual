@@ -3,7 +3,7 @@ use monsterHigh;
 
 create table usuario (
 idUsuario int primary key auto_increment,
-nomeUsuario varchar(45) not null, 
+nomeUsuario varchar(45) not null unique, 
 tipoCriatura varchar(45) not null,
 idade int not null,
 senha char(10) not null,

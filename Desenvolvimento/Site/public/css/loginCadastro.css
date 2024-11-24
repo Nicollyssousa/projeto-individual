@@ -65,7 +65,7 @@ body {
     transform: translate(65.9vh, 67vh);
 }
 
-.armarioCadastro #nomeUsuario{
+.armarioCadastro #nome_usuario{
     position: absolute;
     width: 13%;
     height: 4%;
@@ -79,7 +79,7 @@ body {
     transform: translate(68.6vh, 34vh);
 }
 
-#nomeUsuario::placeholder {
+#nome_usuario::placeholder {
     /*muda cor do texto do input e 
     alinha o texto no meio do input*/
     color: white; 
@@ -87,7 +87,7 @@ body {
     text-align: center;
   }
 
-  .armarioCadastro #tipoMonstro {
+  .armarioCadastro #tipo_monstro {
     position: absolute;
     width: 11%;
     height: 4%;
@@ -104,11 +104,11 @@ body {
 }
 
 /* letra preta para as opções do select */
-.armarioCadastro #tipoMonstro option {
+.armarioCadastro #tipo_monstro option {
     color: black;
 }
 
-.armarioCadastro #senhaUsuario {
+.armarioCadastro #senha_usuario {
     position: absolute;
     width: 11%;
     height: 4%;
@@ -122,13 +122,13 @@ body {
     text-align: center;
 }
 
-#senhaUsuario::placeholder {
+#senha_usuario::placeholder {
     color: black; 
     opacity: 0.6;
     text-align: center;
-  }
+}
 
-.armarioCadastro #confirmacaoSenha{
+.armarioCadastro #confirmacao_senha{
     position: absolute;
     width: 11%;
     height: 4%;
@@ -142,13 +142,13 @@ body {
     transform: translate(70.5vh, 63vh);
 }
 
-#confirmacaoSenha::placeholder {
+#confirmacao_senha::placeholder {
     color: black; 
     opacity: 0.6;
     text-align: center;
   }
 
-.armarioCadastro #idadeUsuario{
+.armarioCadastro #idade_usuario{
     position: absolute;
     width: 11%;
     height: 4%;
@@ -163,8 +163,8 @@ body {
 }
 
 /*tira as setas do input tipo numero*/
-.armarioCadastro #idadeUsuario[type="number"]::-webkit-outer-spin-button,
-.armarioCadastro #idadeUsuario[type="number"]::-webkit-inner-spin-button {
+.armarioCadastro #idade_usuario[type="number"]::-webkit-outer-spin-button,
+.armarioCadastro #idade_usuario[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
@@ -273,4 +273,16 @@ body {
     background-color: rgba(0, 0, 0, 0.784);
     color: #11792E;
     transform: translate(-27vh, 48.5vh);
+}
+
+.card_erro span{
+    display: flex;
+    position: absolute;
+    font-size: 4vh;
+    text-align: center;
+    color: white;
+    background-color: #11792E;
+    transform: translate(5vh, 30vh);
+    word-break: break-word;
+    width: 38vh;
 }
