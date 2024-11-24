@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/icon/logoSite.png">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="../js/sessao.js"></script>
+    <title>| Home</title>
+</head>
+
+<body onload="validarSessao()">
+    <!-- navbar -->
+    <header class="navbar">
+        <img id="logoIndex" src="assets/icon/logoNome.png">
+        <nav> 
+            <ul class="menu">
+                <li class="item home"><a href="indexUsuario.html">Home</a></li>
+                <li class="item franquia"><a href="franquia.html">Franquia</a></li>
+                <li class="item sobre small"><a href="sobreMim.html">Sobre mim</a></li>
+                <li class="item quiz"><a href="quiz.html">Quiz +</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="introducao" class="introducao">
+        <div class="container">
+            <img id="livro" src="assets/icon/index/livro.png">
+            <span id="fraseLivro">Nada mais arrepiante do que ter autoconfiança para ser quem você é!</span>
+            <img id="fotoTurma" src="assets/icon/index/fotoTurma.png">
+            <img id="celular" src="assets/icon/index/celular.png">
+            <img id="raio" src="assets/icon/index/raio.png">
+
+            <div class="idEstudante">
+                <img id="clip" src="assets/icon/index/clip.png">
+                <div class="nickName">
+                    <p><span id="b_usuario">span></p>
+                </div>
+                <span id="texto">STUDENT ID CARD</span>
+                <div class="informacoesUsuario">
+                    <span id="b_usuario"></span>
+                    <p>Idade: <span id="b_idade"></span> anos</p>
+                    <p><span id="b_monstro"></span></p>
+                </div>
+                <img id="logoId" src="assets/icon/logoNome.png">
+                <div class="longount"><img id="longount" src="assets/icon/index/longount.png"
+                alt="sairParaNavegaçãp" style="cursor: pointer;" onclick="limparSessao()"></div>
+            </div>
+
+            <h1>Navegue ainda aqui:</h1>
+            <div class="navegar">
+                <li><a id="linkHistoria" href="#historia">.Historia</a></li>
+                <li><a id="linkOnu" href="#objetivosOnu">.Objetivos da ONU</a></li>
+                <li><a id="linkPersonagens" href="#personagens">.Personagens</a></li>
+                <img class="pet2" src="assets/icon/loginCadastro/pet.png">
+            </div>
+        </div>
+    </div>
+
+    <div id="historia" class="historia">
+        <h1>Monster High</h1>
+        <div class="container">
+            <img id="logoHistoria" src="assets/icon/navegacao/logoPadrao.png">
+            <p>
+                Bem-vindo à Monster High! Aqui, onde os filhos de monstros como vampiros e lobisomens estudam e aprendem a controlar suas habilidades especiais. 
+                A escola celebra a diversidade, e ensina que ser diferente é o que torna todos únicos. 
+                <span>Prepare-se para fazer amigos e viver muitas aventuras!</span></p>
+        </div>
+    </div>
+
+    <div id="objetivosOnu" class="objetivosOnu">
+        <h1>Objetivos da ONU</h1>
+        <img id="fantasmas" src="assets/icon/index/ghosts.png">
+        <div class="container">
+            <img id="lapide1" src="assets/icon/index/lapide.1.png" alt="lapide1Btn" onclick="ocultarLapide(this)" style="cursor: pointer;">
+            <p id="pLapide1" style="display: none;">O tema central de <span>Monster High</span> gira em torno da <span>aceitação das diferenças</span>, sejam elas físicas, culturais ou sociais. 
+                O que alinha com a redução das desigualdades e a promoção da inclusão social. </p>
+
+            <img id="lapide2" src="assets/icon/index/lapide.2.png" alt="lapide1Btn"onclick="ocultarLapide(this)" style="cursor: pointer;">
+            <p id="pLapide2" style="display: none;"><span>Monster High</span> incentiva a aceitação das diferenças e o respeito mútuo, algo que pode estar vinculado a uma educação que promove a <span>inclusão,
+                 o combate ao bullying e a valorização da diversidade</span>.</p>
+
+            <img id="lapide3" src="assets/icon/index/lapide.3.png" alt="lapide1Btn"onclick="ocultarLapide(this)" style="cursor: pointer;">
+            <p id="pLapide3" style="display: none;">A série apresenta personagens femininas fortes e diversificadas, rompendo com estereótipos de gênero. 
+                Isso contribui para a conscientização sobre a importância da <span>igualdade de gênero e do empoderamento de meninas e mulheres.</span></p>
+
+            <img id="lapide4" src="assets/icon/index/lapide.4.png" alt="lapide1Btn"onclick="ocultarLapide(this)" style="cursor: pointer;">
+            <p id="pLapide4" style="display: none;">A série promove valores como respeito, tolerância e resolução pacífica de conflitos, apoiando a criação de uma cultura de paz e inclusão,
+                 onde <span>as diferenças são respeitadas e valorizadas.</span></p>
+        </div>
+    </div>
+
+    <div id="personagens" class="personagens">
+        <div class="container">
+            <img id="icon1" src="assets/icon/index/personagens/icon.10.png" alt="lagoonaBtn"
+                onclick="mostrarPersonagem(this)" style="cursor: pointer;">
+            <img id="icon2" src="assets/icon/index/personagens/icon.11.png" alt="cleoBtn"
+                onclick="mostrarPersonagem(this)" style="cursor: pointer;">
+            <img id="icon3" src="assets/icon/index/personagens/icon.12.png" alt="draculauraBtn"
+                onclick="mostrarPersonagem(this)" style="cursor: pointer;">
+            <img id="icon4" src="assets/icon/index/personagens/icon.9.png" alt="frankieBtn"
+                onclick="mostrarPersonagem(this)" style="cursor: pointer;">
+            <img id="icon5" src="assets/icon/index/personagens/icon.8.png" alt="clawdeenBtn"
+                onclick="mostrarPersonagem(this)" style="cursor: pointer;">
+            <span>|</span>
+        </div>
+        <div class="fundoPersonagens">
+        <img id="cardLagoona" src="assets/icon/index/personagens/lagoonaCard.png" style="display: none;">
+        <img id="cardCleo" src="assets/icon/index/personagens/cleoCard.png" style="display: none;">
+        <img id="cardDraculaura" src="assets/icon/index/personagens/draculauraCard.png"style="display: none;">
+        <img id="cardFrankie" src="assets/icon/index/personagens/frankieCard.png" style="display: none;">
+        <img id="cardClawdeen" src="assets/icon/index/personagens/clawdeenCard.png" style="display: block;">
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <li><a id="linkHome" href="#introducao">Home</a></li>
+            <li><a id="linkHistoria" href="#historia">Historia</a></li>
+            <li><a id="linkOnu" href="#objetivosOnu">Objetivos da ONU</a></li>
+            <li><a id="linkPersonagens" href="#personagens">Personagens</a></li>
+        </div>
+        <div id="direitos">
+            <span>Todos os direitos reservados <span id="marca">MATTEL</span></span>
+            <p id="marcaDAgua">By Nick :)</p>
+        </div>
+</body>
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    b_idade.innerHTML = sessionStorage.IDADE_USUARIO;
+    b_monstro.innerHTML = sessionStorage.CRIATURA_USUARIO;
+
+    function mostrarPersonagem(imagem) {
+        // Esconde todos os cards
+        document.getElementById('cardLagoona').style.display = 'none';
+        document.getElementById('cardCleo').style.display = 'none';
+        document.getElementById('cardDraculaura').style.display = 'none';
+        document.getElementById('cardFrankie').style.display = 'none';
+        document.getElementById('cardClawdeen').style.display = 'none';
+
+        // Exibe o card correspondente
+        switch (imagem.id) {
+            case 'icon1':
+                document.getElementById('cardLagoona').style.display = 'block';
+                break;
+            case 'icon2':
+                document.getElementById('cardCleo').style.display = 'block';
+                break;
+            case 'icon3':
+                document.getElementById('cardDraculaura').style.display = 'block';
+                break;
+            case 'icon4':
+                document.getElementById('cardFrankie').style.display = 'block';
+                break;
+            case 'icon5':
+                document.getElementById('cardClawdeen').style.display = 'block';
+                break;
+            default:
+                console.log('Imagem não encontrada');
+        }
+    }
+    function ocultarLapide(imagem) {
+
+    document.getElementById('pLapide1').style.display = 'none';
+    document.getElementById('pLapide2').style.display = 'none';
+    document.getElementById('pLapide3').style.display = 'none';
+    document.getElementById('pLapide4').style.display = 'none';
+
+    document.getElementById('lapide1').style.filter = "brightness(50%)";
+    document.getElementById('lapide2').style.filter = "brightness(50%)";
+    document.getElementById('lapide3').style.filter = "brightness(50%)";
+    document.getElementById('lapide4').style.filter = "brightness(50%)";
+
+    switch (imagem.id) {
+        case 'lapide1':
+            document.getElementById('lapide1').style.filter = "brightness(100%)";
+            document.getElementById('pLapide1').style.display = 'block';
+            break;
+        case 'lapide2':
+            document.getElementById('lapide2').style.filter = "brightness(100%)";
+            document.getElementById('pLapide2').style.display = 'block';
+            break;
+        case 'lapide3':
+            document.getElementById('lapide3').style.filter = "brightness(100%)";
+            document.getElementById('pLapide3').style.display = 'block';
+            break;
+        case 'lapide4':
+            document.getElementById('lapide4').style.filter = "brightness(100%)";
+            document.getElementById('pLapide4').style.display = 'block';
+            break;
+        default:
+            console.log('Imagem não encontrada');
+    }
+}
+</script>
+
+</html>

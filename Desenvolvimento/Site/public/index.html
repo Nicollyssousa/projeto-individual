@@ -4,198 +4,341 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- logo site  -->
     <link rel="icon" href="assets/icon/logoSite.png">
-    <link rel="stylesheet" href="css/index.css">
-    <title>| Home</title>
+    <!-- link css -->
+    <link rel="stylesheet" href="css/navegacao.css">
+    <!-- link css login e cadastro -->
+    <link rel="stylesheet" href="css/loginCadastro.css">
+    <!-- link icon navegacao seta  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- link js  -->
+    <script src="./js/sessao.js"></script>
+    <!-- nome pagina -->
+    <title>| Monster High</title>
 </head>
 
 <body>
-    <!-- navbar -->
-    <div class="header">
-        <div class="container">
-            <img id="logoIndex" src="assets/icon/logoNome.png">
-            <ul class="navbar">
-                <div class="agora">
-                    <li><a href="#">Início</a></li>
-                </div>
-                <div class="franquia">
-                    <li><a href="">Frânquia</a></li>
-                </div>
-                <div class="sobreMim">
-                    <li><a href="">Sobre mim</a></li>
-                </div>
-                <div class="quiz">
-                    <li><a href="">Quiz+</a></li>
-                </div>
-            </ul>
-        </div>
+    <!-- abertura e navegação -->
+    <div id="abertura" class="abertura" style="display: block;">
+        <img id="logoNavegacao" src="assets/icon/navegacao/logoPadrao.png">
+        <p id="boasVindas">Seja Bem-vindo(a) Monster High</p>
+        <div class="frase">onde ser único é ser monstruosamente fabuloso!</div>
+        <a href="javascript:void(0);" onclick="sumirAbertura()">
+            <i class="fa-solid fa-arrow-down-long fa-beat"></i>
+        </a>
+        <p id="marcaDAgua">@Nick</p>
     </div>
 
-    <div id="introducao" class="introducao">
-        <div class="container">
-            <img id="livro" src="assets/icon/index/livro.png">
-            <span id="fraseLivro">Nada mais arrepiante do que ter autoconfiança para ser quem você é!</span>
-            <img id="fotoTurma" src="assets/icon/index/fotoTurma.png">
-            <img id="celular" src="assets/icon/index/celular.png">
-            <img id="raio" src="assets/icon/index/raio.png">
-
-            <div class="idEstudante">
-
-                <img id="clip" src="assets/icon/index/clip.png">
-                <div class="user">
-                    <script src="navegacao.html"></script>
-                </div>
-                <span id="texto">STUDENT ID CARD</span>
-                <img id="logoId" src="assets/icon/logoNome.png">
-                <div class="longount"><img id="longount" src="assets/icon/index/longount.png"
-                alt="sairParaNavegaçãp" style="cursor: pointer;" onclick="sair()" href="navegacao.html"></div>
-            </div>
-
-            <h1>Navegue ainda aqui:</h1>
-            <div class="navegar">
-                <li><a id="linkHistoria" href="#historia">.Historia</a></li>
-                <li><a id="linkOnu" href="#objetivosOnu">.Objetivos da ONU</a></li>
-                <li><a id="linkPersonagens" href="#personagens">.Personagens</a></li>
-                <img class="pet2" src="assets/icon/loginCadastro/pet.png">
-            </div>
-        </div>
+    <div id="navegacao" class="navegacao" style="display: none;">
+        <h1>Escolha seu destino arrepiante</h1>
+        <img src="assets/icon/navegacao/mapa.png">
+        <a id="linkLogin" href="javascript:void(0)">Login</a>
+        <a id="linkCadastro" href="javascript:void(0)">Cadastro</a>
+        <p id="marcaDAgua">@Nick</p>
     </div>
 
-    <div id="historia" class="historia">
-        <h1>História de MH</h1>
-        <div class="container">
-            <img id="logoHistoria" src="assets/icon/navegacao/logoPadrao.png">
-            <p>
-                Bem-vindo à Monster High! Aqui, os filhos de monstros como vampiros e lobisomens estudam e aprendem a controlar suas habilidades especiais. 
-                A escola celebra a diversidade e ensina que ser diferente é o que torna todos únicos. 
-                <span>Prepare-se para fazer amigos e viver muitas aventuras!</span></p>
-        </div>
+    <!-- cadastro e login -->
+
+    <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
     </div>
 
-    <div id="objetivosOnu" class="objetivosOnu">
-        <h1>Objetivos da ONU</h1>
-        <img id="fantasmas" src="assets/icon/index/ghosts.png">
-        <div class="container">
-            <img id="lapide1" src="assets/icon/index/lapide.1.png" alt="lapide1Btn" onclick="ocultarLapide(this)" style="cursor: pointer;">
-            <p id="pLapide1" style="display: none;">O tema central de <span>Monster High</span> gira em torno da <span>aceitação das diferenças</span>, sejam elas físicas, culturais ou sociais. 
-                O que alinha com a redução das desigualdades e a promoção da inclusão social. </p>
+    <!-- cadastro -->
+    <div id="cadastro" class="armarioCadastro" style="display: none;">
+        <img id="balaoFala" src="assets/icon/loginCadastro/balaoFala.png">
+        <img id="pet" src="assets/icon/loginCadastro/pet.png">
+        <p>Já tem uma<br>conta aqui?</p>
+        <button onclick="irParaLogin()" id="linkLoginBalao">Login</button>
 
-            <img id="lapide2" src="assets/icon/index/lapide.2.png" alt="lapide1Btn"onclick="ocultarLapide(this)" style="cursor: pointer;">
-            <p id="pLapide2" style="display: none;"><span>Monster High</span> incentiva a aceitação das diferenças e o respeito mútuo, algo que pode estar vinculado a uma educação que promove a <span>inclusão,
-                 o combate ao bullying e a valorização da diversidade</span>.</p>
+        <input type="text" id="nome_usuario" placeholder="Digite seu usuário">
+        <select type="text" id="tipo_monstro">
+            <option value="vazio">Tipo de criatura</option>
+            <option value="lobisomen">Lobisomen</option>
+            <option value="vampiro">Vampiro(a)</option>
+        </select>
+        <input type="password" id="senha_usuario" placeholder="Digite sua senha">
+        <input type="password" id="confirmacao_senha" placeholder="Digite novamente">
+        <input type="number" id="idade_usuario" placeholder="Idade">
 
-            <img id="lapide3" src="assets/icon/index/lapide.3.png" alt="lapide1Btn"onclick="ocultarLapide(this)" style="cursor: pointer;">
-            <p id="pLapide3" style="display: none;">A série apresenta personagens femininas fortes e diversificadas, rompendo com estereótipos de gênero. 
-                Isso contribui para a conscientização sobre a importância da <span>igualdade de gênero e do empoderamento de meninas e mulheres.</span></p>
-
-            <img id="lapide4" src="assets/icon/index/lapide.4.png" alt="lapide1Btn"onclick="ocultarLapide(this)" style="cursor: pointer;">
-            <p id="pLapide4" style="display: none;">A série promove valores como respeito, tolerância e resolução pacífica de conflitos, apoiando a criação de uma cultura de paz e inclusão,
-                 onde <span>as diferenças são respeitadas e valorizadas.</span></p>
-        </div>
-    </div>
-
-    <div id="personagens" class="personagens">
-        <div class="container">
-            <img id="icon1" src="assets/icon/index/personagens/icon.10.png" alt="lagoonaBtn"
-                onclick="mostrarPersonagem(this)" style="cursor: pointer;">
-            <img id="icon2" src="assets/icon/index/personagens/icon.11.png" alt="cleoBtn"
-                onclick="mostrarPersonagem(this)" style="cursor: pointer;">
-            <img id="icon3" src="assets/icon/index/personagens/icon.12.png" alt="draculauraBtn"
-                onclick="mostrarPersonagem(this)" style="cursor: pointer;">
-            <img id="icon4" src="assets/icon/index/personagens/icon.9.png" alt="frankieBtn"
-                onclick="mostrarPersonagem(this)" style="cursor: pointer;">
-            <img id="icon5" src="assets/icon/index/personagens/icon.8.png" alt="clawdeenBtn"
-                onclick="mostrarPersonagem(this)" style="cursor: pointer;">
-            <span>|</span>
-        </div>
-        <div class="fundoPersonagens">
-        <img id="cardLagoona" src="assets/icon/index/personagens/lagoonaCard.png" style="display: none;">
-        <img id="cardCleo" src="assets/icon/index/personagens/cleoCard.png" style="display: none;">
-        <img id="cardDraculaura" src="assets/icon/index/personagens/draculauraCard.png"style="display: none;">
-        <img id="cardFrankie" src="assets/icon/index/personagens/frankieCard.png" style="display: none;">
-        <img id="cardClawdeen" src="assets/icon/index/personagens/clawdeenCard.png" style="display: block;">
-        </div>
-    </div>
-
-    <div class="footer">
-        <div class="container">
-            <li><a id="linkHome" href="#introducao">Home</a></li>
-            <li><a id="linkHistoria" href="#historia">Historia</a></li>
-            <li><a id="linkOnu" href="#objetivosOnu">Objetivos da ONU</a></li>
-            <li><a id="linkPersonagens" href="#personagens">Personagens</a></li>
-        </div>
-        <div id="direitos">
-            <span>Todos os direitos reservados <span id="marca">MATTEL</span></span>
-            <p id="marcaDAgua">By Nick :)</p>
-        </div>
+        <img id="visualizarSenha" src="assets/icon/loginCadastro/olho.png" alt="Mostrar senha" style="cursor: pointer;"
+            onclick="mostrarSenha()">
+        <button onclick="cadastrar()" id="cadastroUsuario">Cadastrar-se</button>
+        <p id="marcaDaAgua">@Nick</p>
 </body>
-<script>
-    function mostrarPersonagem(imagem) {
-        // Esconde todos os cards
-        document.getElementById('cardLagoona').style.display = 'none';
-        document.getElementById('cardCleo').style.display = 'none';
-        document.getElementById('cardDraculaura').style.display = 'none';
-        document.getElementById('cardFrankie').style.display = 'none';
-        document.getElementById('cardClawdeen').style.display = 'none';
+</div>
 
-        // Exibe o card correspondente
-        switch (imagem.id) {
-            case 'icon1':
-                document.getElementById('cardLagoona').style.display = 'block';
-                break;
-            case 'icon2':
-                document.getElementById('cardCleo').style.display = 'block';
-                break;
-            case 'icon3':
-                document.getElementById('cardDraculaura').style.display = 'block';
-                break;
-            case 'icon4':
-                document.getElementById('cardFrankie').style.display = 'block';
-                break;
-            case 'icon5':
-                document.getElementById('cardClawdeen').style.display = 'block';
-                break;
-            default:
-                console.log('Imagem não encontrada');
+<div id="login" class="armarioLogin" style="display: none;">
+    <div class="balaoCadastro">
+        <img id="balaoFala2" src="assets/icon/loginCadastro/balaoFala.png">
+        <p>É novo por<br> aqui?</p>
+        <button onclick="irParaCadastro()" id="linkCadastroBalao">Cadastro</button>
+    </div>
+    <center>
+        <input type="text" id="usuario" placeholder="Digite seu usuário">
+        <input type="password" id="senha" placeholder="Digite sua senha">
+        <button onclick="login()" id="loginUsuario">Logar</button>
+    </center>
+    <p id="marcaDaAgua">@Nick</p>
+</div>
+<div id="div_aguardar" class="loading-div">
+  <img src="assets/circle-loading.gif" id="loading-gif" />
+  <div id="div_erros_login"></div>
+</div>
+<div id="exibir"></div>
+</body>
+
+<script>
+    // Script transição de divs e exibir senha 
+    function mostrarSenha() {
+
+        const exibirSenha = document.getElementById("senha_usuario");
+        const exibirConfirmacaoSenha = document.getElementById("confirmacao_senha");
+
+        if (exibirSenha.type === "password" && (exibirConfirmacaoSenha.type === "password")) {
+
+            exibirSenha.type = "text";
+            exibirConfirmacaoSenha.type = "text";
+        } else {
+            exibirSenha.type = "password";
+            exibirConfirmacaoSenha.type = "password";
         }
     }
-    function ocultarLapide(imagem) {
 
-    document.getElementById('pLapide1').style.display = 'none';
-    document.getElementById('pLapide2').style.display = 'none';
-    document.getElementById('pLapide3').style.display = 'none';
-    document.getElementById('pLapide4').style.display = 'none';
+    function sumirAbertura() {
+        var abertura = document.getElementById('abertura');
+        var navegacao = document.getElementById('navegacao');
 
-    document.getElementById('lapide1').style.filter = "brightness(50%)";
-    document.getElementById('lapide2').style.filter = "brightness(50%)";
-    document.getElementById('lapide3').style.filter = "brightness(50%)";
-    document.getElementById('lapide4').style.filter = "brightness(50%)";
-
-    switch (imagem.id) {
-        case 'lapide1':
-            document.getElementById('lapide1').style.filter = "brightness(100%)";
-            document.getElementById('pLapide1').style.display = 'block';
-            break;
-        case 'lapide2':
-            document.getElementById('lapide2').style.filter = "brightness(100%)";
-            document.getElementById('pLapide2').style.display = 'block';
-            break;
-        case 'lapide3':
-            document.getElementById('lapide3').style.filter = "brightness(100%)";
-            document.getElementById('pLapide3').style.display = 'block';
-            break;
-        case 'lapide4':
-            document.getElementById('lapide4').style.filter = "brightness(100%)";
-            document.getElementById('pLapide4').style.display = 'block';
-            break;
-        default:
-            console.log('Imagem não encontrada');
+        abertura.classList.add('subindo');
+        setTimeout(function () {
+            abertura.style.display = 'none';
+            navegacao.style.display = 'block';
+        }, 700);
     }
-}
 
-function sair(){
-    window.location.href = "navegacao.html";
-}
+    // Função para exibir uma div e ocultar a outra com transição
+    function exibirDiv(aparece, sumir) {
+        sumir.classList.remove("show");
+        setTimeout(() => {
+            sumir.style.display = 'none';
+            aparece.style.display = 'block';
+            setTimeout(() => aparece.classList.add("show"), 10);
+        }, 500);
+    }
+
+    function aparecerCadastroLogin() {
+        const navegacao = document.getElementById("navegacao");
+        const linkLogin = document.getElementById("linkLogin");
+        const linkCadastro = document.getElementById("linkCadastro");
+        const armarioLogin = document.getElementById("login");
+        const armarioCadastro = document.getElementById("cadastro");
+
+        // Eventos de clique para alternar entre as seções de Login e Cadastro
+        linkLogin.addEventListener("click", function () {
+            navegacao.classList.remove("show");
+            setTimeout(() => {
+                navegacao.style.display = 'none';
+                exibirDiv(armarioLogin, armarioCadastro);
+            }, 500);
+        });
+
+        linkCadastro.addEventListener("click", function () {
+            navegacao.classList.remove("show");
+            setTimeout(() => {
+                navegacao.style.display = 'none';
+                exibirDiv(armarioCadastro, armarioLogin);
+            }, 500);
+        });
+    }
+
+    // Inicializa a função de troca de seções ao carregar a página
+    window.onload = function () {
+        aparecerCadastroLogin();
+    }
+
+    function irParaLogin() {
+        armarioLogin = document.getElementById("login");
+        armarioCadastro = document.getElementById("cadastro");
+        exibirDiv(armarioLogin, armarioCadastro);
+    }
+
+    function irParaCadastro() {
+        armarioLogin = document.getElementById("login");
+        armarioCadastro = document.getElementById("cadastro");
+        exibirDiv(armarioCadastro, armarioLogin);
+
+        //:)
+    }
 </script>
 
 </html>
+<script>
+    function cadastrar() {
+    const nomeUsuario = nome_usuario.value;
+    const tipoMonstro = tipo_monstro.value;
+    const idade = Number(idade_usuario.value);
+    const senhaUsuario = senha_usuario.value;
+    const confirmacaoSenha = confirmacao_senha.value;
+
+    
+    // Verificando se há algum campo em branco
+    if (
+      nomeUsuario == ""   ||
+      tipoMonstro == "vazio"  ||
+      idade == ""    ||
+      senhaUsuario == ""  ||
+      confirmacaoSenha== "" 
+    ){
+
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "Preencha todos os campos";
+      finalizarAguardar();
+      return false;
+
+    }else if(nomeUsuario.length <= 1){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "Seu nome deve conter mais de um caracter";
+      finalizarAguardar();
+      return false;
+    }else if(senhaUsuario.length < 6){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "Sua senha deve conter pelo menos 6 caracteres";
+      finalizarAguardar();
+      return false;      
+    }else if(confirmacaoSenha !== senhaUsuario){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "Suas senhas não conferem";
+      finalizarAguardar();
+      return false;      
+    }else if(idade.length > 1){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "Digite uma idade valida";
+      finalizarAguardar();
+      return false;      
+    }
+    
+    else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeUsuario,
+        idadeServer: idade,
+        criaturaServer: tipoMonstro,
+        senhaServer: senhaUsuario,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+          setTimeout(() => {
+            irParaLogin();
+          }, "2000");
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+}
+
+function login() {
+        aguardar();
+
+        var nomeUsuario = usuario.value;
+        var senhaUsuario = senha.value;
+
+        if (nomeUsuario == "" || senhaUsuario == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha os campos em branco";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", nomeUsuario);
+        console.log("FORM SENHA: ", senhaUsuario);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer: nomeUsuario,
+                senhaServer: senhaUsuario
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.CRIATURA_USUARIO = json.tipoMonstro;
+                    sessionStorage.NOME_USUARIO = json.nomeUsuario;
+                    sessionStorage.IDADE_USUARIO = json.idade;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+
+                    setTimeout(function () {
+                        window.location = "../indexUsuario.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+}
+
+</script>

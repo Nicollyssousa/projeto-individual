@@ -6,13 +6,18 @@
     font-family: "Changa One", serif;
 }
 
-.header {
+/* Navbar */
+.navbar {
     height: 13vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     z-index: 1;
+    box-shadow: 4px 4px 8px rgb(0, 0, 0);
 }
 
-.header::before {
+.navbar::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -22,76 +27,80 @@
     background-image: url("../assets/headerBackground.jpg");
     background-position: center;
     z-index: -1;
-    filter: brightness(45%);
+    filter: brightness(38%);
 }
 
-.navbar {
-    width: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    list-style: none;
-}
-
-.header #logoIndex {
-    margin-top: 1vh;
+.navbar #logoIndex {
+    margin-top: -1vh;
     height: 10vh;
     width: 35vh;
-    transform: translate(10vh, 0vh);
-    filter:  brightness(90%);
+    transform: translate(-40vh, 0vh);
+    filter:  brightness(95%);
 }
 
-.header .navbar {
-    padding: 0;
-    transform: translate(75vh, -5vh);
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 1vh; /* Espaçamento entre os botões */
+    transform: translate(-12vh, 4vh) ;
 }
 
-.header a {
-    -ms-transform: skewY(12deg);
-    -webkit-transform: skewY(12deg);
-    transform: skewY(12deg);
-    padding: 5vh;
+/* Botões gerais */
+.item {
+    position: relative;
+    padding: 15px 30px;
+    font-weight: bold;
+    font-size: 4vh;
+    text-align: center;
+    text-shadow: 1px 3px 0 #000, -2px 3px 0 #000, 2px -2px 0 #000, -3px -3px 0 #000;
+    border: 3.5px solid #000;
+    color: white;
+    display: inline-block;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.8);
+    transition: transform 0.2s, box-shadow 0.2s;
+    z-index: 1;
+}
+
+/* Estilização por botão */
+.home {
+    background-color: #2196f3;
+    transform: rotate(-5deg);
+    clip-path: polygon(-29% 20%, 100% 4%, 100% 100%, 0% 100%, 0% 100%, 0% 0%);
+}
+
+.franquia {
+    background-color: #2196f3;
+    transform: rotate(6deg);
+    clip-path: polygon(-19% 0%, 100% 24%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+}
+
+.sobre {
+    padding: 15px 14px; /* Tamanho reduzido */
+    background-color: #e91e63;
+    transform: rotate(-5deg);
+    clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 100%, -8% 98%, -6% 0%);
+}
+
+/* Botão "Sobre mim" menor */
+.quiz {
+    transform: rotate(9deg);
+    background-color: #2196f3;
+    clip-path: polygon(0% 0%, 0% 25%, 100% 4%, 100% 100%, 0% 100%, 0% 0%);
+}
+
+/* Links */
+.item a {
     text-decoration: none;
     color: white;
+    display: block;
 }
 
-.navbar .agora {
-    height: 10vh;
-    font-size: 5vh;
-    background: #0E7CB7;
-    -ms-transform: skewY(-12deg);
-    -webkit-transform: skewY(-12deg);
-    transform: skewY(-12deg);
-    transform: skewY(-10deg);
-    float: left;
-    clip-path: polygon(100% 91%, 89% 12%, 87% -2%, 0% 0%, 2% 9%, 20% 92%, 21% 92%, 97% 69%);
-}
-
-.navbar .franquia {
-    height: 10vh;
-    font-size: 4vh;
-    background: #0E7CB7;
-    transform: skewY(20deg);
-    float: left;
-    clip-path: polygon(91% 71%, 88% 12%, 87% 0%, 0% 0%, 0% 2%, 20% 265%, 5% 102%, 91% 68%)
-}
-
-.navbar .sobreMim {
-    width: 120vh;
-    height: 10vh;
-    font-size: 3vh;
-    background: #DC1A73;
-    transform: skewY(-10deg);
-    clip-path: polygon(100% 100%, 148% 30%, 100% -1%, 5% -35%, -118% 113%, 30% 92%, 30% 92%, 182% 85%)
-}
-
-.navbar .quiz {
-    height: 10vh;
-    font-size: 5vh;
-    background: #0E7CB7;
-    transform: skewY(-10deg);
-    float: left;
-    clip-path: polygon(100% 91%, 89% 12%, 87% -2%, 0% 0%, 2% 9%, 20% 92%, 21% 92%, 97% 69%);
+/* Hover */
+.item:hover {
+    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 1); /* Sombra mais forte */
+    z-index: 2;
+    cursor: pointer;
 }
 
 .eu {

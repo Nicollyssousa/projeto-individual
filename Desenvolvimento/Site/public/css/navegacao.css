@@ -184,3 +184,17 @@ html, body {
     align-self: flex-start;
     transform: translate(147vh, 3vh);
 }
+
+#div_erros_login {
+    display: none
+}
+
+.loading-div {
+    width: 50px;
+    display: none;
+  }
+  
+  .loading-div img {
+    height: 50px;
+    width: 50px;
+}
