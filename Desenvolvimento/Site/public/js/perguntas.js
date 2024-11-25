@@ -196,7 +196,7 @@ function exibirResultado() {
     botoesDeRespostas.appendChild(botaoRedirecionar);
 
     // Enviando os pontos de cada personagem para armazenar no banco
-    fetch("/quiz/plotagemBancoDados", {
+    fetch(`/quiz/plotagemBancoDados/${JSON.parse(sessionStorage.ID_USUARIO)}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

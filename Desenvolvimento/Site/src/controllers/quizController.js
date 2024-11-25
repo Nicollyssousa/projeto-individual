@@ -2,6 +2,8 @@ var quizModel = require("../models/quizModel");
 
 function plotagemBancoDados(req, res) {
     const resultados = req.body.resultados;  // Aqui deve vir um array de objetos com nomePersonagem e pontuacao
+    const idUsuario = req.params.idUsuario;
+    console.log(resultados)
 
     if (!resultados || resultados.length === 0) {
         console.error("Nenhum dado enviado ao backend!");
@@ -10,7 +12,7 @@ function plotagemBancoDados(req, res) {
 
     // Processa cada resultado (nome + pontuação) e salva no banco
     const promessas = resultados.map((resultado) =>
-        quizModel.plotagemBancoDados(resultado.nomePersonagem, resultado.pontuacao)
+        quizModel.plotagemBancoDados(resultado.nomePersonagem, resultado.pontuacao, idUsuario)
     );
 
     // Espera todas as inserções concluírem
