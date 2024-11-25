@@ -7,25 +7,28 @@
 }
 
 body {
-    background-color:  #000000e7;
+    background-image: url("../assets/quizBackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .card-perguntas {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #ffffff;
-    max-width: 137vh;
+    background-color:#161616;
+    max-width: 105vh;
     height: 90vh;
     margin: 50px auto 0;
     border-radius: 10px;
-    padding: 30px;
+    padding: 20px;
+    text-align: center;
 }
 
 /*titulo do quiz*/
 .card-perguntas h1 {
     font-size: 4vh;
-    color: #000000;
+    color: #fbfbfb;
     font-weight: bold;
     border-bottom: 1px solid #333;
     padding-bottom: 1vh;
@@ -33,7 +36,7 @@ body {
 }
 
 .quiz {
-    padding: 0px 45px;
+    padding: 0px 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -41,25 +44,19 @@ body {
     gap: 20vh;
 }
 
-.quiz .images-card img {
-    width: auto;
-    height: 20vh;
-    transform: translate(7vh, -3vh);
-}
-
 .btn {
     background: #ffffff;
     color: #202020;
     font-weight: bold;
-    font-size: 2.6vh;
-    width: 88vh;
+    font-size: 3vh;
+    width: 85vh;
     border: 1.5px solid #222;
-    padding: 25px;
-    margin: 7px 0;
+    padding: 22px;
+    margin: 3px 0;
     text-align: left;
     border-radius: 4px;
     cursor: pointer;
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
     transform: translate(10px, -32px);
 }
 
@@ -79,26 +76,24 @@ body {
     border: 1.5px solid #222;
     padding: 21px;
     margin: 7px 0;
-    /* text-align: left; */
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
-    transform: translate(-126px, 296px);
 }
 
 .btn2:hover {
     background: #222;
     color: #fff;
-    transform: translate(-126px, 299px);
+    transform: translateY(2px);
     box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
 }
 
 #proxima-questao {
     background: #ac066c;
     color: #fff;
-    font-size: 2.6vh;
-    height: 10vh;
-    width: 13vw;
+    font-size: 3vh;
+    max-height: 10vh;
+    max-width: 15vw;
     border: 0;
     padding: 10px;
     border-radius: 4px;
@@ -108,7 +103,7 @@ body {
 
 .respostaUsuario {
     color: white;
-    background: rgb(38, 110, 5);
+    background: rgb(29, 86, 2);
 }
 
 .card-perguntas a {

@@ -1,6 +1,6 @@
 const perguntas = [
     {
-        questão: "Se você pudesse escolher algo para definir quem você é, o que seria?",
+        questão: "O que te melhor define?",
         respostas: [
             { texto: "Minha bondade e capacidade de cuidar dos outros", alternativa: ("A") },
             { texto: "Minha inteligência e curiosidade pelo novo", alternativa: ("B") },
@@ -131,7 +131,7 @@ function exibirPergunta() {
     resetarSituacao();
     const perguntaAtual = perguntas[perguntaAtualPosicao];
     const numeroPergunta = perguntaAtualPosicao + 1;
-    questaoElemento.innerHTML = `${numeroPergunta}/${perguntas.length}. ${perguntaAtual.questão}`;
+    questaoElemento.innerHTML = `${numeroPergunta}/${perguntas.length}.<br>${perguntaAtual.questão}`;
 
     perguntaAtual.respostas.forEach((resposta) => {
         const botao = document.createElement("button");
@@ -147,7 +147,7 @@ function exibirPergunta() {
 function resetarSituacao() {
     proximaPerguntaBtn.style.display = "none";
     while (botoesDeRespostas.firstChild)
-    botoesDeRespostas.removeChild(botoesDeRespostas.firstChild);
+        botoesDeRespostas.removeChild(botoesDeRespostas.firstChild);
 }
 
 function selecionarResposta(e) {
@@ -194,6 +194,39 @@ function exibirResultado() {
     });
 
     botoesDeRespostas.appendChild(botaoRedirecionar);
+
+    // Enviando os pontos de cada personagem para armazenar no banco
+    fetch("/quiz/plotagemBancoDados", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            resultados: Object.entries(pontuacao).map(([letra, pontos]) => ({
+                nomePersonagem: personagens[letra], // Mapeia a letra para o nome da personagem
+                pontuacao: pontos,                 // Pontuação da personagem
+            })),
+        }),
+    })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Erro ao enviar os dados para o backend.");
+            }
+            return response.json();
+        })
+        .then((data) => {
+            console.log("Dados enviados com sucesso:", data);
+        })
+        .catch((error) => {
+            console.error("Erro no envio:", error);
+        });
+
+    console.log({
+        resultados: Object.entries(pontuacao).map(([letra, pontos]) => ({
+            nomePersonagem: personagens[letra],
+            pontuacao: pontos,
+        })),
+    });
 }
 
 function encaminharProximaPergunta() {
