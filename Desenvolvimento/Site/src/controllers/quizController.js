@@ -24,27 +24,7 @@ function plotagemBancoDados(req, res) {
         });
 }
 
-
-// function buscarUltimosResultados(req, res) {
-//     var idResultadoQuiz = req.params.idResultadoQuiz;
-//     const limiteLinhas = 5;
-
-//     console.log(`Recuperando resultados`);
-
-//     quizModel.buscarUltimosResultados(idResultadoQuiz, limiteLinhas).then(function (resultado) {
-//         if (resultado.length > 0) {
-//             res.status(200).json(resultado);
-//         } else {
-//             res.status(204).send("Nenhum resultado encontrado!")
-//         }
-//     }).catch(function (erro) {
-//         console.log(erro);
-//         console.log("Houve um erro ao buscar os ultimos resultados.", erro.sqlMessage);
-//         res.status(500).json(erro.sqlMessage);
-//     });
-// }
-
 module.exports = {
     plotagemBancoDados
-    // buscarUltimosResultados
+    
 }

@@ -64,70 +64,96 @@
         </div>
 </body>
 <script>
-    const ctx = document.getElementById('myChart');
-        new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: [
-                    'Cleo',
-                    'Clawdeen',
-                    'Frankie',
-                    'Draculaura',
-                    'Lagoona'
-                ],
-                datasets: [{
-                    label: 'compatibilidade',
-                    data: [15, 20, 20, 30, 15],
-                    backgroundColor: [
-                        '#B29438',
-                        '#8252C0',
-                        '#3581AA',
-                        '#DC1A73',
-                        '#1D9DA9'
-                    ],
-                    hoverOffset: 4
-                }]
-            },
-            options: {
-                aspectRatio: 2,
-                plugins: {
-                    legend: {
-                        position: 'right',
-                        labels: {
-                            boxWidth: 20,
-                            color: 'white',
-                            font: {
-                                weight: 'bold',
-                                size: 16
+
+    let nomePersonagens = [];
+    let pontuacaoPorPersonagem = [];
+
+    fetch("/buscarQuiz/buscarQuiz", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+        .then(function (resposta) {
+            console.log("Peguei as pontuações para o gráfico");
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+
+                    for (let i = 0; i < json.length; i++) {
+                        nomePersonagens.push(json[i].Personagem);
+                        pontuacaoPorPersonagem.push(json[i].Porcentagem);
+                    }
+
+                    const ctx = document.getElementById('myChart');
+                    new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                            labels: nomePersonagens,
+                            datasets: [{
+                                label: 'Compatibilidade',
+                                data: pontuacaoPorPersonagem,
+                                backgroundColor: [
+                                    '#B29438',
+                                    '#8252C0',
+                                    '#3581AA',
+                                    '#DC1A73',
+                                    '#1D9DA9'
+                                ],
+                                hoverOffset: 4
+                            }]
+                        },
+                        options: {
+                            aspectRatio: 2,
+                            plugins: {
+                                legend: {
+                                    position: 'right',
+                                    labels: {
+                                        boxWidth: 20,
+                                        color: 'white',
+                                        font: {
+                                            weight: 'bold',
+                                            size: 16
+                                        }
+                                    },
+                                    title: {
+                                        display: true,
+                                        text: 'Personagens',
+                                        font: {
+                                            size: 17,
+                                            weight: 'bold'
+                                        },
+                                        padding: 2,
+                                        color: 'white'
+                                    }
+                                },
+                                datalabels: {
+                                    color: 'white',
+                                    font: {
+                                        family: 'Passion One',
+                                        weight: 'bold',
+                                        size: 23
+                                    },
+                                    formatter: (value, context) => {
+                                        const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                        const percentage = ((value / total) * 100).toFixed(1) + '%';
+                                        return percentage;
+                                    }
+                                }
                             }
                         },
-                        title: {
-                            display: true,
-                            text: 'Personagens',
-                            font: {
-                                size: 17,
-                                weight: 'bold'
-                            },
-                            padding: 2,
-                            color: 'white'
-                        }
-                    },
-                    datalabels: {
-                        color: 'white',
-                        font: {
-                            family: 'Passion One',
-                            weight: 'bold',
-                            size: 23,
-                        },
-                        formatter: (value, context) => {
-                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                            const percentage = (value / total * 100).toFixed(1) + '%';
-                            return percentage;
-                        }
-                    }
-                }
-            },
-            plugins: [ChartDataLabels],
+                        plugins: [ChartDataLabels],
+                    });
+                });
+            } else {
+                console.log("Houve um erro ao exibir os dados no gráfico");
+            }
+        })
+        .catch(function (erro) {
+            console.log(erro);
         });
 </script>
 </html>
