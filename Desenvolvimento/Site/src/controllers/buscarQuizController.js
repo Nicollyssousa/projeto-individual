@@ -1,8 +1,9 @@
 var quizModel = require("../models/buscarQuizModel");
 
 function buscarQuizController(req, res) {
-
-    quizModel.buscarQuizModel()
+    var usuario = req.body.idUsuarioServer
+    console.log(usuario, 'usuario')
+    quizModel.buscarQuizModel(usuario)
     .then(
         function(resultado) {
             res.json(resultado);

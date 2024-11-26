@@ -3,6 +3,7 @@ var usuarioModel = require("../models/usuarioModel");
 function autenticar(req, res) {
     var nomeUsuario = req.body.nomeServer;
     var senha = req.body.senhaServer;
+    const idUsuario = req.body.idUsuarioServer;
 
     if (nomeUsuario == undefined) {
         res.status(400).send("Seu nome está indefinido!");

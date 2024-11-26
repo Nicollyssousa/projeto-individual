@@ -1,9 +1,9 @@
 var quizModel = require("../models/quizModel");
+const { verificarRegistro } = require("../models/verificarRegistroModel");
 
 function plotagemBancoDados(req, res) {
     const resultados = req.body.resultados;  // Aqui deve vir um array de objetos com nomePersonagem e pontuacao
     const idUsuario = req.params.idUsuario;
-    console.log(resultados)
 
     if (!resultados || resultados.length === 0) {
         console.error("Nenhum dado enviado ao backend!");
@@ -26,5 +26,4 @@ function plotagemBancoDados(req, res) {
 
 module.exports = {
     plotagemBancoDados
-    
 }

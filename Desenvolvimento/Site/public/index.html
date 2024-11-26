@@ -2,84 +2,84 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- logo site  -->
-    <link rel="icon" href="assets/icon/logoSite.png">
-    <!-- link css -->
-    <link rel="stylesheet" href="css/navegacao.css">
-    <!-- link css login e cadastro -->
-    <link rel="stylesheet" href="css/loginCadastro.css">
-    <!-- link icon navegacao seta  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- link js  -->
-    <script src="./js/sessao.js"></script>
-    <!-- nome pagina -->
-    <title>| Monster High</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- logo site  -->
+  <link rel="icon" href="assets/icon/logoSite.png">
+  <!-- link css -->
+  <link rel="stylesheet" href="css/navegacao.css">
+  <!-- link css login e cadastro -->
+  <link rel="stylesheet" href="css/loginCadastro.css">
+  <!-- link icon navegacao seta  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- link js  -->
+  <script src="./js/sessao.js"></script>
+  <!-- nome pagina -->
+  <title>| Monster High</title>
 </head>
 
 <body>
-    <!-- abertura e navegação -->
-    <div id="abertura" class="abertura" style="display: block;">
-        <img id="logoNavegacao" src="assets/icon/navegacao/logoPadrao.png">
-        <p id="boasVindas">Seja Bem-vindo(a) Monster High</p>
-        <div class="frase">onde ser único é ser monstruosamente fabuloso!</div>
-        <a href="javascript:void(0);" onclick="sumirAbertura()">
-            <i class="fa-solid fa-arrow-down-long fa-beat"></i>
-        </a>
-        <p id="marcaDAgua">@Nick</p>
-    </div>
+  <!-- abertura e navegação -->
+  <div id="abertura" class="abertura" style="display: block;">
+    <img id="logoNavegacao" src="assets/icon/navegacao/logoPadrao.png">
+    <p id="boasVindas">Seja Bem-vindo(a) Monster High</p>
+    <div class="frase">onde ser único é ser monstruosamente fabuloso!</div>
+    <a href="javascript:void(0);" onclick="sumirAbertura()">
+      <i class="fa-solid fa-arrow-down-long fa-beat"></i>
+    </a>
+    <p id="marcaDAgua">@Nick</p>
+  </div>
 
-    <div id="navegacao" class="navegacao" style="display: none;">
-        <h1>Escolha seu destino arrepiante</h1>
-        <img src="assets/icon/navegacao/mapa.png">
-        <a id="linkLogin" href="javascript:void(0)">Login</a>
-        <a id="linkCadastro" href="javascript:void(0)">Cadastro</a>
-        <p id="marcaDAgua">@Nick</p>
-    </div>
+  <div id="navegacao" class="navegacao" style="display: none;">
+    <h1>Escolha seu destino arrepiante</h1>
+    <img src="assets/icon/navegacao/mapa.png">
+    <a id="linkLogin" href="javascript:void(0)">Login</a>
+    <a id="linkCadastro" href="javascript:void(0)">Cadastro</a>
+    <p id="marcaDAgua">@Nick</p>
+  </div>
 
-    <!-- cadastro e login -->
+  <!-- cadastro e login -->
 
-    <div class="card_erro" id="cardErro">
-        <span id="mensagem_erro"></span>
-    </div>
+  <div class="card_erro" id="cardErro">
+    <span id="mensagem_erro"></span>
+  </div>
 
-    <!-- cadastro -->
-    <div id="cadastro" class="armarioCadastro" style="display: none;">
-        <img id="balaoFala" src="assets/icon/loginCadastro/balaoFala.png">
-        <img id="pet" src="assets/icon/loginCadastro/pet.png">
-        <p>Já tem uma<br>conta aqui?</p>
-        <button onclick="irParaLogin()" id="linkLoginBalao">Login</button>
+  <!-- cadastro -->
+  <div id="cadastro" class="armarioCadastro" style="display: none;">
+    <img id="balaoFala" src="assets/icon/loginCadastro/balaoFala.png">
+    <img id="pet" src="assets/icon/loginCadastro/pet.png">
+    <p>Já tem uma<br>conta aqui?</p>
+    <button onclick="irParaLogin()" id="linkLoginBalao">Login</button>
 
-        <input type="text" id="nome_usuario" placeholder="Digite seu usuário">
-        <select type="text" id="tipo_monstro">
-            <option value="vazio">Tipo de criatura</option>
-            <option value="lobisomen">Lobisomen</option>
-            <option value="vampiro">Vampiro(a)</option>
-        </select>
-        <input type="password" id="senha_usuario" placeholder="Digite sua senha">
-        <input type="password" id="confirmacao_senha" placeholder="Digite novamente">
-        <input type="number" id="idade_usuario" placeholder="Idade">
+    <input type="text" id="nome_usuario" placeholder="Digite seu usuário">
+    <select type="text" id="tipo_monstro">
+      <option value="vazio">Tipo de criatura</option>
+      <option value="lobisomen">Lobisomen</option>
+      <option value="vampiro">Vampiro(a)</option>
+    </select>
+    <input type="password" id="senha_usuario" placeholder="Digite sua senha">
+    <input type="password" id="confirmacao_senha" placeholder="Digite novamente">
+    <input type="number" id="idade_usuario" placeholder="Idade">
 
-        <img id="visualizarSenha" src="assets/icon/loginCadastro/olho.png" alt="Mostrar senha" style="cursor: pointer;"
-            onclick="mostrarSenha()">
-        <button onclick="cadastrar()" id="cadastroUsuario">Cadastrar-se</button>
-        <p id="marcaDaAgua">@Nick</p>
+    <img id="visualizarSenha" src="assets/icon/loginCadastro/olho.png" alt="Mostrar senha" style="cursor: pointer;"
+      onclick="mostrarSenha()">
+    <button onclick="cadastrar()" id="cadastroUsuario">Cadastrar-se</button>
+    <p id="marcaDaAgua">@Nick</p>
 </body>
 </div>
 
 <div id="login" class="armarioLogin" style="display: none;">
-    <div class="balaoCadastro">
-        <img id="balaoFala2" src="assets/icon/loginCadastro/balaoFala.png">
-        <p>É novo por<br> aqui?</p>
-        <button onclick="irParaCadastro()" id="linkCadastroBalao">Cadastro</button>
-    </div>
-    <center>
-        <input type="text" id="usuario" placeholder="Digite seu usuário">
-        <input type="password" id="senha" placeholder="Digite sua senha">
-        <button onclick="login()" id="loginUsuario">Logar</button>
-    </center>
-    <p id="marcaDaAgua">@Nick</p>
+  <div class="balaoCadastro">
+    <img id="balaoFala2" src="assets/icon/loginCadastro/balaoFala.png">
+    <p>É novo por<br> aqui?</p>
+    <button onclick="irParaCadastro()" id="linkCadastroBalao">Cadastro</button>
+  </div>
+  <center>
+    <input type="text" id="usuario" placeholder="Digite seu usuário">
+    <input type="password" id="senha" placeholder="Digite sua senha">
+    <button onclick="login()" id="loginUsuario">Logar</button>
+  </center>
+  <p id="marcaDaAgua">@Nick</p>
 </div>
 <div id="div_aguardar" class="loading-div">
   <img src="assets/circle-loading.gif" id="loading-gif" />
@@ -89,106 +89,106 @@
 </body>
 
 <script>
-    // Script transição de divs e exibir senha 
-    function mostrarSenha() {
+  // Script transição de divs e exibir senha 
+  function mostrarSenha() {
 
-        const exibirSenha = document.getElementById("senha_usuario");
-        const exibirConfirmacaoSenha = document.getElementById("confirmacao_senha");
+    const exibirSenha = document.getElementById("senha_usuario");
+    const exibirConfirmacaoSenha = document.getElementById("confirmacao_senha");
 
-        if (exibirSenha.type === "password" && (exibirConfirmacaoSenha.type === "password")) {
+    if (exibirSenha.type === "password" && (exibirConfirmacaoSenha.type === "password")) {
 
-            exibirSenha.type = "text";
-            exibirConfirmacaoSenha.type = "text";
-        } else {
-            exibirSenha.type = "password";
-            exibirConfirmacaoSenha.type = "password";
-        }
+      exibirSenha.type = "text";
+      exibirConfirmacaoSenha.type = "text";
+    } else {
+      exibirSenha.type = "password";
+      exibirConfirmacaoSenha.type = "password";
     }
+  }
 
-    function sumirAbertura() {
-        var abertura = document.getElementById('abertura');
-        var navegacao = document.getElementById('navegacao');
+  function sumirAbertura() {
+    var abertura = document.getElementById('abertura');
+    var navegacao = document.getElementById('navegacao');
 
-        abertura.classList.add('subindo');
-        setTimeout(function () {
-            abertura.style.display = 'none';
-            navegacao.style.display = 'block';
-        }, 700);
-    }
+    abertura.classList.add('subindo');
+    setTimeout(function () {
+      abertura.style.display = 'none';
+      navegacao.style.display = 'block';
+    }, 700);
+  }
 
-    // Função para exibir uma div e ocultar a outra com transição
-    function exibirDiv(aparece, sumir) {
-        sumir.classList.remove("show");
-        setTimeout(() => {
-            sumir.style.display = 'none';
-            aparece.style.display = 'block';
-            setTimeout(() => aparece.classList.add("show"), 10);
-        }, 500);
-    }
+  // Função para exibir uma div e ocultar a outra com transição
+  function exibirDiv(aparece, sumir) {
+    sumir.classList.remove("show");
+    setTimeout(() => {
+      sumir.style.display = 'none';
+      aparece.style.display = 'block';
+      setTimeout(() => aparece.classList.add("show"), 10);
+    }, 500);
+  }
 
-    function aparecerCadastroLogin() {
-        const navegacao = document.getElementById("navegacao");
-        const linkLogin = document.getElementById("linkLogin");
-        const linkCadastro = document.getElementById("linkCadastro");
-        const armarioLogin = document.getElementById("login");
-        const armarioCadastro = document.getElementById("cadastro");
+  function aparecerCadastroLogin() {
+    const navegacao = document.getElementById("navegacao");
+    const linkLogin = document.getElementById("linkLogin");
+    const linkCadastro = document.getElementById("linkCadastro");
+    const armarioLogin = document.getElementById("login");
+    const armarioCadastro = document.getElementById("cadastro");
 
-        // Eventos de clique para alternar entre as seções de Login e Cadastro
-        linkLogin.addEventListener("click", function () {
-            navegacao.classList.remove("show");
-            setTimeout(() => {
-                navegacao.style.display = 'none';
-                exibirDiv(armarioLogin, armarioCadastro);
-            }, 500);
-        });
-
-        linkCadastro.addEventListener("click", function () {
-            navegacao.classList.remove("show");
-            setTimeout(() => {
-                navegacao.style.display = 'none';
-                exibirDiv(armarioCadastro, armarioLogin);
-            }, 500);
-        });
-    }
-
-    // Inicializa a função de troca de seções ao carregar a página
-    window.onload = function () {
-        aparecerCadastroLogin();
-    }
-
-    function irParaLogin() {
-        armarioLogin = document.getElementById("login");
-        armarioCadastro = document.getElementById("cadastro");
+    // Eventos de clique para alternar entre as seções de Login e Cadastro
+    linkLogin.addEventListener("click", function () {
+      navegacao.classList.remove("show");
+      setTimeout(() => {
+        navegacao.style.display = 'none';
         exibirDiv(armarioLogin, armarioCadastro);
-    }
+      }, 500);
+    });
 
-    function irParaCadastro() {
-        armarioLogin = document.getElementById("login");
-        armarioCadastro = document.getElementById("cadastro");
+    linkCadastro.addEventListener("click", function () {
+      navegacao.classList.remove("show");
+      setTimeout(() => {
+        navegacao.style.display = 'none';
         exibirDiv(armarioCadastro, armarioLogin);
+      }, 500);
+    });
+  }
 
-        //:)
-    }
+  // Inicializa a função de troca de seções ao carregar a página
+  window.onload = function () {
+    aparecerCadastroLogin();
+  }
+
+  function irParaLogin() {
+    armarioLogin = document.getElementById("login");
+    armarioCadastro = document.getElementById("cadastro");
+    exibirDiv(armarioLogin, armarioCadastro);
+  }
+
+  function irParaCadastro() {
+    armarioLogin = document.getElementById("login");
+    armarioCadastro = document.getElementById("cadastro");
+    exibirDiv(armarioCadastro, armarioLogin);
+
+    //:)
+  }
 </script>
 
 </html>
 <script>
-    function cadastrar() {
+  function cadastrar() {
     const nomeUsuario = nome_usuario.value;
     const tipoMonstro = tipo_monstro.value;
     const idade = Number(idade_usuario.value);
     const senhaUsuario = senha_usuario.value;
     const confirmacaoSenha = confirmacao_senha.value;
 
-    
+
     // Verificando se há algum campo em branco
     if (
-      nomeUsuario == ""   ||
-      tipoMonstro == "vazio"  ||
-      idade == ""    ||
-      senhaUsuario == ""  ||
-      confirmacaoSenha== "" 
-    ){
+      nomeUsuario == "" ||
+      tipoMonstro == "vazio" ||
+      idade == "" ||
+      senhaUsuario == "" ||
+      confirmacaoSenha == ""
+    ) {
 
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -196,32 +196,32 @@
       finalizarAguardar();
       return false;
 
-    }else if(nomeUsuario.length <= 1){
+    } else if (nomeUsuario.length <= 1) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "Seu nome deve conter mais de um caracter";
       finalizarAguardar();
       return false;
-    }else if(senhaUsuario.length < 6){
+    } else if (senhaUsuario.length < 6) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "Sua senha deve conter pelo menos 6 caracteres";
       finalizarAguardar();
-      return false;      
-    }else if(confirmacaoSenha !== senhaUsuario){
+      return false;
+    } else if (confirmacaoSenha !== senhaUsuario) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "Suas senhas não conferem";
       finalizarAguardar();
-      return false;      
-    }else if(idade.length > 1){
+      return false;
+    } else if (idade.length > 1) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "Digite uma idade valida";
       finalizarAguardar();
-      return false;      
+      return false;
     }
-    
+
     else {
       setInterval(sumirMensagem, 5000);
     }
@@ -270,74 +270,99 @@
 
   function sumirMensagem() {
     cardErro.style.display = "none";
-}
+  }
 
-function login() {
-        aguardar();
+  function login() {
+    aguardar();
 
-        var nomeUsuario = usuario.value;
-        var senhaUsuario = senha.value;
+    var nomeUsuario = usuario.value;
+    var senhaUsuario = senha.value;
 
-        if (nomeUsuario == "" || senhaUsuario == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Preencha os campos em branco";
-            finalizarAguardar();
-            return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
-
-        console.log("FORM LOGIN: ", nomeUsuario);
-        console.log("FORM SENHA: ", senhaUsuario);
-
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                nomeServer: nomeUsuario,
-                senhaServer: senhaUsuario
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.CRIATURA_USUARIO = json.tipoMonstro;
-                    sessionStorage.NOME_USUARIO = json.nomeUsuario;
-                    sessionStorage.IDADE_USUARIO = json.idade;
-                    sessionStorage.ID_USUARIO = json.idUsuario;
-
-                    setTimeout(function () {
-                        window.location = "../indexUsuario.html";
-                    }, 1000); // apenas para exibir o loading
-
-                });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
-        return false;
+    if (nomeUsuario == "" || senhaUsuario == "") {
+      cardErro.style.display = "block"
+      mensagem_erro.innerHTML = "Preencha os campos em branco";
+      finalizarAguardar();
+      return false;
+    }
+    else {
+      setInterval(sumirMensagem, 5000)
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-}
+    console.log("FORM LOGIN: ", nomeUsuario);
+    console.log("FORM SENHA: ", senhaUsuario);
+
+    fetch("/usuarios/autenticar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        nomeServer: nomeUsuario,
+        senhaServer: senhaUsuario
+      })
+    }).then(function (resposta) {
+      console.log("ESTOU NO THEN DO entrar()!")
+
+      if (resposta.ok) {
+        console.log(resposta);
+
+        resposta.json().then(json => {
+          console.log(json);
+          console.log(JSON.stringify(json));
+          sessionStorage.CRIATURA_USUARIO = json.tipoMonstro;
+          sessionStorage.NOME_USUARIO = json.nomeUsuario;
+          sessionStorage.IDADE_USUARIO = json.idade;
+          sessionStorage.ID_USUARIO = json.idUsuario;
+
+          fetch("/verificarRegistro/verificar", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              idUsuarioServer: sessionStorage.ID_USUARIO
+            })
+          }).then(function (resposta) {
+            console.log("ESTOU VERIFICANDO SE HÁ REGISTROS NO QUIZ");
+
+            if (resposta.ok) {
+              console.log(resposta);
+              console.log("REGISTROS ENCONTRADOS REDIRECIONANDO PARA A DASHBOARD");
+
+              setTimeout(function () {
+                window.location = "../dashboard.html";
+              }, 1000);
+
+            } else {
+              console.log("NEHUM REGISTRO ENCONTRADO REDIRECIONANDO PARA O QUIZ")
+              setTimeout(function () {
+                window.location = "../quiz.html";
+              }, 1000);
+            }
+
+          }).catch(function (erro) {
+            console.log(erro);
+          })
+        });
+      } 
+      else {
+        console.log("Houve um erro ao tentar realizar o login!");
+        resposta.text().then(texto => {
+          console.error(texto);
+        });
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML = "Nome ou senha inválida!";
+
+        setInterval(sumirMensagem, 5000)
+        return false;
+      }
+
+    }).catch(function (erro) {
+      console.log(erro);
+    })
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none"
+  }
 </script>

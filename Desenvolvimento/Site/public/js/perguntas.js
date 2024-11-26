@@ -111,8 +111,38 @@ const personagens = {
     E: "Lagoona Blue",
 };
 
+//Mapa Descricao para personagem correspondente 
+const descricao = {
+    draculaura: 
+      "Draculaura é alegre, gentil e muito amorosa." +
+      " Sempre vê o lado positivo das coisas e valoriza suas amizades acima de tudo." +
+      " Com um estilo romântico e colorido, ela adora espalhar energia boa por onde passa." +
+      " Assim como ela, você tem um coração enorme e é um(a) verdadeiro(a) amigo(a)!",
+      
+    frankie: 
+      "Frankie é curiosa, inteligente e cheia de energia!" +
+      " Apesar de ser nova em Monster High, ela está sempre disposta a aprender e a se aventurar." +
+      " Seu estilo é cheio de personalidade, misturando modernidade e tradição." +
+      " Assim como ela, você é único(a), está sempre explorando o mundo e não tem medo de ser você mesmo(a)!",
+      
+    clawdeen: 
+      "Clawdeen é destemida, criativa e super leal aos seus amigos." +
+      " Sempre pronta para ajudar, ela também adora moda e tem um talento incrível para criar looks únicos." +
+      " Assim como ela, você é cheio(a) de atitude e sabe como brilhar em qualquer situação!",
+      
+    cleo: 
+      "Cleo é confiante, ambiciosa e adora estar no controle." +
+      " Com um estilo glamouroso e cheio de personalidade, ela sabe o que quer e sempre busca alcançar seus objetivos." +
+      " Assim como ela, você é determinado(a), charmoso(a) e adora um toque de elegância!",
+      
+    lagoona: 
+      "Lagoona é gentil, descontraída e está sempre disposta a ajudar quem precisa." +
+      " Assim como ela, você é acolhedor(a), transmite calma e tem uma conexão especial com a natureza e as pessoas."
+};  
+
 // Elementos HTML
 const questaoElemento = document.getElementById("questao");
+const descricaoPersonagem = document.getElementById("descricao");
 const botoesDeRespostas = document.getElementById("respostas-btns");
 const proximaPerguntaBtn = document.getElementById("proxima-questao");
 
@@ -182,6 +212,7 @@ function exibirResultado() {
 
     // Exibe o personagem final
     questaoElemento.innerHTML = `Parabéns! Você se parece mais com: <strong id="personagem">${personagemNome}</strong>`;
+    descricaoPersonagem.innerHtml = `${descricao}`;
 
     // Cria o botão de redirecionamento
     const botaoRedirecionar = document.createElement("button");
@@ -206,7 +237,7 @@ function exibirResultado() {
                 nomePersonagem: personagens[letra], // Mapeia a letra para o nome da personagem
                 pontuacao: pontos,                 // Pontuação da personagem
             })),
-        }),
+        })
     })
         .then((response) => {
             if (!response.ok) {
