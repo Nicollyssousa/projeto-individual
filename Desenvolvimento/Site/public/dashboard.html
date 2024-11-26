@@ -34,7 +34,7 @@
                 <a href="quiz.html" class="sair-quiz"><img src="assets/icon/dashboard/setaVoltar.png">Sair do QUIZ</a>
                 <div class="saida-quiz">
                     <h1>Você é totalmente</h1>
-                    <h2>DRACULAURA</h2>
+                    <h2 id="nomePersonagem">DRACULAURA</h2>
                 </div>
             </div>
         
@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div>
-                    <canvas id="myChart" style="position: relative; height:40vh; width:46vw"></canvas>
+                    <canvas id="myChart" style="position: relative; height:40vh; width:55vw"></canvas>
                 </div>
             </div>
         </div>
@@ -64,7 +64,6 @@
         </div>
 </body>
 <script>
-
     let nomePersonagens = [];
     let pontuacaoPorPersonagem = [];
 
@@ -97,11 +96,11 @@
                                 label: 'Compatibilidade',
                                 data: pontuacaoPorPersonagem,
                                 backgroundColor: [
-                                    '#B29438',
-                                    '#8252C0',
-                                    '#3581AA',
-                                    '#DC1A73',
-                                    '#1D9DA9'
+                                    "#3581AA", // Frankie
+                                    "#1D9DA9", // Lagoona
+                                    "#DC1A73", // Draculaura
+                                    "#8252C0", // Clawdeen
+                                    "#B29438"  // Cleo
                                 ],
                                 hoverOffset: 4
                             }]
@@ -123,10 +122,9 @@
                                         display: true,
                                         text: 'Personagens',
                                         font: {
-                                            size: 17,
+                                            size: 20,
                                             weight: 'bold'
                                         },
-                                        padding: 2,
                                         color: 'white'
                                     }
                                 },
@@ -138,7 +136,12 @@
                                         size: 23
                                     },
                                     formatter: (value, context) => {
-                                        const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                        const total = context.dataset.data.reduce((a, b) => Number(a) + Number(b), 0);
+
+                                        if (total == 0 || value == 0 || isNaN(total) || isNaN(value)) {
+                                            return '';
+                                        }
+
                                         const percentage = ((value / total) * 100).toFixed(1) + '%';
                                         return percentage;
                                     }
@@ -155,5 +158,6 @@
         .catch(function (erro) {
             console.log(erro);
         });
+
 </script>
 </html>

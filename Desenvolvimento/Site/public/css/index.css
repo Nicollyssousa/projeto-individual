@@ -548,6 +548,14 @@ img {
     border-style: dashed;
 }
 
+.personagens .container img {
+    border: 4px solid #ad115a;
+}
+
+.personagens .container img:hover {
+    border: 4px solid #2196f3;
+}
+
 .personagens span {
     margin-left: 1vh;
     width: 40vh;

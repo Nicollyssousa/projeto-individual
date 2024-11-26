@@ -15,7 +15,7 @@
 <body>
     <header class="navbar">
         <img id="logoIndex" src="assets/icon/logoNome.png">
-        <nav> 
+        <nav>
             <ul class="menu">
                 <li class="item home"><a href="indexUsuario.html">Home</a></li>
                 <li class="item franquia"><a href="franquia.html">Franquia</a></li>
@@ -24,7 +24,6 @@
             </ul>
         </nav>
     </header>
-
     <div class="quiz-pagina">
         <h1>Quiz</h1>
         <span>Descubra qual das personagens mais se parece com você</span>
@@ -32,18 +31,6 @@
             <a class="carregar-quiz" href="questionario.html"></a>
         </div>
     </div>
-
-    <div class="colecaoUsuario">
-        <div class="colecaoStatus">
-            <h1>Sua Coleção</h1>
-            <div id="checkList"></div>
-            <span id="qtdBonecas" style="color: white; font-size: 5vh; margin-left: 5vh;">0</span>
-        </div>
-
-        <div class="espaco-colecao">
-            <div id="fotoBoneca"></div>
-            <button id="adicionarBtn" onclick="adicionarColecao()">adiconar</button>
-        </div>
     </div>
 
     <div class="footer">
@@ -53,24 +40,4 @@
         </div>
     </div>
 </body>
-<script>
-    //contar a quantidade de bonecas por click no botão
-    var count = 0;
-    var btn = document.getElementById("adicionarBtn");
-    var disp = document.getElementById("qtdBonecas");
-
-    btn.onclick = function () {
-        count++;
-        disp.innerHTML = count;
-        fotoBoneca.innerHTML += `<input type="file"><br><input type="checkbox"><br>`
-    }
-
-    function checkboxesCount() {
-        var total_checked = $("input[type = checkbox]: checked").length;
-        console.log(total_checked);
-
-        checkList.innerHTML = total_checked
-    }
-</script>
-
 </html>

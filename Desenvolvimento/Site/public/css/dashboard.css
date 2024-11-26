@@ -116,7 +116,6 @@
 .dashboard .container {
     display: flex;
     align-items: center;
-
 }
 
 .container a {
@@ -139,7 +138,8 @@
 .saida-quiz {
     font-size: 3.5vh;
     color: #0D691A;
-    transform: translate(-10vh, -4vh);
+    margin-top: 7vh;
+    transform: translate(-10vh, -5vh);
 }
 
 .saida-quiz h2 {
@@ -155,6 +155,10 @@
     padding-left: 3vh;
     padding-right: 3vh;
     gap: 15vh;
+}
+
+.sair-quiz {
+    margin-top: 7vh;
 }
 
 .sair-quiz img {
