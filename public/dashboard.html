@@ -32,20 +32,20 @@
             <div class="container">
                 <div class="saida-quiz">
                     <h1>Você é totalmente</h1>
-                    <h2 id="nomePersonagem">DRACULAURA</h2>
+                    <h2 id="nomePersonagem"></h2>
                 </div>
             </div>
         
             <div class="grafico">
                 <div class="kpis">
-                    <div id="kpi">
-                        <p>Fofa</p>
+                    <div id="kpi1">
+                        <p id="kpi1p"></p>
                     </div><br>
-                    <div id="kpi">
-                        <p>Leal</p>
+                    <div id="kpi2">
+                        <p id="kpi2">Leal</p>
                     </div><br>
-                    <div id="kpi">
-                        <p>Amizade Verdadeira</p>
+                    <div id="kpi3">
+                        <p id="kpi3">Amizade Verdadeira</p>
                     </div>
                 </div>
                 <div>
@@ -62,6 +62,7 @@
         </div>
 </body>
 <script>
+    // plotagem do gráfico com os dados
     let nomePersonagens = [];
     let pontuacaoPorPersonagem = [];
 
@@ -159,6 +160,52 @@
         .catch(function (erro) {
             console.log(erro);
         });
+</script>
+<script>
+    //chamar kpi com o nome da personagem com maior pontuação do usuario
+    fetch(`/buscarQuiz/kpiNomePersonagem/`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            idUsuarioServer: sessionStorage.ID_USUARIO
+        })
+    })
+        .then(response => response.json())
+        .then(data => {
+            
+            const nomePersonagemH1 = document.getElementById("nomePersonagem");
 
+            // Exibe o nome da personagem diretamente sem verificação
+            nomePersonagemH1.innerHTML = data[0].nomePersonagem;
+        })
+        .catch(error => {
+            console.error("Erro ao buscar o nome da personagem:", error);
+            const nomeElement = document.getElementById("nomePersonagem");
+            nomeElement.textContent = "Erro ao carregar a personagem.";
+        });
+
+
+    // kpi personagem mais popular entre usuarios
+    fetch(`/buscarQuiz/kpiPersonagemMaisPontuada/`, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({})
+    })
+    .then(response => response.json())
+    .then(data => {
+        const kp1 = document.getElementById("kpi1p");
+
+        // Exibe o nome da personagem diretamente no <p>
+        kp1.innerHTML = `Personagem mais popular:<br> ${data[0].nomePersonagem}`;
+    })
+    .catch(error => {
+        console.error("Erro ao buscar o nome da personagem:", error);
+        const kp1 = document.getElementById("kpi1p");
+        kp1.textContent = "Erro ao carregar a personagem.";
+    });
 </script>
 </html>
