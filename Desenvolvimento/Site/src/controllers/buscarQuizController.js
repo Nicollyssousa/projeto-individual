@@ -58,8 +58,27 @@ function kpiPersonagemMaisPontuada(req, res) {
     );
 }
 
+function kpiPersonagemMenosPontuada(req, res) {
+    quizModel.kpiPersonagemMenosPontuada()
+    .then(
+        function(resultado) {
+            res.json(resultado);
+        }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            console.log(
+                "\nHouve um erro ao enviar o nome da personagem mais pontuada: ",
+                erro.sqlMessage
+            );
+            res.status(500).json(erro.sqlMessage)
+        }
+    );
+}
+
 module.exports = {
     buscarQuizController,
     kpiNomePersonagem,
-    kpiPersonagemMaisPontuada
+    kpiPersonagemMaisPontuada,
+    kpiPersonagemMenosPontuada
 }

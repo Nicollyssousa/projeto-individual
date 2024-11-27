@@ -42,11 +42,8 @@
                         <p id="kpi1p"></p>
                     </div><br>
                     <div id="kpi2">
-                        <p id="kpi2">Leal</p>
+                        <p id="kpi2p">Leal</p>
                     </div><br>
-                    <div id="kpi3">
-                        <p id="kpi3">Amizade Verdadeira</p>
-                    </div>
                 </div>
                 <div>
                     <canvas id="myChart" style="position: relative; height:40vh; width:55vw"></canvas>
@@ -206,6 +203,28 @@
         console.error("Erro ao buscar o nome da personagem:", error);
         const kp1 = document.getElementById("kpi1p");
         kp1.textContent = "Erro ao carregar a personagem.";
+    });
+
+    
+    // kpi personagem menos popular entre usuarios
+    fetch(`/buscarQuiz/kpiPersonagemMenosPontuada/`, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({})
+    })
+    .then(response => response.json())
+    .then(data => {
+        const kp2 = document.getElementById("kpi2p");
+
+        // Exibe o nome da personagem diretamente no <p>
+        kp2.innerHTML = `Personagem menos popular:<br> ${data[0].nomePersonagem}`;
+    })
+    .catch(error => {
+        console.error("Erro ao buscar o nome da personagem:", error);
+        const kp2 = document.getElementById("kpi2p");
+        kp2.textContent = "Erro ao carregar a personagem.";
     });
 
     //:)

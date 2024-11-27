@@ -15,4 +15,8 @@ router.post("/kpiPersonagemMaisPontuada", function (req, res) {
     buscarQuizController.kpiPersonagemMaisPontuada(req, res);
 });
 
+router.post("/kpiPersonagemMenosPontuada", function (req, res) {
+    buscarQuizController.kpiPersonagemMenosPontuada(req, res);
+});
+
 module.exports = router;

@@ -41,8 +41,22 @@ function kpiPersonagemMaisPontuada() {
     return database.executar(instrucaoSql);
 }
 
+function kpiPersonagemMenosPontuada() {
+
+    var instrucaoSql = `
+        SELECT nomePersonagem
+        FROM resultadoQuiz
+        GROUP BY nomePersonagem
+        ORDER BY AVG(pontuacao) ASC
+        LIMIT 1;
+`;
+console.log("Executando a instrução SQL: \n" + instrucaoSql);
+return database.executar(instrucaoSql);
+}
+
 module.exports = {
     buscarQuizModel,
     kpiNomePersonagem,
-    kpiPersonagemMaisPontuada
+    kpiPersonagemMaisPontuada,
+    kpiPersonagemMenosPontuada
 }
