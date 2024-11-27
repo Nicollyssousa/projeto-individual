@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Passion+One:wght@400;700;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Changa One", serif;
+}
+
+html, body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #000000e8;
+    overflow: hidden;
+}
+
+.abertura {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.subindo {
+    transform: translateY(-100vh);
+    opacity: 0;
+}
+
+.fa-solid {
+    padding: 0;
+    font-size: 6vh;
+    font-style: bold;
+    color: #901360;
+    margin-top: 6vh;
+}
+
+.abertura #logoNavegacao {
+    margin-top: 5vh;
+    height: 50%;
+}
+
+.abertura #marcaDAgua {
+    font-size: 3vh;
+    color: white;
+    align-self: flex-start;
+    transform: translate(103vh, 11vh);
+}
+
+.abertura #boasVindas {
+    font-size: 5vh;
+    color: white;
+    margin-top: 3vh;
+}
+
+.frase {
+    font-size: 6vh;
+    margin-top: 2vh;
+    background-image: linear-gradient(45deg, #34ABE1, #227ca5, #88185d, #5c0f71, #34ABE1);
+    background-size: 400% 100%;
+    animation: degrade 10s linear infinite alternate;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes degrade {
+    0%{
+        background-position-x: 0%;
+    }
+    100%{
+        background-position: 100%;
+    }
+}
+
+.navegacao {
+    width: 100%;
+    height: 100vh; /* Ajusta a altura para 100% da tela */
+    text-align: center;
+    justify-items: center;
+    background-image: url("../assets/navegacaoBackground.jpg");
+    background-size: cover; /* Cobre toda a área da div */
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.navegacao h1 {
+    margin: 0;
+    margin-right: 10vh;
+    padding-top: 3vh;
+    text-align: center;
+    font-size: 6vh;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow:
+    2px 2px 2px black,
+    -2px -2px 2px black,
+    2px -2px 2px black,
+    -2px 2px 2px black;
+}
+
+.navegacao img {
+    width: 97vh;
+    height: auto;
+    margin: 0;
+    transform: translate(-1vh, 2vh);
+    padding-top: 3vh;
+    filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.5));
+}
+
+.navegacao #linkCadastro {
+    position: absolute;
+    font-size: 4.8vh;
+    color: rgba(0, 0, 0, 0.833);
+    text-decoration: none;
+    transform: translateX(-40vh) translateY(25.5vh);
+    transition: all 0.3s ease-in-out;
+}
+
+.navegacao #linkCadastro:hover {
+    animation: pularCadastro 1.5s ease-in-out;
+    -webkit-background-clip: text;
+    color: #118031;
+}
+
+@keyframes pularCadastro {
+    0% {
+        transform: translateX(-40vh) translateY(25.5vh);
+        color: #118031;
+    }
+    50% {
+        transform: translateX(-40vh) translateY(24vh);
+        color: #118031;
+    }
+    100% {
+        transform: translateX(-40vh) translateY(25.5vh);
+        color: #118031;
+    }
+}
+
+.navegacao #linkLogin {
+    position: absolute;
+    font-size: 5vh;
+    color: black;
+    text-decoration: none;
+    transform: translate(-26vh, 53vh);
+    transition: all 0.3s ease-in-out;
+}
+
+.navegacao #linkLogin:hover {
+    animation: pularLogin 1.5s ease-in-out;
+    -webkit-background-clip: text;
+    color: #118031;
+}
+
+@keyframes pularLogin {
+    0% {
+        transform: translateX(-26vh, 53vh);
+    }
+    50% {
+        transform: translateX(-26vh) translateY(52vh);
+    }
+    100% {
+        transform: translateX(-26vh) translateY(53vh);
+    }
+}
+
+.navegacao #marcaDAgua {
+    position: absolute;
+    font-size: 3vh;
+    color: white;
+    align-self: flex-start;
+    transform: translate(147vh, 3vh);
+}
+
+#div_erros_login {
+    display: none
+}
+
+.loading-div {
+    width: 50px;
+    display: none;
+  }
+  
+  .loading-div img {
+    height: 50px;
+    width: 50px;
+}

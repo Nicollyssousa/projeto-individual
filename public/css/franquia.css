@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:ital@0;1&family=Passion+One:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Passion One", serif;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    height: 13vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 4px 4px 8px rgb(0, 0, 0);
+}
+
+.navbar::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("../assets/headerBackground.jpg");
+    background-position: center;
+    z-index: -1;
+    filter: brightness(38%);
+}
+
+.navbar #logoIndex {
+    margin-top: -1vh;
+    height: 10vh;
+    width: 35vh;
+    transform: translate(-40vh, 0vh);
+    filter:  brightness(95%);
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 1vh; /* Espaçamento entre os botões */
+    transform: translate(-12vh, 4vh) ;
+}
+
+/* Botões gerais */
+.item {
+    position: relative;
+    padding: 15px 30px;
+    font-weight: bold;
+    font-size: 4vh;
+    text-align: center;
+    text-shadow: 1px 3px 0 #000, -2px 3px 0 #000, 2px -2px 0 #000, -3px -3px 0 #000;
+    border: 3.5px solid #000;
+    color: white;
+    display: inline-block;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.8);
+    transition: transform 0.2s, box-shadow 0.2s;
+    z-index: 1;
+}
+
+/* Estilização por botão */
+.home {
+    background-color: #2196f3;
+    transform: rotate(-5deg);
+    clip-path: polygon(-29% 20%, 100% 4%, 100% 100%, 0% 100%, 0% 100%, 0% 0%);
+}
+
+.franquia {
+    background-color: #e91e63;
+    transform: rotate(6deg);
+    clip-path: polygon(-19% 0%, 100% 24%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+}
+
+.sobre {
+    padding: 15px 14px; /* Tamanho reduzido */
+    background-color: #2196f3;
+    transform: rotate(-5deg);
+    clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 100%, -8% 98%, -6% 0%);
+}
+
+.dash {
+    transform: rotate(9deg);
+    background-color: #2196f3;
+    clip-path: polygon(0% 0%, 0% 25%, 100% 4%, 100% 100%, 0% 100%, 0% 0%);
+}
+
+/* Links */
+.item a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+/* Hover */
+.item:hover {
+    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 1); /* Sombra mais forte */
+    z-index: 2;
+    cursor: pointer;
+}
+
+.mattel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.938);
+}
+
+.mattel #logoMattel {
+    width: 40vh;
+    height: auto;
+}
+
+.mattel .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    height: auto;
+    width: 100%;
+}
+
+.mattel p {
+    font-size: clamp(2rem, 2.5vw, 5vh); /* Tamanho dinâmico entre 2rem e 5vh */
+    color: white;
+    max-width: 60%; 
+    text-align: justify; 
+    line-height: 1.2; /* Adiciona espaçamento entre as linhas */
+    overflow-wrap: break-word; 
+}
+
+/*filmes*/
+.card-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.934), black ,#110018);
+    gap: 3vh;
+}
+
+/*cards fundo imagens*/
+.card-list .card-item .card-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 53vh;
+    width: auto;
+    background: black;
+    padding: 10px;
+    user-select: none;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+}
+  
+/*borda ao clicar*/
+.card-list .card-item .card-link:hover {
+    border: 4px solid #af2054;
+}
+  
+/*imagens*/
+.card-list .card-link .card-image {
+    height: 100%;
+    width: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    filter: brightness(90%);
+}
+
+.linhaTempo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 180vh;
+    background-color: #110018
+}
+
+.timeline h1 {
+    font-size: 10vh;
+    color: white;
+    margin-bottom: 4vh;
+}
+
+/* linha vertical*/
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+  /* linha vertical */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 48%;
+    margin-left: -3px;
+    margin-top: 14vh;
+}
+  
+/* linha vertical */
+.linhaTempo .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+  
+/* bolinhas */
+.linhaTempo .container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -24vh;
+    background-color: black;
+    border: 4px solid #930b6a;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.linhaTempo .container:hover {
+    cursor: pointer;
+    color: #065f23;
+}
+  
+  /* g1 e g3*/
+.left {
+    right: 23vh;
+}
+  
+  /* g2 e collector*/
+.right {
+    left: 35vh;
+}
+  
+  /* setas colector e g2*/
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 51.5vh;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+  
+  /* setas g1 e g3*/
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+  
+/* Fix the circle for containers on the right side */
+.right::after {
+    left: -16px;
+  }
+  
+/* fundo imagens */
+.content {
+    padding: 2vh;
+    width: 45vh;
+    height: 37vh;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+}
+
+.content img {
+    position: absolute;
+    height: auto;
+    width: 40vh;
+}
+
+.content h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vh;
+    padding: 1vh;
+}
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .timeline::after {
+    left: 31px;
+}    
+    
+    /* Full-width containers */
+.container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+}
+    
+    /* Make sure that all arrows are pointing leftwards */
+.container::before {
+    left: 10vh;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+  
+    /* Make sure all circles are at the same spot */
+.left::after, .right::after {
+    left: 15px;
+}
+    
+    /* Make all right containers behave like the left ones */
+.right {
+    left: 0%;
+}
+}
+
+.colecionadores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #110018, black, rgba(0, 0, 0, 0.934));
+}
+
+.colecionadores h1{
+    font-size: 11vh;
+    color: #a40f55;
+    padding-bottom: 1vh;
+}
+
+.colecionadores span {
+    font-size: 6vh;
+    color: white;
+    padding-bottom: 4vh;
+}
+
+.colecionadores .container{
+    display: flex;
+    flex-direction: row;
+}
+
+.colecionadoresFotos {
+    width: auto;
+    height: 40vh;
+    border: 5px solid #0E7CB7;
+    margin-right: 4vh;
+    margin-bottom: 3vh;
+    filter: brightness(95%);
+}
+
+.colecionadores .container .grupo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.grupo span {
+    font-size: 4vh;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    height: 8vh;
+    background-color: black;
+    color: white;
+    z-index: 10;
+}
+
+.footer #direitos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 80vh;
+    gap: 80vh;
+    font-size: 2.3vh;
+}
+
+.footer #marca {
+    color:#2D7305;
+}
+
+.footer #marcaDAgua {
+    color: #FC3A9A;
+}

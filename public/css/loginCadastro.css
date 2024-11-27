@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Passion+One:wght@400;700;900&display=swap');
+
+*{
+    margin: 0;
+}
+
+body {
+    font-family: "Changa One", serif;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #1C1B1B
+}
+
+.armarioCadastro {
+    transition: opacity 0.3s ease;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../assets/icon/loginCadastro/armarioCadastro.png");
+    background-size: 205vh;
+    background-position:-27vh;
+    background-repeat: no-repeat;
+}
+
+.armarioCadastro #balaoFala{
+    margin: 0;
+    width: 17%;
+    transform: translate(160vh, 7vh);
+    filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.5));
+}
+
+.armarioCadastro p {
+    top: 5vh;
+    position: absolute;
+    color: #11792E;
+    font-size: 5vh;
+    transform: translate(165vh, 4.8vh);
+}
+
+.armarioCadastro #linkLoginBalao {
+    position: absolute;
+    color: #941664;
+    font-size: 5vh;
+    font-family: "Changa One", serif;
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+    transform: translate(133vh, 21vh);
+}
+
+.armarioCadastro #pet {
+    position: absolute;
+    width: 20%;
+    height: auto;
+    transform: translate(137vh, 24vh);
+}
+
+.armarioCadastro #visualizarSenha {
+    position: absolute;
+    width: 7.4vh;
+    transform: translate(65.9vh, 67vh);
+}
+
+.armarioCadastro #nome_usuario{
+    position: absolute;
+    width: 13%;
+    height: 4%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 2.8vh;
+    font-family: "Changa One", serif;
+    color: white;
+    text-align: center;
+    transform: translate(68.6vh, 34vh);
+}
+
+#nome_usuario::placeholder {
+    /*muda cor do texto do input e 
+    alinha o texto no meio do input*/
+    color: white; 
+    opacity: 0.7;
+    text-align: center;
+  }
+
+  .armarioCadastro #tipo_monstro {
+    position: absolute;
+    width: 11%;
+    height: 4%;
+    transform: translate(68vh, 41.6vh);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 2.8vh;
+    font-family: "Changa One", serif;
+    text-align: center;
+    color: white;
+    opacity: 0.9;
+    appearance: none;
+}
+
+/* letra preta para as opções do select */
+.armarioCadastro #tipo_monstro option {
+    color: black;
+}
+
+.armarioCadastro #senha_usuario {
+    position: absolute;
+    width: 11%;
+    height: 4%;
+    transform: translate(70.5vh, 58vh);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 2.5vh;
+    font-family: "Changa One", serif;
+    color: black;
+    text-align: center;
+}
+
+#senha_usuario::placeholder {
+    color: black; 
+    opacity: 0.6;
+    text-align: center;
+}
+
+.armarioCadastro #confirmacao_senha{
+    position: absolute;
+    width: 11%;
+    height: 4%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 2.4vh;
+    font-family: "Changa One", serif;
+    color: black;
+    text-align: center;
+    transform: translate(70.5vh, 63vh);
+}
+
+#confirmacao_senha::placeholder {
+    color: black; 
+    opacity: 0.6;
+    text-align: center;
+  }
+
+.armarioCadastro #idade_usuario{
+    position: absolute;
+    width: 11%;
+    height: 4%;
+    transform: translate(88vh, 88.6vh);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 3.3vh;
+    font-family: "Changa One", serif;
+    color: rgb(60, 3, 60);
+    text-align: center;
+}
+
+/*tira as setas do input tipo numero*/
+.armarioCadastro #idade_usuario[type="number"]::-webkit-outer-spin-button,
+.armarioCadastro #idade_usuario[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.armarioCadastro #cadastroUsuario {
+    position: absolute;
+    height: 5vh;
+    font-family: "Changa One", serif;
+    font-size: 4vh;
+    background-color: rgba(0, 0, 0, 0.784);
+    color: #11792E;
+    transform: translate(73vh, 15vh);
+}
+
+.armarioCadastro #marcaDaAgua {
+    position: absolute;
+    width: 2%;
+    height: 2%;
+    right: 38%;
+    color: white;
+    font-size: 3vh;
+    transform: translate(78vh, 91vh);
+}
+
+/*pagina login*/
+.armarioLogin {
+    transition: opacity 0.3s ease;
+    margin: 0;
+    margin-top: 2vh;
+    width: 100vw;
+    height: 113vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../assets/icon/loginCadastro/armarioLogin.png");
+    background-size: 100vh;
+    background-position: 60vh;
+    background-repeat: no-repeat;
+}
+
+.armarioLogin #balaoFala2 {
+    margin: 0;
+    width: 17%;
+    transform: translate(33vh, 5vh);
+}
+
+.armarioLogin p {
+    position: absolute;
+    color: #11792E;
+    font-size: 5vh;
+    transform: translate(38vh, -20vh);
+}
+
+.armarioLogin #linkCadastroBalao {
+    position: absolute;
+    color: #791151;
+    font-size: 5vh;
+    font-family: "Changa One", serif;
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+    font-size: 3.6vh;
+    transform: translate(13vh, 17vh);
+}
+
+.armarioLogin #usuario {
+    font-size: 3.5vh;
+    font-family: "Changa One", serif;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transform: translate(-1vh, 38vh);
+}
+
+#usuario::placeholder {
+    color: black; 
+    opacity: 0.6;
+}
+
+.armarioLogin #senha {
+    position: absolute;
+    font-size: 3.5vh;
+    font-family: "Changa One", serif;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transform: translate(-42vh, 43vh);
+}
+
+.armarioLogin #marcaDaAgua {
+    position: absolute;
+    width: 2%;
+    height: 2%;
+    right: 38%;
+    color: white;
+    font-size: 3vh;
+    transform: translate(78vh, 59vh);
+}
+
+.armarioLogin #loginUsuario {
+    position: absolute;
+    height: 5vh;
+    font-family: "Changa One", serif;
+    font-size: 4vh;
+    background-color: rgba(0, 0, 0, 0.784);
+    color: #11792E;
+    transform: translate(-27vh, 48.5vh);
+}
+
+.card_erro span{
+    display: flex;
+    position: absolute;
+    font-size: 4vh;
+    text-align: center;
+    color: white;
+    background-color: #11792E;
+    transform: translate(5vh, 30vh);
+    word-break: break-word;
+    width: 38vh;
+}
+
+#div_erros_login {
+    display: none
+}
+
+.loading-div {
+    width: 50px;
+    display: none;
+  }
+  
+  .loading-div img {
+    height: 50px;
+    width: 50px;
+}
