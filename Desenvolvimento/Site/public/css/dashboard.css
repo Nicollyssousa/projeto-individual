@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Passion+One:wght@400;700;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Passion One", serif;
+}
+
+/* Navbar */
+.navbar {
+    height: 13vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 4px 4px 8px rgb(0, 0, 0);
+}
+
+.navbar::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("../assets/headerBackground.jpg");
+    background-position: center;
+    z-index: -1;
+    filter: brightness(38%);
+}
+
+.navbar #logoIndex {
+    margin-top: -1vh;
+    height: 10vh;
+    width: 35vh;
+    transform: translate(-40vh, 0vh);
+    filter:  brightness(95%);
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 1vh; /* Espaçamento entre os botões */
+    transform: translate(-12vh, 4vh) ;
+}
+
+/* Botões gerais */
+.item {
+    position: relative;
+    padding: 15px 30px;
+    font-weight: bold;
+    font-size: 4vh;
+    text-align: center;
+    text-shadow: 1px 3px 0 #000, -2px 3px 0 #000, 2px -2px 0 #000, -3px -3px 0 #000;
+    border: 3.5px solid #000;
+    color: white;
+    display: inline-block;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.8);
+    transition: transform 0.2s, box-shadow 0.2s;
+    z-index: 1;
+}
+
+/* Estilização por botão */
+.home {
+    background-color: #2196f3;
+    transform: rotate(-5deg);
+    clip-path: polygon(-29% 20%, 100% 4%, 100% 100%, 0% 100%, 0% 100%, 0% 0%);
+}
+
+.franquia {
+    background-color: #2196f3;
+    transform: rotate(6deg);
+    clip-path: polygon(-19% 0%, 100% 24%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+}
+
+.sobre {
+    padding: 15px 14px; /* Tamanho reduzido */
+    background-color: #2196f3;
+    transform: rotate(-5deg);
+    clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 100%, -8% 98%, -6% 0%);
+}
+
+/* Botão "Sobre mim" menor */
+.dash {
+    transform: rotate(9deg);
+    background-color: #e91e63;
+    clip-path: polygon(0% 0%, 0% 25%, 100% 4%, 100% 100%, 0% 100%, 0% 0%);
+}
+
+/* Links */
+.item a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+/* Hover */
+.item:hover {
+    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+    background-color: #0D691A;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 1); /* Sombra mais forte */
+    z-index: 2;
+    cursor: pointer;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background:  #000000f5;
+}
+
+.dashboard .container {
+    display: flex;
+    align-items: center;
+}
+
+.container a {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 2vh;
+    transform: translate(-67vh, -15vh);
+    font-size: 3.5vh;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container a:hover {
+    transform: translate(-68vh, -15vh);
+    color: #0D691A;
+}
+
+.saida-quiz {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 3.5vh;
+    color: #0D691A;
+    margin-top: 7vh;
+    transform: translate(-10vh, -5vh);
+}
+
+.saida-quiz h2 {
+    text-align: center;
+    font-size: 8vh;
+    color: #DC1A73;
+    margin-bottom: 5vh;
+}
+
+.grafico {
+    display: flex;
+    align-items: center;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    gap: 15vh;
+}
+
+.kpis #kpi {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 32vh;
+    height: 9vh;
+    background-color: #D99AB7;
+    font-size: 4vh;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    height: 8vh;
+    background-color: black;
+    color: white;
+    z-index: 10;
+}
+
+.footer #direitos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 80vh;
+    gap: 74vh;
+    font-size: 3vh;
+}
+
+.footer #marca {
+    color:#2D7305;
+}
+
+.footer #marcaDAgua {
+    color: #FC3A9A;
+}

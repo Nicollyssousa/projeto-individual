@@ -1,0 +1,659 @@
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:ital@0;1&family=Passion+One:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Changa+One:ital@0;1&family=Passion+One:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Passion One", serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    height: 13vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 4px 4px 8px rgb(0, 0, 0);
+}
+
+.navbar::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("../assets/headerBackground.jpg");
+    background-position: center;
+    z-index: -1;
+    filter: brightness(38%);
+}
+
+.navbar #logoIndex {
+    margin-top: -1vh;
+    height: 10vh;
+    width: 35vh;
+    transform: translate(-40vh, 0vh);
+    filter:  brightness(95%);
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 1vh; /* Espaçamento entre os botões */
+    transform: translate(-12vh, 4vh) ;
+}
+
+/* Botões gerais */
+.item {
+    position: relative;
+    padding: 15px 30px;
+    font-weight: bold;
+    font-size: 4vh;
+    text-align: center;
+    text-shadow: 1px 3px 0 #000, -2px 3px 0 #000, 2px -2px 0 #000, -3px -3px 0 #000;
+    border: 3.5px solid #000;
+    color: white;
+    display: inline-block;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.8);
+    transition: transform 0.2s, box-shadow 0.2s;
+    z-index: 1;
+}
+
+/* Estilização por botão */
+.home {
+    background-color: #e91e63;
+    transform: rotate(-5deg);
+    clip-path: polygon(-29% 20%, 100% 4%, 100% 100%, 0% 100%, 0% 100%, 0% 0%);
+}
+
+.franquia {
+    background-color: #2196f3;
+    transform: rotate(6deg);
+    clip-path: polygon(-19% 0%, 100% 24%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+}
+
+.sobre {
+    padding: 15px 14px; /* Tamanho reduzido */
+    background-color: #2196f3;
+    transform: rotate(-5deg);
+    clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 100%, -8% 98%, -6% 0%);
+}
+
+/* Botão "Sobre mim" menor */
+.dash {
+    transform: rotate(9deg);
+    background-color: #2196f3;
+    clip-path: polygon(0% 0%, 0% 25%, 100% 4%, 100% 100%, 0% 100%, 0% 0%);
+}
+
+/* Links */
+.item a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+/* Hover */
+.item:hover {
+    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 1); /* Sombra mais forte */
+    z-index: 2;
+    cursor: pointer;
+}
+
+.introducao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    font-family: "Caveat", cursive;
+    padding-bottom: 102vh;
+}
+
+.introducao::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 115vh;
+    top: 0px;
+    bottom: 0px;
+    background-image: url("../assets/indexBackground.jpg");
+    background-size: cover;
+    z-index: -1;
+    filter: brightness(25%);
+}
+
+.introducao .container #livro {
+    position: absolute;
+    right: 50vh;
+    top: 20vh;
+    width: auto;
+    height: 76vh;
+    filter: brightness(80%);
+}
+
+.introducao .container #fotoTurma {
+    position: absolute;
+    width: auto;
+    height: 42vh;
+    top: 43vh;
+    left: 53vh;
+    transform: rotate(5deg);
+    z-index: 3;
+    filter: brightness(80%);
+    filter: drop-shadow(5px 3px 5px rgba(0, 0, 0, 0.5));
+}
+
+.introducao .container #celular {
+    position: absolute;
+    width: auto;
+    height: 40vh;
+    top: 53vh;
+    left: 50vh;
+    transform: rotate(-10deg);
+    z-index: 3;
+    filter: brightness(80%);
+}
+
+.introducao .container #fraseLivro {
+    position: absolute;
+    width: 40vh;
+    height: 10vh;
+    word-wrap: break-word;
+    top: 30vh;
+    left: 66vh;
+    z-index: 3;
+    font-size: 3.7vh;
+    transform: rotate(-1deg);
+    font-family: "Caveat", cursive;
+    font-style: bold;
+}
+
+.introducao .container #raio {
+    position: absolute;
+    width: auto;
+    height: 10vh;
+    top: 35vh;
+    left: 99vh;
+    transform: rotate(14deg);
+    z-index: 3;
+    filter: brightness(80%);
+}
+
+.introducao .idEstudante {
+    position: absolute;
+    width: 45vh;
+    height: 25vh;
+    top: 33vh;
+    left: 116.4vh;
+    z-index: 3;
+    filter: brightness(80%);
+    background-image: url("../assets/headerBackground.jpg");
+    border-radius: 10px;
+    filter: drop-shadow(5px 3px 5px rgba(0, 0, 0, 0.5));
+}
+
+.informacoesUsuario {
+    color: white;
+    -webkit-text-stroke: 0.5px black; /* Largura e cor da borda */
+    -webkit-text-fill-color: white; /* Cor interna do texto */
+    font-size: 3vh;
+    transform: translate(25vh, 4vh);
+}
+
+.nickName {
+    color: white;
+    background-color: #227ca5;
+    height: 4vh;
+    width: 20vh;
+    font-size: 4vh;
+    text-align: center;
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: white;
+    transform: translate(-0.1vh, 15.3vh);
+    z-index: 3;
+}
+
+.introducao #clip {
+    position: absolute;
+    width: auto;
+    height: 5vh;
+    transform: translate(-0.1vh, -35vh);
+    z-index: 3;
+}
+
+.introducao #logoId {
+    position: absolute;
+    width: auto;
+    height: 5vh;
+    top: 1vh;
+    left: 22vh;
+    z-index: 5;
+}
+
+.introducao #texto {
+    position: absolute;
+    width: 30vh;
+    height: 3vh;
+    top: 21vh;
+    left: 5vh;
+    z-index: 5;
+    background-color: #DC1A73;
+    color: white;
+    text-align: center;
+}
+
+.introducao .longount img {
+    position: absolute;
+    width: 3.5vh;
+    height: 3.5vh;
+    top: 20.5vh;
+    left: 38vh;
+    z-index: 3;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.introducao h1 {
+    position: absolute;
+    width: 50vh;
+    height: 3.5vh;
+    top: 62vh;
+    left: 117vh;
+    z-index: 3;
+    font-size: 3.5vh;
+    font-family: "Caveat", cursive;
+    font-style: bold;
+    color: #ad115a;
+}
+
+.introducao .navegar #linkHistoria {
+    position: absolute;
+    width: 50vh;
+    height: 3vh;
+    top: 64vh;
+    padding: 20px;
+    left: 117vh;
+    z-index: 3;
+    font-size: 3.5vh;
+    font-family: "Caveat", cursive;
+    color: black;
+}
+
+.introducao .navegar #linkOnu {
+    position: absolute;
+    width: 50vh;
+    height: 3vh;
+    top: 68vh;
+    padding: 20px;
+    left: 117vh;
+    z-index: 3;
+    font-size: 3.5vh;
+    font-family: "Caveat", cursive;
+    color: black;
+}
+
+.introducao .navegar #linkPersonagens {
+    position: absolute;
+    width: 50vh;
+    height: 3vh;
+    top: 72.5vh;
+    padding: 20px;
+    left: 117vh;
+    z-index: 3;
+    font-size: 3.5vh;
+    font-family: "Caveat", cursive;
+    color: black;
+}
+
+.introducao .pet2 {
+    position: absolute;
+    width: 30vh;
+    height: auto;
+    top: 72vh;
+    padding: 20px;
+    left: 136vh;
+    z-index: 3;
+}
+
+img {
+    top: 50vh;
+    width: 10vh;
+    height: 10vh;
+    z-index: 1;
+}
+
+.historia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 110vh;
+    background-color: rgba(0, 0, 0, 0.938);
+}
+
+.historia #logoHistoria {
+    width: 50vh;
+    height: auto;
+}
+
+.historia h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 31vh;
+    padding-bottom: 3vh;
+    height: auto;
+    font-size: 8vh;
+    color: #0E7CB7;
+}
+
+.historia .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    height: auto;
+    width: 100%;
+}
+
+.historia p {
+    font-size: clamp(2rem, 2.5vw, 5vh); /* Tamanho dinâmico entre 2rem e 5vh */
+    color: white;
+    max-width: 60%; 
+    text-align: justify; 
+    line-height: 1.2; /* Adiciona espaçamento entre as linhas */
+    overflow-wrap: break-word; 
+}
+
+.historia span {
+    text-align: justify; 
+    line-height: 1.2;
+    font-size: clamp(2rem, 2.5vw, 5vh); 
+    background-image: linear-gradient(45deg, #34ABE1, #227ca5, #88185d, #5c0f71, #34ABE1);
+    background-size: 400% 100%;
+    animation: degrade 5s linear infinite alternate;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes degrade {
+    0%{
+        background-position-x: 0%;
+    }
+    100%{
+        background-position: 100%;
+    }
+}
+
+.objetivosOnu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 114vh;
+    animation: changeBackgroundColor 1s ease-in;
+    background-color: #000000;
+}
+
+@keyframes changeBackgroundColor {
+    0% {
+        background-color: rgba(0, 0, 0, 0.938);
+    }
+    50% {
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    100% {
+        background-color:  rgba(0, 0, 0, 0.995);
+    }
+}
+
+.objetivosOnu h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-top: 3vh;
+    font-size: 11vh;
+    color: white;
+}
+
+.objetivosOnu .container {
+    display: flex;
+    justify-content: center;
+    gap: 2vh;
+    height: auto;
+    position: relative;
+    width: 105%;
+    bottom: 5vh;
+}
+
+.objetivosOnu #fantasmas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    position: relative;
+    width: 175vh;
+    margin-left: 27vh;
+    animation: flutuar 3s ease-in-out infinite;
+    filter:  brightness(0.2) contrast(-3.0);
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(-19vh);
+    }
+    50% {
+        transform: translateY(-27vh);
+    }
+}
+
+.objetivosOnu #lapide1 {
+    width: 37vh;
+    height: auto;
+    z-index: 5;
+    filter: brightness(70%);
+}
+
+.objetivosOnu #lapide2 {
+    width: 37vh;
+    height: auto;
+    z-index: 5;
+    filter: brightness(70%);
+}
+
+.objetivosOnu #lapide3 {
+    width: 37vh;
+    height: auto;
+    z-index: 5;
+    filter: brightness(70%);
+}
+
+.objetivosOnu #lapide4 {
+    width: 37vh;
+    height: auto;
+    z-index: 5;
+    margin-top: 1vh;
+    filter: brightness(70%);
+}
+
+.objetivosOnu p {
+    position: absolute;
+    width: 100vh;
+    max-height: 24vh;
+    color: black;
+    font-size: 4vh;
+    background-color: #d9d9d9b7;
+    border-radius: 2vh;
+    overflow-wrap: break-word;
+    text-align: center;
+    padding: 2vh;
+    transform: translate(-6vh, -42vh);
+}
+
+.objetivosOnu span {
+    color: #2D7305;
+}
+
+.personagens {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 105vh;
+    position: relative;
+    z-index: 1;
+}
+
+.personagens::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("../assets/headerBackground.jpg");
+    background-position: center;
+    z-index: -1;
+    filter: brightness(45%);
+}
+
+.personagens .container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+    gap: 3vh;
+    max-width: 20vh;
+    background-color: black;
+    padding-top: 37px;
+    padding-bottom: 14px;
+    border-width: 0px 15px 0px 15px;
+    border-color: white;
+    border-style: dashed;
+}
+
+.personagens .container img {
+    border: 4px solid #ad115a;
+}
+
+.personagens .container img:hover {
+    border: 4px solid #2196f3;
+}
+
+.personagens span {
+    margin-left: 1vh;
+    width: 40vh;
+    height: auto;
+    color: white;
+    font-size: 95px;
+    max-width: 2vh;
+    transform: rotate(90deg);
+    gap: 0;
+}
+
+.personagens #cardClawdeen {
+    width: 80vh;
+    height: auto;
+    gap: 0;
+    filter:  brightness(90%);
+}
+
+.personagens #cardCleo {
+    width: 84vh;
+    margin-left: -4vh;
+    height: auto;
+    gap: 0;
+    filter:  brightness(90%);
+}
+
+.personagens #cardDraculaura {
+    width: 90vh;
+    margin-left: -7vh;
+    height: auto;
+    gap: 0;
+    filter:  brightness(90%);
+}
+
+.personagens #cardLagoona {
+    width: 81vh;
+    margin-left: -2vh;
+    height: auto;
+    gap: 0;
+    filter:  brightness(90%);
+}
+
+.personagens #cardFrankie {
+    width: 78vh;
+    margin-left: 2vh;
+    height: auto;
+    gap: 0;
+    filter:  brightness(90%);
+}
+
+.personagens .fundoPersonagens {
+    position: relative;
+    width: 73vh;
+    height: 88vh;
+    z-index: 1;
+    background-color: black;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 5.5vh;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    z-index: 10;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 2vh;
+}
+
+.footer #linkHistoria, #linkOnu, #linkPersonagens, #linkPersonagens, #linkHome {
+    align-items: flex-start;
+    list-style: none;
+    color: white;
+}
+
+.footer #direitos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 40vh;
+    gap: 80vh;
+    font-size: 2.3vh;
+}
+
+.footer #marca {
+    color:#2D7305;
+}
+
+.footer #marcaDAgua {
+    color: #FC3A9A;
+}

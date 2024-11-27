@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- logo site -->
+    <link rel="icon" href="assets/icon/logoSite.png">
+    <!-- link css -->
+    <link rel="stylesheet" href="css/sobreMim.css">
+    <!-- titulo site -->
+    <title>| Sobre mim</title>
+</head>
+
+<body>
+    <header class="navbar">
+        <img id="logoIndex" src="assets/icon/logoNome.png">
+        <nav> 
+            <ul class="menu">
+                <li class="item home"><a href="indexUsuario.html">Home</a></li>
+                <li class="item franquia"><a href="franquia.html">Franquia</a></li>
+                <li class="item sobre small"><a href="sobreMim.html">Sobre mim</a></li>
+                <li class="item dash"><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="eu">
+        <div class="fundo-dinamico">
+            <div class="slider">
+                <div class="slide-fotos">
+                    <div class="fotos-fundo">
+                        <img src="assets/icon/sobreMim/foto1.jpg">
+                    </div>
+                    <div class="fotos-fundo">
+                        <img src="assets/icon/sobreMim/foto2.jpg">
+                    </div>
+                    <div class="fotos-fundo">
+                        <img src="assets/icon/sobreMim/foto3.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="identificador">
+                    <img class="minhaFoto" src="assets/icon/sobreMim/foto.png">
+                    <h1>Nick :)</h1>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Placeat ipsum, temporibus sapiente,repellendus magnam impedit mollitia dolorum delectus vero fugit
+                    debitis alias incidunt, deleniti necessitatibus fuga sit labore aut rerum?
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="colecao">
+        <h1>Minha coleção</h1>
+        <div class="container">
+            <img class="fotoColecao" src="assets/icon/navegacao/logoPadrao.png">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Placeat ipsum, temporibus sapiente, repellendus magnam impedit mollitia dolorum delectus vero fugit
+                debitis alias incidunt,
+                deleniti necessitatibus fuga sit labore aut rerum?
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div id="direitos">
+            <span>Todos os direitos reservados a <span id="marca">MATTEL</span></span>
+            <p id="marcaDAgua">By Nick :)</p>
+        </div>
+    </div>
+</body>
+<script>
+    let index = 0; // Índice inicial do slide
+    const slides = document.querySelector('.slide-fotos');
+    const totalSlides = document.querySelectorAll('.fotos-fundo').length;
+
+    // Função para mudar de slide
+    function changeSlide() {
+        index = (index + 1) % totalSlides; // Incrementa o índice e reinicia no início após o último
+        slides.style.transform = `translateX(-${index * 100}%)`; // Move o slide
+    }
+
+    // Configuração do intervalo para pausar entre os slides
+    setInterval(changeSlide, 5000); // Altere o slide a cada 5 segundos
+</script>
+
+</html>
