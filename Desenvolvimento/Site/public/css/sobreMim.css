@@ -81,8 +81,7 @@
     clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 100%, -8% 98%, -6% 0%);
 }
 
-/* Botão "Sobre mim" menor */
-.quiz {
+.dash {
     transform: rotate(9deg);
     background-color: #2196f3;
     clip-path: polygon(0% 0%, 0% 25%, 100% 4%, 100% 100%, 0% 100%, 0% 0%);

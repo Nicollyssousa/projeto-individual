@@ -7,68 +7,6 @@
     font-family: "Passion One", serif;
 }
 
-/* Navbar */
-.navbar {
-    height: 13vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-    box-shadow: 4px 4px 8px rgb(0, 0, 0);
-}
-
-.navbar::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-image: url("../assets/headerBackground.jpg");
-    background-position: center;
-    z-index: -1;
-    filter: brightness(38%);
-}
-
-.navbar #logoIndex {
-    margin-top: -1vh;
-    height: 10vh;
-    width: 35vh;
-    transform: translate(-40vh, 0vh);
-    filter:  brightness(95%);
-}
-
-.menu {
-    display: flex;
-    list-style: none;
-    gap: 1vh; /* Espaçamento entre os botões */
-    transform: translate(-12vh, 4vh) ;
-}
-
-/* Botões gerais */
-.item {
-    position: relative;
-    padding: 15px 30px;
-    font-weight: bold;
-    font-size: 4vh;
-    text-align: center;
-    text-shadow: 1px 3px 0 #000, -2px 3px 0 #000, 2px -2px 0 #000, -3px -3px 0 #000;
-    border: 3.5px solid #000;
-    color: white;
-    display: inline-block;
-    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.8);
-    transition: transform 0.2s, box-shadow 0.2s;
-    z-index: 1;
-}
-
-/* Estilização por botão */
-.home {
-    background-color: #2196f3;
-    transform: rotate(-5deg);
-    clip-path: polygon(-29% 20%, 100% 4%, 100% 100%, 0% 100%, 0% 100%, 0% 0%);
-}
-
 .franquia {
     background-color: #2196f3;
     transform: rotate(6deg);
