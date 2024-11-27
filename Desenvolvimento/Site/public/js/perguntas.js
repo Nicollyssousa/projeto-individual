@@ -212,7 +212,7 @@ function exibirResultado() {
 
     // Exibe o personagem final
     questaoElemento.innerHTML = `Parabéns! Você se parece mais com: <strong id="personagem">${personagemNome}</strong>`;
-    descricaoPersonagem.innerHtml = `${descricao}`;
+    descricaoPersonagem.innerHTML = `${descricao}`;
 
     // Cria o botão de redirecionamento
     const botaoRedirecionar = document.createElement("button");
@@ -234,10 +234,10 @@ function exibirResultado() {
         },
         body: JSON.stringify({
             resultados: Object.entries(pontuacao).map(([letra, pontos]) => ({
-                nomePersonagem: personagens[letra], // Mapeia a letra para o nome da personagem
-                pontuacao: pontos,                 // Pontuação da personagem
+                nomePersonagem: personagens[letra],
+                pontuacao: pontos,
             })),
-        })
+        }),
     })
         .then((response) => {
             if (!response.ok) {
@@ -251,13 +251,6 @@ function exibirResultado() {
         .catch((error) => {
             console.error("Erro no envio:", error);
         });
-
-    console.log({
-        resultados: Object.entries(pontuacao).map(([letra, pontos]) => ({
-            nomePersonagem: personagens[letra],
-            pontuacao: pontos,
-        })),
-    });
 }
 
 function encaminharProximaPergunta() {

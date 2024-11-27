@@ -162,7 +162,35 @@
     gap: 15vh;
 }
 
-.kpis #kpi {
+.kpis {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.kpis #kpi1{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40vh;
+    height: 15vh;
+    background-color: #D99AB7;
+    font-size: 4vh;
+    text-align: center;
+}
+
+.kpis #kpi2{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 32vh;
+    height: 9vh;
+    background-color: #D99AB7;
+    font-size: 4vh;
+}
+
+.kpis #kpi3{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
