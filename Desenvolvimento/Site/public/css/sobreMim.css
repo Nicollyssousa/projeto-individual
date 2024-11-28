@@ -6,6 +6,11 @@
     font-family: "Changa One", serif;
 }
 
+body {
+    background-color: #000;
+    overflow-x: hidden;
+}
+
 /* Navbar */
 .navbar {
     height: 13vh;
@@ -34,7 +39,7 @@
     margin-top: -1vh;
     height: 10vh;
     width: 35vh;
-    transform: translate(-40vh, 0vh);
+    transform: translate(-30vh, 0vh);
     filter:  brightness(95%);
 }
 
@@ -119,40 +124,28 @@
     border: 5px solid #FC3A9A;
 }
   
-.fundo-dinamico {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    height: 83vh;
-    width: 65vw;
-}
-  
 .slider {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
-    height: 100%;
+    max-width: 120vh;
+    margin: auto;
     overflow: hidden;
 }
-  
-.slide-fotos {
-    display: flex;
-    width: 300%; 
-    transition: linear 25s;
-    filter: brightness(90%);
-}  
-  
+
 .fotos-fundo {
-    width: 100%;
-    height: 100%;
+    display: none;
 }
-  
-.fotos-fundo img {
+
+.fotos-fundo.active {
+    display: block;
+}
+
+.slider img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    border: 5px solid #88185d;
+    display: block;
+    transition: opacity 1s ease-in-out;
 }
   
 .minhaFoto {
@@ -184,11 +177,12 @@
 
 .eu p {
     font-size: 5vh;
-    color: rgba(255, 255, 255, 0.401);
-    max-width: 70%; 
-    margin-bottom: 6vh;
+    color: white;
+    max-width: 60%; 
     text-align: justify; 
-    overflow-wrap: break-word; 
+    line-height: 1.2;
+    overflow-wrap: break-word;
+    margin-bottom: 5vh;
 }
 
 .colecao {
@@ -210,8 +204,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 31vh;
-    padding-bottom: 3vh;
+    padding-right: 28vh;
     height: auto;
     font-size: 8vh;
     color: #86196b;

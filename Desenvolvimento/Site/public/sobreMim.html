@@ -26,7 +26,22 @@
     </header>
 
     <div class="eu">
-        <div class="fundo-dinamico">
+            <div class="container">
+                <div class="identificador">
+                    <img class="minhaFoto" src="assets/icon/sobreMim/foto.png">
+                    <h1>Nick :)</h1>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Placeat ipsum, temporibus sapiente,repellendus magnam impedit mollitia dolorum delectus vero fugit
+                    debitis alias incidunt, deleniti necessitatibus fuga sit labore aut rerum?
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-fotos">
+        <div class="slide">
             <div class="slider">
                 <div class="slide-fotos">
                     <div class="fotos-fundo">
@@ -39,17 +54,6 @@
                         <img src="assets/icon/sobreMim/foto3.jpg">
                     </div>
                 </div>
-            </div>
-            <div class="container">
-                <div class="identificador">
-                    <img class="minhaFoto" src="assets/icon/sobreMim/foto.png">
-                    <h1>Nick :)</h1>
-                </div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Placeat ipsum, temporibus sapiente,repellendus magnam impedit mollitia dolorum delectus vero fugit
-                    debitis alias incidunt, deleniti necessitatibus fuga sit labore aut rerum?
-                </p>
             </div>
         </div>
     </div>
@@ -75,18 +79,29 @@
     </div>
 </body>
 <script>
-    let index = 0; // Índice inicial do slide
-    const slides = document.querySelector('.slide-fotos');
-    const totalSlides = document.querySelectorAll('.fotos-fundo').length;
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slider .fotos-fundo');  // Seleciona as imagens dentro da div slider
+    const totalSlides = slides.length;
 
-    // Função para mudar de slide
-    function changeSlide() {
-        index = (index + 1) % totalSlides; // Incrementa o índice e reinicia no início após o último
-        slides.style.transform = `translateX(-${index * 100}%)`; // Move o slide
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
     }
 
-    // Configuração do intervalo para pausar entre os slides
-    setInterval(changeSlide, 5000); // Altere o slide a cada 5 segundos
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+    }
+
+    // Show the first slide initially
+    showSlide(currentIndex);
+
+    // Change slides every 3 seconds
+    setInterval(nextSlide, 3000);
 </script>
 
 </html>
