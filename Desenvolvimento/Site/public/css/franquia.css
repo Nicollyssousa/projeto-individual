@@ -15,7 +15,23 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Navbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #88185d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #227ca5; 
+}
+
 .navbar {
     height: 13vh;
     display: flex;
@@ -50,11 +66,10 @@ body {
 .menu {
     display: flex;
     list-style: none;
-    gap: 1vh; /* Espaçamento entre os botões */
+    gap: 1vh; 
     transform: translate(-12vh, 4vh) ;
 }
 
-/* Botões gerais */
 .item {
     position: relative;
     padding: 15px 30px;
@@ -70,11 +85,10 @@ body {
     z-index: 1;
 }
 
-/* Estilização por botão */
 .home {
     background-color: #2196f3;
     transform: rotate(-5deg);
-    clip-path: polygon(-29% 20%, 100% 4%, 100% 100%, 0% 100%, 0% 100%, 0% 0%);
+    clip-path: polygon(0% 20%, 100% 4%, 100% 100%, 0% 100%, 0% 100%, 0% 0%);
 }
 
 .franquia {
@@ -84,29 +98,28 @@ body {
 }
 
 .sobre {
-    padding: 15px 14px; /* Tamanho reduzido */
+    padding: 15px 14px; 
     background-color: #2196f3;
     transform: rotate(-5deg);
-    clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 100%, -8% 98%, -6% 0%);
+    clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 80%, 0% 95%, 0% 0%);
 }
 
 .dash {
     transform: rotate(9deg);
     background-color: #2196f3;
-    clip-path: polygon(0% 0%, 0% 25%, 100% 4%, 100% 100%, 0% 100%, 0% 0%);
+    clip-path: polygon(0% 0%, 0% 23%, 100% 4%, 100% 100%, 0% 100%, 0% 0%);
 }
 
-/* Links */
 .item a {
     text-decoration: none;
     color: white;
     display: block;
 }
 
-/* Hover */
 .item:hover {
-    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
-    box-shadow: 5px 5px 0 rgba(0, 0, 0, 1); /* Sombra mais forte */
+    transform: scale(1.1);
+    background-color: #2D7305;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 1);
     z-index: 2;
     cursor: pointer;
 }
@@ -136,11 +149,10 @@ body {
 }
 
 .mattel p {
-    font-size: clamp(1rem, 2.5vw, 10vh); /* Tamanho dinâmico entre 2rem e 5vh */
+    font-size: 5.5vh;
     color: white;
     max-width: 60%; 
     text-align: justify; 
-    line-height: 1.2; /* Adiciona espaçamento entre as linhas */
     overflow-wrap: break-word; 
 }
 

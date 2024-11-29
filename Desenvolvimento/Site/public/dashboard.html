@@ -37,6 +37,7 @@
             </div>
         
             <div class="grafico">
+                <div id="exibirPersonagem"></div>
                 <div class="kpis">
                     <div id="kpi1">
                         <p id="kpi1p"></p>
@@ -50,7 +51,6 @@
                 </div>
             </div>
         </div>
-
         <div class="footer">
             <div id="direitos">
                 <span>Todos os direitos reservados a <span id="marca">MATTEL</span></span>
@@ -176,6 +176,24 @@
 
             // Exibe o nome da personagem diretamente sem verificação
             nomePersonagemH1.innerHTML = data[0].nomePersonagem;
+
+            // Exibe a imagem da personagem correpodente 
+            if(data[0].nomePersonagem == "Lagoona Blue"){
+                exibirPersonagem.innerHTML = `<img src="assets/icon/dashboard/lagoona.3.png">`
+            }
+            else if(data[0].nomePersonagem == "Draculaura"){
+                exibirPersonagem.innerHTML = `<img src="assets/icon/dashboard/draculaura.3.png">`
+            }
+            else if(data[0].nomePersonagem == "Cleo de Nile"){
+                exibirPersonagem.innerHTML = `<img src="assets/icon/dashboard/cleo.1.png">`
+            }
+            else if(data[0].nomePersonagem == "Clawdeen Wolf"){
+                exibirPersonagem.innerHTML = `<img src="assets/icon/dashboard/clawdenn.2.png">`
+            }
+            else{
+                exibirPersonagem.innerHTML = `<img src="assets/icon/dashboard/frankie.1.png">`
+            }
+
         })
         .catch(error => {
             console.error("Erro ao buscar o nome da personagem:", error);

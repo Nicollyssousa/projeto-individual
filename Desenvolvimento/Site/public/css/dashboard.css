@@ -6,7 +6,27 @@
     font-family: "Passion One", serif;
 }
 
-/* Navbar */
+body {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #88185d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #227ca5; 
+}
+
 .navbar {
     height: 13vh;
     display: flex;
@@ -41,11 +61,10 @@
 .menu {
     display: flex;
     list-style: none;
-    gap: 1vh; /* Espaçamento entre os botões */
+    gap: 1vh; 
     transform: translate(-12vh, 4vh) ;
 }
 
-/* Botões gerais */
 .item {
     position: relative;
     padding: 15px 30px;
@@ -58,14 +77,14 @@
     display: inline-block;
     box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.8);
     transition: transform 0.2s, box-shadow 0.2s;
+    filter: brightness(55%);
     z-index: 1;
 }
 
-/* Estilização por botão */
 .home {
     background-color: #2196f3;
     transform: rotate(-5deg);
-    clip-path: polygon(-29% 20%, 100% 4%, 100% 100%, 0% 100%, 0% 100%, 0% 0%);
+    clip-path: polygon(0% 20%, 100% 4%, 100% 100%, 0% 100%, 0% 100%, 0% 0%);
 }
 
 .franquia {
@@ -75,31 +94,29 @@
 }
 
 .sobre {
-    padding: 15px 14px; /* Tamanho reduzido */
+    padding: 15px 14px; 
     background-color: #2196f3;
     transform: rotate(-5deg);
-    clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 100%, -8% 98%, -6% 0%);
+    clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 80%, 0% 95%, 0% 0%);
 }
 
-/* Botão "Sobre mim" menor */
 .dash {
     transform: rotate(9deg);
     background-color: #e91e63;
-    clip-path: polygon(0% 0%, 0% 25%, 100% 4%, 100% 100%, 0% 100%, 0% 0%);
+    clip-path: polygon(0% 0%, 0% 23%, 100% 4%, 100% 100%, 0% 100%, 0% 0%);
 }
 
-/* Links */
 .item a {
     text-decoration: none;
     color: white;
     display: block;
 }
 
-/* Hover */
 .item:hover {
-    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
-    background-color: #0D691A;
-    box-shadow: 5px 5px 0 rgba(0, 0, 0, 1); /* Sombra mais forte */
+    transform: scale(1.1);
+    background-color: #2D7305;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 1);
+    filter: brightness(90%);
     z-index: 2;
     cursor: pointer;
 }
@@ -119,23 +136,6 @@
     align-items: center;
 }
 
-.container a {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 2vh;
-    transform: translate(-67vh, -15vh);
-    font-size: 3.5vh;
-    text-decoration: none;
-    color: white;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.container a:hover {
-    transform: translate(-68vh, -15vh);
-    color: #0D691A;
-}
-
 .saida-quiz {
     display: flex;
     align-items: center;
@@ -143,8 +143,6 @@
     flex-direction: column;
     font-size: 3.5vh;
     color: #0D691A;
-    margin-top: 7vh;
-    transform: translate(-10vh, -5vh);
 }
 
 .saida-quiz h2 {
@@ -157,16 +155,18 @@
 .grafico {
     display: flex;
     align-items: center;
-    padding-left: 3vh;
+    padding-left: 5vh;
     padding-right: 3vh;
-    gap: 15vh;
+    padding-bottom: 4vh;
+    gap: 17vh;
 }
 
 .kpis {
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 1vh;
+    gap: 5vh;
+    transform: translateX(10vh);
 }
 
 .kpis #kpi1{
@@ -184,26 +184,30 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 32vh;
-    height: 9vh;
+    width: 40vh;
+    height: 15vh;
     background-color: #D99AB7;
-    font-size: 4vh;
+    font-size: 3.8vh;
+    text-align: center;
 }
 
-.kpis #kpi3{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 32vh;
-    height: 9vh;
-    background-color: #D99AB7;
-    font-size: 4vh;
+canvas {
+    width: 30vh;
+    margin-bottom: 5vh;
 }
 
 .chart-container {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#exibirPersonagem img{
+    position: absolute;
+    width: auto;
+    height: 70vh;
+    z-index: 10;
+    transform: translate(-4vh, -47.3vh);
 }
 
 .footer {
