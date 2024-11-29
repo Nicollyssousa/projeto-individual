@@ -35,19 +35,20 @@
                     <h2 id="nomePersonagem"></h2>
                 </div>
             </div>
-        
             <div class="grafico">
-                <div id="exibirPersonagem"></div>
                 <div class="kpis">
+                    <p id="titulo">Personagem mais popular:</p>
                     <div id="kpi1">
                         <p id="kpi1p"></p>
-                    </div><br>
+                    </div>
+                    <p id="titulo">Personagem mais popular:</p>
                     <div id="kpi2">
                         <p id="kpi2p">Leal</p>
                     </div><br>
                 </div>
+                <div id="exibirPersonagem"></div>
                 <div>
-                    <canvas id="myChart" style="position: relative; height:40vh; width:55vw"></canvas>
+                    <canvas id="myChart" style="position: relative; height:40vh; width:54vw"></canvas>
                 </div>
             </div>
         </div>
@@ -64,99 +65,99 @@
     let pontuacaoPorPersonagem = [];
 
     fetch(`/buscarQuiz/buscarQuiz/`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            idUsuarioServer: sessionStorage.ID_USUARIO
-        })
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        idUsuarioServer: sessionStorage.ID_USUARIO
     })
-        .then(function (resposta) {
-            console.log("Peguei as pontuações para o gráfico");
+})
+    .then(function (resposta) {
+        console.log("Peguei as pontuações para o gráfico");
 
-            if (resposta.ok) {
-                console.log(resposta);
+        if (resposta.ok) {
+            console.log(resposta);
 
-                resposta.json().then(json => {
-                    console.log(json);
+            resposta.json().then(json => {
+                console.log(json);
 
-                    for (let i = 0; i < json.length; i++) {
-                        nomePersonagens.push(json[i].Personagem);
-                        pontuacaoPorPersonagem.push(json[i].Porcentagem);
-                    }
+                for (let i = 0; i < json.length; i++) {
+                    nomePersonagens.push(json[i].Personagem);
+                    pontuacaoPorPersonagem.push(json[i].Porcentagem);
+                }
 
-                    const ctx = document.getElementById('myChart');
-                    new Chart(ctx, {
-                        type: 'pie',
-                        data: {
-                            labels: nomePersonagens,
-                            datasets: [{
-                                label: 'Compatibilidade',
-                                data: pontuacaoPorPersonagem,
-                                backgroundColor: [
-                                    "#3581AA", // Frankie
-                                    "#1D9DA9", // Lagoona
-                                    "#DC1A73", // Draculaura
-                                    "#8252C0", // Clawdeen
-                                    "#B29438"  // Cleo
-                                ],
-                                hoverOffset: 4
-                            }]
-                        },
-                        options: {
-                            aspectRatio: 2,
-                            plugins: {
-                                legend: {
-                                    position: 'right',
-                                    labels: {
-                                        boxWidth: 20,
-                                        color: 'white',
-                                        font: {
-                                            weight: 'bold',
-                                            size: 16
-                                        }
-                                    },
-                                    title: {
-                                        display: true,
-                                        text: 'Personagens',
-                                        font: {
-                                            size: 20,
-                                            weight: 'bold'
-                                        },
-                                        color: 'white'
-                                    }
+                const ctx = document.getElementById('myChart');
+                new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: nomePersonagens,
+                        datasets: [{
+                            label: 'Compatibilidade',
+                            data: pontuacaoPorPersonagem,
+                            backgroundColor: [
+                                "#3581AA",
+                                "#1D9DA9",
+                                "#DC1A73",
+                                "#8252C0",
+                                "#B29438" 
+                            ],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        aspectRatio: 2,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Percentual de Compatibilidade',
+                                font: {
+                                    size: 20,
+                                    weight: 'bold'
                                 },
-                                datalabels: {
+                                color: 'white'
+                            },
+                            legend: {
+                                position: 'right',
+                                labels: {
+                                    boxWidth: 20,
                                     color: 'white',
                                     font: {
-                                        family: 'Passion One',
                                         weight: 'bold',
-                                        size: 23
-                                    },
-                                    formatter: (value, context) => {
-                                        const total = context.dataset.data.reduce((a, b) => Number(a) + Number(b), 0);
-
-                                        if (total == 0 || value == 0 || isNaN(total) || isNaN(value)) {
-                                            return '';
-                                        }
-
-                                        const percentage = ((value / total) * 100).toFixed(1) + '%';
-                                        return percentage;
+                                        size: 16
                                     }
                                 }
+                            },
+                            datalabels: {
+                                color: 'white',
+                                font: {
+                                    family: 'Passion One',
+                                    weight: 'bold',
+                                    size: 23
+                                },
+                                formatter: (value, context) => {
+                                    const total = context.dataset.data.reduce((a, b) => Number(a) + Number(b), 0);
+
+                                    if (total == 0 || value == 0 || isNaN(total) || isNaN(value)) {
+                                        return '';
+                                    }
+
+                                    const percentage = ((value / total) * 100).toFixed(1) + '%';
+                                    return percentage;
+                                }
                             }
-                        },
-                        plugins: [ChartDataLabels],
-                    });
+                        }
+                    },
+                    plugins: [ChartDataLabels],
                 });
-            } else {
-                console.log("Houve um erro ao exibir os dados no gráfico");
-            }
-        })
-        .catch(function (erro) {
-            console.log(erro);
-        });
+            });
+        } else {
+            console.log("Houve um erro ao exibir os dados no gráfico");
+        }
+    })
+    .catch(function (erro) {
+        console.log(erro);
+    });
 </script>
 <script>
     //chamar kpi com o nome da personagem com maior pontuação do usuario
@@ -215,7 +216,7 @@
         const kp1 = document.getElementById("kpi1p");
 
         // Exibe o nome da personagem diretamente no <p>
-        kp1.innerHTML = `Personagem mais popular:<br> ${data[0].nomePersonagem}`;
+        kp1.innerHTML = `${data[0].nomePersonagem}`;
     })
     .catch(error => {
         console.error("Erro ao buscar o nome da personagem:", error);
@@ -237,7 +238,7 @@
         const kp2 = document.getElementById("kpi2p");
 
         // Exibe o nome da personagem diretamente no <p>
-        kp2.innerHTML = `Personagem menos popular:<br> ${data[0].nomePersonagem}`;
+        kp2.innerHTML = `${data[0].nomePersonagem}`;
     })
     .catch(error => {
         console.error("Erro ao buscar o nome da personagem:", error);

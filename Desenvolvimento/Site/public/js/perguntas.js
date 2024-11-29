@@ -211,7 +211,7 @@ function exibirResultado() {
     const personagemNome = personagens[personagemLetra];
 
     // Exibe o personagem final
-    questaoElemento.innerHTML = `Parabéns! Você se parece mais com: <strong id="personagem">${personagemNome}</strong>`;
+    questaoElemento.innerHTML = `Parabéns! Você completou o quiz, acesse a dashbord para ver o resultado!`;
     descricaoPersonagem.innerHTML = `${descricao}`;
 
     // Cria o botão de redirecionamento
